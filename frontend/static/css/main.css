@@ -343,6 +343,9 @@ color: lightgrey;
 }
 
 /* how it works */
+#how-it-works {
+  text-align: center;
+}
 #how-it-works > h2{
 margin-bottom: -2%;
 font-size: 2.5rem;

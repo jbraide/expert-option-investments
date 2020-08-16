@@ -1,0 +1,12 @@
+{
+  "files": [
+    "src/wave.ts",
+    "src/interface.ts",
+    "src/untils.ts"
+  ],
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "target": "es5",
+    "lib": ["es2015", "es2017", "dom"]
+  }
+}

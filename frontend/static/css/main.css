@@ -1,0 +1,418 @@
+/* fonts */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: rgb(33, 40, 63);
+    color: whitesmoke;
+    /* font-family: 'Rubik', sans-serif; */
+    font-family: 'Quicksand', sans-serif;
+}
+
+hr {
+  border-top: 0.1rem solid white;
+}
+
+/* flat button */
+.flat-button {
+  border-radius: 0;
+}
+
+/* change table default color to white */
+.table {
+  color: white;
+}
+
+
+
+/* desktop view */
+@media screen and (min-width: 800px){
+/*
+    homepage
+*/
+
+
+/* navigation */
+.banner-navigation {
+  width: 80%;
+  height: 80px;
+  background-color: transparent;
+  margin: 0 auto;
+  padding-top: 2rem ;
+}
+
+.main-nav-logo {
+  width: 30%;
+  margin: 0 6rem;
+  margin-right: 4rem;
+}
+.eng-lang-flag{
+  /* width: ; */
+  padding: 0 3rem;
+}
+.nav-buttons {
+  padding-left: 9rem;
+}
+.nav-buttons > .btn {
+  margin-right: 0.6rem;
+}
+/* banner */
+#banner {
+  background: url('../images/pexels-nao-triponez-129208.jpg');
+  height: 100vh;
+  box-shadow: 0 3000px rgba(27, 35, 55, .7) inset;
+  color: white;
+}
+
+#myNav > span {
+  font-size: 1.5rem;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+/* banner text  */
+.banner-text {
+padding-top: 18%;
+}
+
+.green-on{
+  color: green;
+  font-size: 0.9rem
+}
+
+.green-on:hover{
+  color: greenyellow;
+}
+
+/* how it works */
+#how-it-works > h2{
+margin-bottom: -2%;
+font-size: 2.5rem;
+letter-spacing: 0.1rem;
+}
+#how-it-works-background{
+background-color: #1b2337;
+padding: 2% 3%;
+padding-top: 5%;
+}
+
+.how-it-works-headings {
+font-weight: bold;
+}
+
+/* proof of excellence */
+#excellence-header , #best-trading-platform {
+margin: 4% 0;
+font-weight: 800;
+font-size: 1.8rem;
+}
+
+#excellence-message, #award-winning {
+margin: 2rem 0;
+}
+
+.see-more-button {
+width: 70%;
+border-radius: 0;
+font-weight: bold;
+padding: 2%
+}
+
+
+/* global trading platform */
+#global-platform{
+margin: 4% 0;
+}
+
+#map {
+height: 400px;
+}
+
+#chartdiv {
+width: 100%;
+height: 500px;
+}
+
+/* account registered and traders online */
+/* globe online */
+.globe-on {
+color: greenyellow;
+}
+
+
+/* footer */
+footer > .container > .row > .col-lg-2 > a {
+display: block;
+color: lightgrey;
+}
+
+#footer-logo {
+  width: 90%;
+  padding: 1.5rem 0;
+}
+/* disclaimer */
+
+/* 
+        Plans
+*/
+/* account types */
+.account-type-background {
+  background: url('../images/pexels-lorenzo-241544.jpg') no-repeat;
+  height: 100vh;
+  box-shadow: 0 3000px rgba(27, 35, 55, .9) inset;
+}
+
+/* plan showcase */
+.plan-showcase-outer {
+  margin: 0 2%;
+}
+.plan-showcase-border{
+  border: 1px solid lightgrey;
+  height: 100%;
+  padding: 5%;
+}
+
+.plan-showcase-header {
+  margin: 20% 0;
+}
+
+.color {
+  border: 1px solid white;
+  width: 40%;
+}
+
+.platinum{
+  /* margin-top: 5%; */
+  box-shadow: 0 0 10px white;
+}
+
+.private {
+  box-shadow: 0 0 10px greenyellow;  
+}
+
+.gold {
+  box-shadow: 0 0 10px gold;
+}
+
+.silver{
+  box-shadow: 0 0 10px silver;
+}
+
+.entry {
+  box-shadow: 0 0 10px green;
+
+}
+.mini{
+  box-shadow: 0 0 10px skyblue;
+}
+
+/* Registration */
+.reg-login-bg{
+  background-color: #283154;
+}
+.form-bg{
+  background-color: #20293E;
+  /* background-color: #28325A; */
+  height: 400px;
+}
+#register-header{
+  font-size: 2.5rem;  
+}
+#reg-email-input , #reg-password-input{
+  width: 60%;
+}
+
+}
+
+/*
+     mobile view 
+*/
+@media screen and (max-width: 800px){
+/*
+    homepage
+*/
+
+/* banner */
+#banner {
+  background: url('../images/pexels-nao-triponez-129208.jpg');
+  height: 100vh;
+  box-shadow: 0 3000px rgba(27, 35, 55, .7) inset;
+  color: white;
+}
+/* navigation */
+.banner-navigation {
+  width: 80%;
+  height: 80px;
+  background-color: transparent;
+  margin: 0 auto;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+/* banner text  */
+.banner-text {
+  padding-top: 55%;
+}
+
+.green-on{
+  color: green;
+  font-size: 0.9rem
+}
+
+.green-on:hover{
+  color: greenyellow;
+}
+
+/* how it works */
+#how-it-works > h2{
+margin-bottom: -2%;
+font-size: 2.5rem;
+letter-spacing: 0.1rem;
+}
+#how-it-works-background{
+background-color: #1b2337;
+padding: 2% 3%;
+padding-top: 5%;
+}
+
+.how-it-works-headings {
+font-weight: bold;
+}
+
+/* proof of excellence */
+#excellence-header , #best-trading-platform {
+margin: 4% 0;
+font-weight: 800;
+font-size: 1.8rem;
+}
+
+#excellence-message, #award-winning {
+margin: 2rem 0;
+}
+
+.see-more-button {
+width: 70%;
+border-radius: 0;
+font-weight: bold;
+padding: 2%
+}
+
+
+/* global trading platform */
+#global-platform{
+margin: 4% 0;
+}
+
+#map {
+height: 400px;
+}
+
+#chartdiv {
+width: 100%;
+height: 500px;
+}
+
+/* account registered and traders online */
+/* globe online */
+.globe-on {
+color: greenyellow;
+}
+
+
+/* footer */
+footer > .container > .row > .col-lg-2 > a {
+display: block;
+color: lightgrey;
+}
+/* disclaimer */
+
+}
+
+/* mobile for navigation */
+@media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+    }
+  }

@@ -16,6 +16,7 @@
 
     <!-- project css -->
     <link rel="stylesheet" href="./static/css/main.css">
+    <link rel="stylesheet" href="./static/css/sam.css">
 
     <!-- fontawesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
@@ -52,14 +53,28 @@
       <div class="container">
         <h3 class="text-center" id="register-header">Register</h3>
         <div class="form-bg">
-          <form action="" class="mx-5">
-              <input type="email" name="" id="reg-email-input" class="form-control" placeholder="E-mail">
-              <input type="password" class="form-control" id="reg-password-input" placeholder="password">
-              <input type="checkbox" name="" id=""> <a href=""> I accept Terms & conditions, privacy policy</a>
-              <br>
-              <button class="btn btn-success flat-button">
-                  Create Account
+          <form action="" class="mx-5 1w2d6bn ">
+            <div class="form-group">
+              <input type="email" name="" id="reg-email-input" class="form-control" placeholder="E-mail" required>
+            </div>
+            <div>
+              <input type="password" class="form-control" id="reg-password-input" placeholder="password" required>
+            </div>
+            <div class="col-row">
+              <div class="col-lg-6">
+              <input type="checkbox" name="reg-password-input" id=""> <a href=""> I accept Terms & conditions, privacy policy</a>
+              </div>
+              <div class="col-lg-6">
+                <button class="btn btn-primary bttn" id="btn">
+                  Open Account
               </button>
+              </div>
+              <br>
+            </div>            
+            <section class="butt2">
+              <a><button class="btn btn-primary"><span><i class="fab fa-facebook-square" aria-hidden="true"></i></span>Facebook</button></a>
+              <a><button class="btn btn-danger"><span><i class="fab fa-google" aria-hidden="true"></i></span>Google</button></a>
+            </section>
           </form>
         </div>
         <a href="" class="mx-auto">Login</a>

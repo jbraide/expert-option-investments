@@ -1,4 +1,139 @@
+
+/* body */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, Roboto, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    color: rgb(245, 245, 245);
+    line-height: 1.6;
+    height: 100%;
+}
+/* login */
 .form-bg {
+    background-color: rgb(21,27,39,0.175);
+    padding: 40px 0;
+    border-radius: 12px;
+    box-sizing: border-box;
+    height: 300px;
+    width: 400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+
+.reg-login-bg {
+    background: radial-gradient(circle,rgba(46,60,111,1) 0%,rgba(37,44,71,1) 100%);
+}
+
+#register-header{
+    font-size: 2.5rem;
+    padding: 0 0 10px;
+    font-family: "Arial";
+    
+}
+
+#reg-email-input , #reg-password-input{
+    width: 300px;
+    margin-bottom: 1rem;
+    float: right;
+    border-radius: 4px;
+    background-color: #20293e;
+    color: #fff;
+    width: none;
+  }
+
+div {
+    display: block;
+}
+
+button { 
+    padding: 10px;
+    border: 1px; 
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    margin: 0em;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: 400;
+    font-stretch: normal;
+    font-family: "Arial";
+}
+
+button span {
+    margin-right: 10px;
+    margin: 8px;
+    padding: 8px;
+    
+}
+
+
+section {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-bottom: 16px;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.css-1ry0z48 {
+    min-width: 130px;
+}
+
+.bttn {
+    padding: 0 15px;
+    display: flex;
+    align-self: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    background: none;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 3px;
+    text-decoration: none;
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+    touch-action: manipulation;
+    white-space: nowrap;
+    max-width: 100%;
+    outline: none;
+    transition: opacity 0.2s,transform 0.15s,background-image 0.15s,background-color 0.15s,color 0.15s,border-color 0.15s,box-shadow 0.15s !important;
+    height: 36px;
+    line-height: 34px;
+    border-color: #3facff;
+    background-color: #3facff;
+    background-image: linear-gradient(to top,#3facff,#259efa);
+    box-shadow: 0 3px 10px #0048b5;
+    color: #fff;
+    width: 40%;
+    float: right;
+    top: -30px;
+}
+
+.mx-auto {
+    display: block;
+    padding: 25px;
+    text-align: center;
+}
+
+/* Registration  */
+
+.css-1w2d6bn {
     background-color: rgb(21,27,39,0.175);
     padding: 40px;
     border-radius: 12px;
@@ -7,4 +142,14 @@
     width: 400px;
     margin: 0 auto;
     position: relative;
+}
+ .fm {
+    background-color: rgb(21,27,39,0.175);
+ }
+
+ /* link */
+ a {
+    color: rgb(212, 212, 212);
+    text-decoration: none;
+    background-color: transparent;
 }

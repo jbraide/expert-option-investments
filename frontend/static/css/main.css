@@ -258,11 +258,11 @@ color: lightgrey;
 #register-header{
   font-size: 2.5rem;  
 }
-#reg-email-input , #reg-password-input{
+/* #reg-email-input , #reg-password-input{
   width: 60%;
-}
+} */
 
-}
+
 
 /*
      mobile view 
@@ -418,4 +418,5 @@ color: lightgrey;
     top: 15px;
     right: 35px;
     }
+  }
   }

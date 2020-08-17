@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <!-- JS, Popper.js, and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
@@ -30,17 +30,37 @@
     <script>
       new WOW().init();
     </script>
+
+  <!-- owl carousel -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
+
   <!-- Resources -->
   <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
   <script src="https://cdn.amcharts.com/lib/4/maps.js"></script>
   <script src="https://cdn.amcharts.com/lib/4/geodata/worldLow.js"></script>
   <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
-    <!-- wave js -->
-    <script src="./static/js/wave.js"></script>
-    <!-- main js file -->
-    <script src="./static/js/main.js"></script>
-
-    <!-- Chart code -->
+  
+  <!-- wave js -->
+  <script src="./static/js/wave.js"></script>
+  
+  <!-- main js file -->
+  <script src="./static/js/main.js"></script>
+  <script>
+    // owl carousel
+  $('.owl-carousel').owlCarousel({
+    loop:true,
+    magin: 10,
+    nav:true,
+    responsiveClass:true,
+    responsive: {
+      0:{
+        items:1,
+        nav:false
+      },
+    }
+  })
+  </script>
+  <!-- Chart code -->
 <script>
 // waves js
 var waveAnimation = new Wave('body', {
@@ -123,9 +143,13 @@ graticuleSeries.fitExtent = false;
             <a href="#">Contact</a>
           </div>
         </div>        
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
-        <img src="./static/images/flags/us.gif" alt="" class="eng-lang-flag">
-        <img src="./static/images/logos/full-exp-opt-logo.png" alt="" class="main-nav-logo">
+        <span onclick="openNav()" id="menu-icon">&#9776; Menu</span>
+        <img src="./static/images/flags/us.gif" alt="" class="eng-lang-flag desktop">
+        
+        <!-- mobile and desktop navigation -->
+        <img src="./static/images/logos/full-exp-opt-logo.png" alt="" class="main-nav-logo desktop">
+        <img src="./static/images/logos/just-logo(expert-option).png" alt="" class="main-nav-logo mobile">
+
         <span class="nav-buttons">
           <a href="" class="btn btn-primary nav-login flat-button">Login</a>
           <a href="" class="btn btn-primary nav-register flat-button">Register</a>
@@ -148,37 +172,84 @@ graticuleSeries.fitExtent = false;
       </div>   
 
     </div>
-    <div class="container">
+
+    <!-- sliding charts -->
+    <div id="sliding-chart">
+      <!-- TradingView Widget BEGIN -->
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {
+    "symbols": [
+      {
+        "proName": "FOREXCOM:SPXUSD",
+        "title": "S&P 500"
+      },
+      {
+        "proName": "FOREXCOM:NSXUSD",
+        "title": "Nasdaq 100"
+      },
+      {
+        "proName": "FX_IDC:EURUSD",
+        "title": "EUR/USD"
+      },
+      {
+        "proName": "BITSTAMP:BTCUSD",
+        "title": "BTC/USD"
+      },
+      {
+        "proName": "BITSTAMP:ETHUSD",
+        "title": "ETH/USD"
+      }
+    ],
+    "colorTheme": "light",
+    "isTransparent": false,
+    "displayMode": "adaptive",
+    "locale": "en"
+  }
+    </script>
+    </div>
+</div>
+<!-- TradingView Widget END -->
+    <!-- how it works -->
+    <div class="container text-center">
       <div id="how-it-works">
         <h2 class="text-center mt-5">
           How it Works
         </h2>
         <div id="how-it-works-background">
           <div class="row">
-            <div class="col-lg-4">
-              <h5 class="how-it-works-headings">
-              <span class="fas fa-money-bill mr-3"></span>
-                Deposit
-              </h5>
-              <p class="my-3">Open real account and add funds. We work with more than 12 payment systems.
-              </p>
+            <div class="col-lg-6">
+              <div id="how-it-works-body">
+                <h5 class="how-it-works-headings">
+                  <span class="fas fa-money-bill mr-3"></span>
+                    Deposit
+                  </h5>
+                  <p class="my-3">Open real account and add funds. We work with more than 12 payment systems.
+                  </p>
+              </div>
             </div>
-            <div class="col-lg-4">
-              <h5 class="how-it-works-headings">
-                <span class="fas fa-chart-line mr-3"></span>
-                  Trade
-                </h5>
-                <p class="my-3">
-                  Trade out catalog of over 60 assets and stocks. Use technical analysis and trade the news
-                </p>
+            <div class="col-lg-6">
+              <div id="how-it-works-body">
+                <h5 class="how-it-works-headings">
+                  <span class="fas fa-chart-line mr-3"></span>
+                    Trade
+                  </h5>
+                  <p class="my-3">
+                    Trade out catalog of over 60 assets and stocks. Use technical analysis and trade the news
+                  </p>
             </div>
-            <div class="col-lg-4">
-              <h5 class="how-it-works-headings">
-                <span class="fas fa-download mr-3"></span>
-                  Withdraw
-                </h5>
-                <p class="my-3">Get funds easily to your bank card or e-wallet. We take no commission.
-                </p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div id="how-it-works-body">
+                  <h5 class="how-it-works-headings">
+                    <span class="fas fa-download mr-3"></span>
+                      Withdraw
+                    </h5>
+                    <p class="my-3">Get funds easily to your bank card or e-wallet. We take no commission.
+                    </p>
+              </div>
             </div>
           </div>
         </div>
@@ -191,16 +262,16 @@ graticuleSeries.fitExtent = false;
       <div class="proof-of-excellence">
         <div class="row">
           <div class="col-lg-6">
-            <h3 id="excellence-header">
-              <span class="fas fa-shield-alt mr-2"></span>
-              Trusted
-            </h3>
-            <p id="excellence-message">
-              Expert Option Investments is the leader in the online trading industry. 
-              We are trusted by more than 5,000,000 clients.
-            </p>
-            <a href="" class="btn btn-primary see-more-button btn-block">See More</a>
-          </div>
+              <h3 id="excellence-header">
+                <span class="fas fa-shield-alt mr-2"></span>
+                Trusted
+              </h3>
+              <p id="excellence-message">
+                Expert Option Investments is the leader in the online trading industry. 
+                We are trusted by more than 5,000,000 clients.
+              </p>
+              <a href="" class="btn btn-primary see-more-button btn-block">See More</a>
+            </div>  
           <div class="col-lg-6">
             <h5 id="best-trading-platform">
               <span class="fas fa-trophy mr-2"></span>
@@ -227,7 +298,11 @@ graticuleSeries.fitExtent = false;
       </div>
 
       <!-- map -->
-      <div id="chartdiv"></div>
+      <div class="container">
+        <div id="chartdiv">
+        <img src="./static/images/world_map.png" alt="">
+        </div>
+      </div>
       <!-- <div id="map"> -->
       </div>
     </div>
@@ -244,7 +319,7 @@ graticuleSeries.fitExtent = false;
               <div class="col-lg-2">
                 <span class="fas fa-user-plus display-4"></span>
               </div>
-              <div class="col-lg-10">
+              <div class="col-lg-10" id="registered-accounts-container">
                 <h2 id="registered-accounts-number" class="">
                   385,000
                 </h2>
@@ -277,8 +352,9 @@ graticuleSeries.fitExtent = false;
     <footer>
       <div class="container">
         <div class="row">
-          <div class="col-lg-4">
-              <img src="./static/images/logos/full-exp-opt-logo.png" alt="expert option investment logo" id="footer-logo">
+          <div class="col-lg-4" id="company-footer-text">
+              <img src="./static/images/logos/full-exp-opt-logo.png" alt="expert option investment logo" id="footer-logo" class="desktop">
+              <img src="./static/images/logos/just-logo(expert-option).png" alt="expert option investment logo" id="footer-logo" class="mobile">
             <!-- <h3>Expert Option Logo</h3> -->
             <p class=" my-3">
               Company provides servies to everyone across the globe. <br>
@@ -287,23 +363,23 @@ graticuleSeries.fitExtent = false;
               Making trading available and accessible to everyone is and continues to be our # 1 goal and priority.
             </p>
           </div>
-          <div class="col-lg-2">
+          <div class="col-lg-2" id="home-footer">
             <h4>Home</h4>
             <a href="">Login</a>
             <a href="">Create Account</a>
           </div>
-          <div class="col-lg-2">
+          <div class="col-lg-2" id="trading-footer">
             <h4>Trading</h4>
             <a href="">Account Types</a>
           </div>
-          <div class="col-lg-2">
+          <div class="col-lg-2" id="company-footer">
             <h4>Company</h4>
             <a href="">About Company</a>
             <a href="">Terms</a>
             <a href="">Payment Policy</a>
             <a href="">Privacy Policy</a>
           </div>
-          <div class="col-lg-2">
+          <div class="col-lg-2" id="payment-methods-footer">
             <h4>Payment Methods</h4>
           </div>
         </div>

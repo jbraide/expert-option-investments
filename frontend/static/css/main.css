@@ -28,6 +28,9 @@ hr {
 
 /* desktop view */
 @media screen and (min-width: 800px){
+  .mobile {
+    display: none;
+  }
 /*
     homepage
 */
@@ -65,9 +68,6 @@ hr {
   color: white;
 }
 
-#myNav > span {
-  font-size: 1.5rem;
-}
 
 .overlay {
   height: 100%;
@@ -110,6 +110,11 @@ hr {
   font-size: 60px;
 }
 
+#menu-icon {
+  font-size: 1.5rem;
+}
+
+
 /* banner text  */
 .banner-text {
 padding-top: 18%;
@@ -138,6 +143,11 @@ padding-top: 5%;
 
 .how-it-works-headings {
 font-weight: bold;
+font-size: 1.7rem;
+}
+
+#how-it-works-body > p {
+  line-height: 1.5rem;
 }
 
 /* proof of excellence */
@@ -164,15 +174,17 @@ padding: 2%
 margin: 4% 0;
 }
 
-#map {
-height: 400px;
-}
-
 #chartdiv {
 width: 100%;
 height: 500px;
+padding-top: 8%;
 }
-
+  
+#chartdiv > img {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
 /* account registered and traders online */
 /* globe online */
 .globe-on {
@@ -197,9 +209,13 @@ color: lightgrey;
 */
 /* account types */
 .account-type-background {
-  background: url('../images/pexels-lorenzo-241544.jpg') no-repeat;
+  background: url('../images/pexels-pixabay-265087.jpg') no-repeat;
   height: 100vh;
   box-shadow: 0 3000px rgba(27, 35, 55, .9) inset;
+}
+
+.account-type-nav {
+  padding-bottom: 7%;
 }
 
 /* plan showcase */
@@ -207,8 +223,8 @@ color: lightgrey;
   margin: 0 2%;
 }
 .plan-showcase-border{
-  border: 1px solid lightgrey;
-  height: 100%;
+  border: 1px solid rgba(211,211,211, .5);
+  height: 95%;
   padding: 5%;
 }
 
@@ -217,7 +233,7 @@ color: lightgrey;
 }
 
 .color {
-  border: 1px solid white;
+  border: 2px solid white;
   width: 40%;
 }
 
@@ -234,6 +250,10 @@ color: lightgrey;
   box-shadow: 0 0 10px gold;
 }
 
+#gold-plan{
+  margin-top: -10%;
+}
+
 .silver{
   box-shadow: 0 0 10px silver;
 }
@@ -246,6 +266,53 @@ color: lightgrey;
   box-shadow: 0 0 10px skyblue;
 }
 
+
+/* account types table */
+#plan-details {
+  margin: 7% 0;
+}
+#account-types-card{
+  background-color: #252F45 ;
+  box-shadow: black;
+  box-shadow: 0 0 10px black;
+  position: absolute;
+  top: 40rem;
+  height: 208px;
+  width: 30rem;
+  padding-left: 2%;
+}
+
+#acct-type-card-icon {
+  font-size: 4rem;
+  margin: 6% 0; 
+}
+
+#acct-type-header {
+  font-size: 3rem;
+}
+
+#benefits{
+  background-color: #20273C;
+  width: 80%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  margin: 0 auto;
+  padding: 1.5% 0;
+  box-shadow: 0 0 1.5rem white;
+}
+
+#benefits > p {
+  font-weight: bold;
+}
+
+/* Withdrawal options - Account type */
+#account-type-withdrawal {
+  margin-bottom: 5%;
+}
+
+#withdrawal-description-body{
+  line-height: 1.9rem;
+}
+
 /* Registration */
 .reg-login-bg{
   background-color: #283154;
@@ -256,10 +323,10 @@ color: lightgrey;
   height: 400px;
 }
 #register-header{
-  font-size: 2.5rem;  
+  font-size: 2.3rem;  
 }
 #reg-email-input , #reg-password-input{
-  width: 60%;
+  /* width: 60%; */
 }
 
 }
@@ -268,6 +335,9 @@ color: lightgrey;
      mobile view 
 */
 @media screen and (max-width: 800px){
+  .desktop{
+    display: none;
+  }
 /*
     homepage
 */
@@ -281,12 +351,33 @@ color: lightgrey;
 }
 /* navigation */
 .banner-navigation {
-  width: 80%;
+  width: 90%;
   height: 80px;
   background-color: transparent;
   margin: 0 auto;
 }
 
+.main-nav-logo{
+  width: 15%;
+  margin: 0 4%;
+  margin-left: 14%;
+}
+
+.nav-buttons {
+  margin-left: 2%;
+}
+.nav-login {
+  background-color: transparent;
+  border: none;
+}
+
+.nav-register {
+  background-color: transparent;
+}
+
+.nav-register:hover {
+  box-shadow: 0 0 10px blue;
+}
 .overlay {
   height: 100%;
   width: 0;
@@ -342,26 +433,40 @@ color: lightgrey;
   color: greenyellow;
 }
 
+/* sliding charts */
+#sliding-chart{
+  margin-top: -18%;
+}
+
 /* how it works */
 #how-it-works {
   text-align: center;
 }
 #how-it-works > h2{
-margin-bottom: -2%;
+margin-bottom: -6%;
 font-size: 2.5rem;
 letter-spacing: 0.1rem;
 }
 #how-it-works-background{
 background-color: #1b2337;
-padding: 2% 3%;
-padding-top: 5%;
+padding: 7% 3%;
+padding-top: 15%;
 }
+#how-it-works-body{
+  margin-bottom: 3rem;
+}
+
 
 .how-it-works-headings {
 font-weight: bold;
+font-size: 1.9rem;
+margin-bottom: 1.3rem;
 }
 
 /* proof of excellence */
+.proof-of-excellence {
+  text-align: center;
+}
 #excellence-header , #best-trading-platform {
 margin: 4% 0;
 font-weight: 800;
@@ -370,43 +475,190 @@ font-size: 1.8rem;
 
 #excellence-message, #award-winning {
 margin: 2rem 0;
+line-height: 2.3rem;
 }
 
 .see-more-button {
 width: 70%;
 border-radius: 0;
 font-weight: bold;
-padding: 2%
+padding: 2%;
+margin: 0 auto;
+margin-bottom: 10%;
 }
 
+#how-it-works-body > p {
+  line-height: 2.3rem;
+  margin: 2rem 0;
+}
 
 /* global trading platform */
 #global-platform{
 margin: 4% 0;
 }
 
-#map {
-height: 400px;
-}
-
 #chartdiv {
 width: 100%;
-height: 500px;
+height: 100px;
+padding-top: 6%;
+}
+
+#chartdiv > img {
+  width: 100%;
+  height: 190%;
 }
 
 /* account registered and traders online */
 /* globe online */
+#registered-accounts-container{
+  margin-bottom: 6%;
+}
+
 .globe-on {
 color: greenyellow;
 }
 
+#registered-online{
+  text-align: center;
+}
 
 /* footer */
 footer > .container > .row > .col-lg-2 > a {
 display: block;
 color: lightgrey;
+margin-bottom: 3%;
+}
+
+#footer-logo {
+  width: 20%;
+}
+
+#home-footer, #trading-footer, .company-footer, .payment-methods-footer {
+  margin-bottom: 4%;
+}
+
+.payment-logos > img {
+  width: 100%;
 }
 /* disclaimer */
+
+/* 
+        Plans
+*/
+/* account types */
+.account-type-background {
+  background: url('../images/pexels-pixabay-265087.jpg') no-repeat;
+  height: 100vh;
+  box-shadow: 0 3000px rgba(27, 35, 55, .9) inset;
+}
+
+.account-type-nav {
+  padding-bottom: 7%;
+}
+
+/* plan showcase */
+.plan-showcase-outer {
+  margin: 0 2%;
+}
+.plan-showcase-border{
+  border: 1px solid rgba(211,211,211, .5);
+  height: 95%;
+  padding: 5%;
+}
+
+.plan-showcase-header {
+  margin: 20% 0;
+}
+
+.color {
+  border: 2px solid white;
+  width: 40%;
+}
+
+.platinum{
+  /* margin-top: 5%; */
+  box-shadow: 0 0 10px white;
+}
+
+.private {
+  box-shadow: 0 0 10px greenyellow;  
+}
+
+.gold {
+  box-shadow: 0 0 10px gold;
+}
+
+#gold-plan{
+  margin-top: -10%;
+}
+
+.silver{
+  box-shadow: 0 0 10px silver;
+}
+
+.entry {
+  box-shadow: 0 0 10px green;
+
+}
+.mini{
+  box-shadow: 0 0 10px skyblue;
+}
+
+
+/* account types table */
+#plan-details {
+  margin: 7% 0;
+}
+#account-types-card{
+  background-color: #252F45 ;
+  box-shadow: black;
+  box-shadow: 0 0 10px black;
+  position: absolute;
+  top: 40rem;
+  height: 8rem;
+  width: 23rem;
+  padding-left: 2%;
+}
+
+#acct-type-card-icon {
+  font-size: 2.3rem;
+  margin: 3% 0;
+  margin-top: 6%;
+  /* margin-left: 36%;  */
+}
+
+#acct-type-header {
+  font-size: 1.9rem;
+  /* text-align: center; */
+}
+
+#benefits{
+  background-color: #20273C;
+  width: 93%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  margin: 0 auto;
+  margin-bottom: 4rem;
+  padding: 1.5% 0;
+  box-shadow: 0 0 1.5rem white;
+}
+
+#benefits > p {
+  font-weight: bold;
+}
+
+.table{
+  overflow: hidden;
+}
+
+/* Withdrawal options - Account type */
+#account-type-withdrawal {
+  margin-bottom: 5%;
+}
+
+#withdrawal-description-body{
+  line-height: 1.9rem;
+}
+
 
 }
 

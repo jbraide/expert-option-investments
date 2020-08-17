@@ -8,7 +8,7 @@ function closeNav() {
 }
 
 // waves js
-var waveAnimation = new Wave('body', {
+const waveAnimation = new Wave('body', {
   number: 3,
   smooth: 50,
   velocity: 2,
@@ -74,3 +74,19 @@ am4core.ready(function() {
   graticuleSeries.fitExtent = false;
   
   }); // end am4core.ready()
+
+
+
+  // owl carousel
+  $('.owl-carousel').owlCarousel({
+    loop:true,
+    magin: 10,
+    nav:true,
+    responsiveClass:true,
+    responsive: {
+      0:{
+        items:1,
+        nav:false
+      },
+    }
+  })

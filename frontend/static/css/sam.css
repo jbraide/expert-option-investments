@@ -114,7 +114,8 @@ button {
     border-color: #3b5998;
     background-color: #3b5998;
     box-shadow: 1px 1px 10px rgba(64,94,157,0);
-
+    border-radius: 5px;
+    border: 1px solid #007bff;
 }
 
 button span {
@@ -216,12 +217,44 @@ a:hover {
 #nav {
     position: fixed;
 }
+
+/* navigation banner */
+.banner-navigation {
+    width: 85%;
+    background-color: transparent;
+    margin: 0 auto;
+    padding-top: 2rem;
+    align-content: center;
+    left: 146px;
+    top: -10px;
+}
+
+/* navigation buttons */
+btn-primary {
+    color: #fff;
+    border-color: #3b5998;
+    background-color: rgb(33, 40, 63);
+    border-radius: 5px;
+  }
+  
+    .create-account-button:active {
+    box-shadow: rgb(20, 92, 201) 0px 1px 11px;
+}
+    .create-account-button:hover {
+    background-color: rgb(57, 178, 255);
+    background-image: linear-gradient(to top, rgb(83, 188, 255), rgb(70, 183, 255));
+    color: rgb(255, 255, 255);
+    box-shadow: rgb(20, 92, 201) 0px 3px 15px;
+    border-color: rgb(57, 178, 255);
+}
+  
+
 }
 
 
 
 /* mobile view  */
-@media only screen and (min-width: 32px) and (max-width: 800px) {
+@media only screen and (min-width: 320px) and (max-width: 800px) {
     /* ruleset for 480px - 600px */
     /* body {
         font-size: 12px;
@@ -430,3 +463,6 @@ a:hover {
 
 
 }
+
+/* media query for screen size 1300 * 520 */
+@media screen only (max-width

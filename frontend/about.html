@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+      <!-- bootstrap -->
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+    <!-- project css -->
+    <link rel="stylesheet" href="./static/css/main.css">
+    <link rel="stylesheet" href="./static/css/sam.css">
+
+    <!-- fontawesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
+
+    <!--  google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap" rel="stylesheet">
+
+    <!-- animate css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <!-- wow js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+  <!-- Resources -->
+  <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+  <script src="https://cdn.amcharts.com/lib/4/maps.js"></script>
+  <script src="https://cdn.amcharts.com/lib/4/geodata/worldLow.js"></script>
+  <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+    <!-- wave js -->
+    <script src="./static/js/wave.js"></script>
+    <!-- main js file -->
+    <script src="./static/js/main.js"></script>
+
+    <!-- Chart code -->
+<script>
+// waves js
+var waveAnimation = new Wave('body', {
+  number: 3,
+  smooth: 50,
+  velocity: 2,
+  height: .2,
+  colors: ['#f1f1f1'],
+  border: {
+    show: false,
+    width: 2, 
+    color: ['']
+  }, 
+  opacity: 6, 
+  position: 'bottom'
+
+} )
+waveAnimation.animate()
+
+
+am4core.ready(function() {
+
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+// Create map instance
+var chart = am4core.create("chartdiv", am4maps.MapChart);
+
+// Set map definition
+chart.geodata = am4geodata_worldLow;
+
+// Set projection
+chart.projection = new am4maps.projections.NaturalEarth1();
+chart.panBehavior = "rotateLong";
+
+// Create map polygon series
+var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
+
+// Make map load polygon (like country names) data from GeoJSON
+polygonSeries.useGeodata = true;
+
+polygonSeries.mapPolygons.template.fillOpacity = 0.6;
+polygonSeries.mapPolygons.template.nonScalingStroke = true;
+polygonSeries.mapPolygons.template.strokeWidth = 0.5;
+polygonSeries.mapPolygons.template.adapter.add("fill", function(fill, target) {
+    return chart.colors.getIndex(Math.round(Math.random() * 4)).saturate(0.3);
+})
+
+// Configure series
+var polygonTemplate = polygonSeries.mapPolygons.template;
+polygonTemplate.tooltipText = "{name}";
+
+// Create hover state and set alternative fill color
+var hs = polygonTemplate.states.create("hover");
+hs.properties.fill = chart.colors.getIndex(1);
+
+// Center on Pacic
+chart.deltaLongitude = -154.8;
+
+
+
+var graticuleSeries = chart.series.push(new am4maps.GraticuleSeries());
+graticuleSeries.fitExtent = false;
+
+}); // end am4core.ready()
+</script>
+</head>
+<body>
+
+    <div id="banner" class="pt-4">
+      <!-- navigation  -->
+      <div class="banner-navigation" id="nav">
+        <div id="myNav" class="overlay">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <div class="overlay-content">
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>        
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+        <img src="./static/images/flags/us.gif" alt="" class="eng-lang-flag">
+        <img src="./static/images/logos/full-exp-opt-logo.png" alt="" class="main-nav-logo">
+        <span class="nav-buttons">
+          <a href="" class="btn btn-primary nav-login flat-button">Login</a>
+          <a href="" class="btn btn-primary nav-register flat-button">Register</a>
+        </span>
+        
+      </div>
+
+      <!-- banner text -->
+      <div class="banner-text">
+        <div class="text-center">
+          <h3>
+            Fast
+            <span class="fas fa-circle green-on"></span>
+            online trading
+          </h3>
+          <button class="btn btn-primary mt-4 flat-button">
+            Create an Account
+          </button>
+        </div>    
+      </div>   
+
+    </div>
+    <div class="container">
+      <div id="how-it-works">
+        <h2 class="text-center mt-5">
+          How it Works
+        </h2>
+        <div id="how-it-works-background">
+          <div class="row">
+            <div class="col-lg-4">
+              <h5 class="how-it-works-headings">
+              <span class="fas fa-money-bill mr-3"></span>
+                Deposit
+              </h5>
+              <p class="my-3">Open real account and add funds. We work with more than 12 payment systems.
+              </p>
+            </div>
+            <div class="col-lg-4">
+              <h5 class="how-it-works-headings">
+                <span class="fas fa-chart-line mr-3"></span>
+                  Trade
+                </h5>
+                <p class="my-3">
+                  Trade out catalog of over 60 assets and stocks. Use technical analysis and trade the news
+                </p>
+            </div>
+            <div class="col-lg-4">
+              <h5 class="how-it-works-headings">
+                <span class="fas fa-download mr-3"></span>
+                  Withdraw
+                </h5>
+                <p class="my-3">Get funds easily to your bank card or e-wallet. We take no commission.
+                </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>

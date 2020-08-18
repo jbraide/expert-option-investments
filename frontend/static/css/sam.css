@@ -183,3 +183,36 @@ a:hover {
     width: 100%;
     margin-top: 16px;
 }
+
+/* Navigation Section  */
+#nav {
+    position: fixed;
+}
+
+
+/* mobile view  */
+@media only screen and (min-width: 32px) and (max-width: 800px) {
+    /* ruleset for 480px - 600px */
+    body {
+        font-size: 12px;
+    }
+
+    .form-bg {
+        width: 270px;
+    }
+    .form-control {
+        width: 200px;
+    }
+
+    #reg-email-input , #reg-password-input {
+        width: 100%;
+    }
+
+    .btn {
+        height: 30px;
+        position: relative;
+        font-size: 14px;
+        width: 90px;
+        
+    }
+}

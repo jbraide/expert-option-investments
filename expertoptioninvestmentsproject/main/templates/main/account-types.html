@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Types</title>
+      <!-- bootstrap -->
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+    <!-- project css -->
+    <link rel="stylesheet" href="./static/css/main.css">
+
+    <!-- fontawesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
+
+    <!--  google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap" rel="stylesheet">
+
+    <!-- animate css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <!-- wow js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+     <!-- owl carousel -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
+
+    <!-- main js file  -->
+    <script src="./static/js/main.js"></script>
+    <script>
+      // owl carousel
+    $('.owl-carousel').owlCarousel({
+      loop:true,
+      magin: 10,
+      nav:true,
+      responsiveClass:true,
+      responsive: {
+        0:{
+          items:1,
+          nav:false
+        },
+      }
+    })
+    </script>
+</head>
+<body>
+    <div class="account-type-background">
+      <!-- navigation  -->
+      <div class="banner-navigation account-type-nav">
+        <div id="myNav" class="overlay">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <div class="overlay-content">
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>        
+        <span onclick="openNav()" id="menu-icon">&#9776; Menu</span>
+        <img src="./static/images/flags/us.gif" alt="" class="eng-lang-flag desktop">
+        
+        <!-- mobile and desktop navigation -->
+        <img src="./static/images/logos/full-exp-opt-logo.png" alt="" class="main-nav-logo desktop">
+        <img src="./static/images/logos/just-logo(expert-option).png" alt="" class="main-nav-logo mobile">
+
+        <span class="nav-buttons">
+          <a href="" class="btn btn-primary nav-login flat-button">Login</a>
+          <a href="" class="btn btn-primary nav-register flat-button">Register</a>
+        </span>
+        
+      </div>
+
+      <!-- plan showcase -->
+
+      <!-- desktop plan view -->
+      <div class="plan-showcase-outer desktop">
+        <div class="row text-center">
+          <div class="col-lg-2">
+            <div class="plan-showcase-border">
+              <h3 class="plan-showcase-header">
+                Mini
+              </h3>
+              <hr class="color mini"/>
+              <p class="plan-showcase-text">
+                For those who prefer light start. Upgrade to higher status when ready
+              </p>
+              <br>
+              <p class="plan-showcase-from-text">
+                From
+              </p>
+              <h4>$ 10</h4>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="plan-showcase-border">
+              <h3 class="plan-showcase-header">
+                Entry 
+              </h3>
+              <hr class="color entry"/>
+              <p class="plan-showcase-text">
+                For those who prefer light start. Upgrade to higher status when ready
+              </p>
+              <br>
+              <p class="plan-showcase-from-text">
+                From
+              </p>
+              <h4>$ 50</h4>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="plan-showcase-border">
+              <h3 class="plan-showcase-header">
+                Silver
+              </h3>
+              <hr class="color silver"/>
+              <p class="plan-showcase-text">
+                Majority of our clients start with Silver account. Free consultations included 
+              </p>
+              <br>
+              <p class="plan-showcase-from-text">
+                From
+              </p>
+              <h4>$ 500</h4>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="plan-showcase-border">
+              <h3 class="plan-showcase-header">
+                Gold
+              </h3>
+              <hr class="color gold"/>
+              <p class="plan-showcase-text">
+                Smart investments start with Gold account. Get most from your account with privileged features
+              </p>
+              <br>
+              <p class="plan-showcase-from-text" id="gold-plan">
+                From
+                <h4>$ 2500</h4>
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="plan-showcase-border">
+              <h3 class="plan-showcase-header">
+                Platinum
+              </h3>
+              <hr class="color platinum"/>
+              <p class="plan-showcase-text">
+                Our best expertise and exclusive account management for serious investors
+              </p>
+              <br>
+              <p class="plan-showcase-from-text">
+                From
+                <h4>$ 5000</h4>
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="plan-showcase-border">
+              <h3 class="plan-showcase-header">
+                Private
+              </h3>
+              <hr class="color private"/>
+              <p class="plan-showcase-text">
+                Ask your account manager for additional information
+              </p>
+              <br>
+              <p class="plan-showcase-from-text">
+                by
+              </p>
+              <h4>Invitation only</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- mobile plan view -->
+      <div class="plan-showcase-outer">
+        <div class="owl-carousel mobile text-center">
+          <div class="container">
+          <div class="row">
+            <div class="item">
+              <div class="col-lg-2">
+                <div class="plan-showcase-border">
+                  <h3 class="plan-showcase-header">
+                    Mini
+                  </h3>
+                  <hr class="color mini"/>
+                  <p class="plan-showcase-text">
+                    For those who prefer light start. Upgrade to higher status when ready
+                  </p>
+                  <br>
+                  <p class="plan-showcase-from-text">
+                    From
+                  </p>
+                  <h4>$ 10</h4>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="col-lg-2">
+                <div class="plan-showcase-border">
+                  <h3 class="plan-showcase-header">
+                    Entry 
+                  </h3>
+                  <hr class="color entry"/>
+                  <p class="plan-showcase-text">
+                    For those who prefer light start. Upgrade to higher status when ready
+                  </p>
+                  <br>
+                  <p class="plan-showcase-from-text">
+                    From
+                  </p>
+                  <h4>$ 50</h4>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="col-lg-2">
+                <div class="plan-showcase-border">
+                  <h3 class="plan-showcase-header">
+                    Silver
+                  </h3>
+                  <hr class="color silver"/>
+                  <p class="plan-showcase-text">
+                    Majority of our clients start with Silver account. Free consultations included 
+                  </p>
+                  <br>
+                  <p class="plan-showcase-from-text">
+                    From
+                  </p>
+                  <h4>$ 500</h4>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="col-lg-2">
+                <div class="plan-showcase-border">
+                  <h3 class="plan-showcase-header">
+                    Gold
+                  </h3>
+                  <hr class="color gold"/>
+                  <p class="plan-showcase-text">
+                    Smart investments start with Gold account. Get most from your account with privileged features
+                  </p>
+                  <br>
+                  <p class="plan-showcase-from-text" id="gold-plan">
+                    From
+                    <h4>$ 2500</h4>
+                  </p>
+                </div>
+              </div>
+            </div>
+  
+            <div class="item">
+              <div class="col-lg-2">
+                <div class="plan-showcase-border">
+                  <h3 class="plan-showcase-header">
+                    Platinum
+                  </h3>
+                  <hr class="color platinum"/>
+                  <p class="plan-showcase-text">
+                    Our best expertise and exclusive account management for serious investors
+                  </p>
+                  <br>
+                  <p class="plan-showcase-from-text">
+                    From
+                    <h4>$ 5000</h4>
+                  </p>
+                </div>
+                </div>
+            </div>
+            <div class="item">
+              <div class="col-lg-2">
+                <div class="plan-showcase-border">
+                  <h3 class="plan-showcase-header">
+                    Private
+                  </h3>
+                  <hr class="color private"/>
+                  <p class="plan-showcase-text">
+                    Ask your account manager for additional information
+                  </p>
+                  <br>
+                  <p class="plan-showcase-from-text">
+                    by
+                  </p>
+                  <h4>Invitation only</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+
+    <!-- plan details -->
+    <div id="plan-details">
+      <div class="container">
+        <div class="row">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>
+                  <div id="account-types-card">
+                    <span class="fas fa-id-card" id="acct-type-card-icon"></span>
+                    <h3 id="acct-type-header">Account Types</h3>
+                  </div>
+                </th>
+                <th>
+                  Micro
+                  <br>
+                  <span class="plan-details-table-from">
+                    From
+                  </span>
+                  <p class="plan-details-table-price">
+                    $ 10
+                  </p>
+                </th>
+                <th>
+                  Entry
+                  <br>
+                  <span class="plan-details-table-from">
+                    From
+                  </span>
+                  <p class="plan-details-table-price">
+                    $ 10
+                  </p>
+                </th>
+                <th>
+                  Silver
+                  <br>
+                  <span class="plan-details-table-from">
+                    From
+                  </span>
+                  <p class="plan-details-table-price">
+                    $ 500
+                  </p>
+                </th>
+                <th>
+                  Gold
+                  <br>
+                  <span class="plan-details-table-from">
+                    From
+                  </span>
+                  <p class="plan-details-table-price">
+                    $ 2500
+                  </p>
+                </th>                
+                <th>
+                  Platinum
+                  <br>
+                  <span class="plan-details-table-from">
+                    From
+                  </span>
+                  <p class="plan-details-table-price">
+                    $ 5000
+                  </p>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Education Materials</td>
+                <td><span class="fas fa-check"></span></td>
+                <td><span class="fas fa-check"></span></td>
+                <td><span class="fas fa-check"></span></td>
+                <td><span class="fas fa-check"></span></td>
+                <td><span class="fas fa-check"></span></td> 
+              </tr>
+              <tr>
+                <td>Daily Market reviews and Financial Research</td>
+                <td>-</td>
+                <td>-</td>
+                <td><span class="fas fa-check"></span></td> 
+                <td><span class="fas fa-check"></span></td> 
+                <td><span class="fas fa-check"></span></td> 
+              </tr>
+              <tr>
+                <td>Priority Withdrawal</td>                
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td><span class="fas fa-check"></span></td> 
+                <td><span class="fas fa-check"></span></td> 
+              </tr>
+              <tr>
+                <td>Maxium number of simulaneously open deals</td>
+                <td>10</td>
+                <td>10</td>
+                <td>15</td>
+                <td>20</td>
+                <td>no limit</td>
+              </tr>
+              <tr>
+                <td>Maximum deal amount</td>
+                <td>$ 10</td>
+                <td>$ 25</td>
+                <td>$ 250</td>
+                <td>$ 1000</td>
+                <td>$ 2000</td>
+              </tr>
+              <tr>
+                <td>Increase asset profit</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>up to 2%</td>
+                <td>Up to 4%</td>
+              </tr>
+            </tbody>            
+          </table>
+          <div id="benefits" class="text-center">
+            <p>Some benefits of the account types are activated manually after client's request by email.</p>
+          </div>
+        </div>        
+      </div>
+    </div>
+
+    <!-- Withdrawal options -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9" id="account-type-withdrawal">
+          <h3>
+            <span class="fas fa-download mr-3"></span>
+            Withdrawal
+          </h3>
+          <p class="my-4" id="withdrawal-description-body">
+            Trade and withdaw your money. 
+            <br>
+            We Work with more than 12 secure and reliable payment Systems. 
+            You can transfer money to your debit or credit card: Visa, MasterCad, Maesto, UnionPay. We are integrated with electronic payment methods like Perfet Money, FasaPay  and others.
+            Gold, Platinum & private accounts have priority withdrawal.
+          </p>
+          <div class="payment-logos">
+            <img src="./static/images/pay-logos.svg" alt="">
+          </div>
+        </div>
+        <div class="col-lg-3">
+
+        </div>
+      </div>
+    </div>
+
+    <hr>
+    <!-- footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4" id="company-footer-text">
+              <img src="./static/images/logos/full-exp-opt-logo.png" alt="expert option investment logo" id="footer-logo" class="desktop">
+              <img src="./static/images/logos/just-logo(expert-option).png" alt="expert option investment logo" id="footer-logo" class="mobile">
+            <!-- <h3>Expert Option Logo</h3> -->
+            <p class=" my-3">
+              Company provides servies to everyone across the globe. <br>
+            </p>
+            <p class=" my-3">
+              Making trading available and accessible to everyone is and continues to be our # 1 goal and priority.
+            </p>
+          </div>
+          <div class="col-lg-2" id="home-footer">
+            <h4>Home</h4>
+            <a href="">Login</a>
+            <a href="">Create Account</a>
+          </div>
+          <div class="col-lg-2" id="trading-footer">
+            <h4>Trading</h4>
+            <a href="">Account Types</a>
+          </div>
+          <div class="col-lg-2" id="company-footer">
+            <h4>Company</h4>
+            <a href="">About Company</a>
+            <a href="">Terms</a>
+            <a href="">Payment Policy</a>
+            <a href="">Privacy Policy</a>
+          </div>
+          <div class="col-lg-2" id="payment-methods-footer">
+            <h4>Payment Methods</h4>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <hr>
+    <!-- disclaimer part -->
+    <div id="disclaimer-portion">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-9 my-3">
+            <p>Trading and investing involves significant level of risk and is not suitable and/or appropriate for all clients. Please make sure you carefully consider your investment objectives, level of experience and risk appetite before buying or selling. Buying or selling entails financial risks and could result in a partial or complete loss of your funds, therefore, you should not invest funds you cannot afford to lose. You should be aware of and fully understand all the risks associated with trading and investing, and seek advice from an independent financial advisor if you have any doubts. You are granted limited non-exclusive rights to use the IP contained in this site for personal, non-commercial, non-transferable use only in relation to the services offered on the site.</p>
+          </div>
+          <div class="col-lg-3 my-3">
+            <p>&copy; 2014 - 2020 Expert Option Investments</p>
+            <span>Expert Option Investments. All rights reserved.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

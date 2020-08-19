@@ -8,6 +8,79 @@ body {
     height: 100%;
 }
 
+/* banner */
+#banner {
+    background: url('../images/pexels-rebrand-cities-1367272.jpg') no-repeat;
+    height: 100vh;
+    box-shadow: 0 3000px rgba(27, 35, 55, .7) inset;
+    color: white;
+  }
+  
+.trading-available {
+    display: block;
+    font-size: 42px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+    max-width: 60%;
+    position: relative;
+    font-style: italic;
+
+}
+
+.trading-available:before {
+    content: '';
+    background-image: url(../images/logos/quote.svg);
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 22px;
+    position: absolute;
+    left: -28px;
+    bottom: -35px;
+}
+
+.trading-available:after {
+    content: '';
+    background-image: url(../images/logos/quote-close.svg);
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 22px;
+    position: absolute;
+    top: -28px;
+    right: -40px;
+}
+
+.span-for-trading {
+    position: relative;
+    display: inline;
+}
+
+.span-for-trading:after {
+    content: '';
+    background-image: url(../images/logos/heading-line.svg);
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 120px;
+    height: 5px;
+    right: 0;
+    bottom: -10px;
+} 
+
+h1 {
+    font-weight: 200;
+    line-height: 1.2;
+}
+
+.span-for-trading {
+    position: relative;
+    display: inline;
+}
+
+.container {
+    background-color: #1e2539;
+    padding-bottom: 40px;
+}
+
 @media only screen and (min-width:800px){
 /* login */
 .form-bg {
@@ -237,7 +310,7 @@ btn-primary {
     border-radius: 5px;
   }
   
-    .create-account-button:active {
+   .create-account-button:active {
     box-shadow: rgb(20, 92, 201) 0px 1px 11px;
 }
     .create-account-button:hover {
@@ -246,7 +319,7 @@ btn-primary {
     color: rgb(255, 255, 255);
     box-shadow: rgb(20, 92, 201) 0px 3px 15px;
     border-color: rgb(57, 178, 255);
-}
+    }   
   
 
 }
@@ -255,31 +328,7 @@ btn-primary {
 
 /* mobile view  */
 @media only screen and (min-width: 320px) and (max-width: 800px) {
-    /* ruleset for 480px - 600px */
-    /* body {
-        font-size: 12px;
-    } */
 
-    /* .form-bg {
-        width: 270px;
-    }
-    .form-control {
-        width: 200px;
-    }
-
-    #reg-email-input , #reg-password-input {
-        width: 100%;
-    }
-
-    .btn {
-        height: 30px;
-        position: relative;
-        font-size: 14px;
-        width: 90px;
-        
-    } */
-
-    /* login */
 .form-bg {
     background-color: rgb(21,27,39,0.175);
     padding: 40px 0;
@@ -465,4 +514,3 @@ a:hover {
 }
 
 /* media query for screen size 1300 * 520 */
-@media screen only (max-width

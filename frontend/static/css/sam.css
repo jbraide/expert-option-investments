@@ -657,7 +657,9 @@ p {
     right: -13px;
     top: 0;
 }
-}
+ .verification-image {
+     left: 300px;
+ }
 @media only screen and (min-width:800px){
 /* login */
 .form-bg {

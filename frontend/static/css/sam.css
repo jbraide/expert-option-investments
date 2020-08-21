@@ -138,6 +138,10 @@ p {
     margin-top: 0px;
     margin-bottom: 1em;
 }
+
+/* end of the first "about section" 
+
+    Over value section*/
 .our-value {
     font-size: 46px;
     font-weight: 200;
@@ -352,49 +356,23 @@ p {
     padding-bottom: 40px;
 }
 
-.row-col {
-    min-width: 984px;
-    max-width: 1200px;
-    padding: 0 25px;
-    margin: 0 auto;
+.row {
+    position: relative;
+    left: 80px;
+    padding-top: 10px;
 }
 
-.krvv {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    -webkit-box-pack: center;
-    justify-content: center;
-    flex-wrap: wrap;
+/* 30 + 2014 30 + environment  */
+.css-11e38wd {
+    display: inline-block;
+    position: relative;
+    line-height: 1em;
+    height: 1em;
+    vertical-align: text-bottom;
+    width: 55px;
+    margin: 0 15px 0 0;
 }
 
-.kvrq {
-    max-width: 300px;
-    padding: 20px;
-    box-sizing: border-box;
-    display: flex;
-    -webkit-box-flex: 0;
-    flex-grow: 0;
-    flex-shrink: 0;
-    flex-direction: column;
-}
-
-.text-of-30 {
-        font-size: 46px;
-        font-weight: 200;
-        line-height: 1.2;
-        margin-bottom: 25px;
-}
-
-.text-of-30-div {
-        color: #a9b5cb;
-        -webkit-letter-spacing: 0.2px;
-        -moz-letter-spacing: 0.2px;
-        -ms-letter-spacing: 0.2px;
-        letter-spacing: 0.2px;
-        line-height: 22px;
-        margin-bottom: 0;
-}
 /* Contact us section  */
 .contact {
     background-color: #1e2539;
@@ -526,7 +504,7 @@ p {
     background-color: #263047;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
     border-radius: 5px;
-    width: 100%;
+    width: 80%;
     box-sizing: border-box;
 }
 

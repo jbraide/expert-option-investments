@@ -82,3 +82,15 @@
 .trophy-color-box {
   background-color:#44A35A;
 }
+
+
+/* profile */
+.profile-text-color{
+  color: black;
+}
+
+.profile-body > span{
+  display: block;
+  margin-bottom: 2.3rem;
+  font-weight: bold;
+}

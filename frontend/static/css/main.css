@@ -608,7 +608,7 @@ margin-bottom: 3%;
 
 
 /* owl carousel mobile fix for slider */
-.owl-carousel {
+.owl-carousel-fix {
   position: absolute;
   top: 9rem;
 }

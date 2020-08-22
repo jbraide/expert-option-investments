@@ -15,8 +15,13 @@ body {
     background-repeat: repeat-x;
     margin: 0px;
 }
-/* Login form section styling  */
-#login-form {
+/* Login form section styling 
+
+    [the login and registration form section styling are the same]
+
+    Registration form section styling 
+ */
+#login-form, #registration-form {
     padding: 100px 0 100px;
     text-align: center;
     background: radial-gradient(circle,
@@ -184,6 +189,94 @@ body {
     left: -1px;
     top: -1px;
 }
+/* registration form continued  */
+#reg-terms-and-conditons {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.checkbox-label {
+    margin-bottom: 0;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    user-select: none;
+    font-size: 12px;
+    color: #a9b5cb;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.checkbox-checkbox {
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    min-height: 20px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-color: #20293e;
+    border: 1px solid rgba(47,59,81,0.5);
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    transition: border-color 0.2s,box-shadow 0.2s;
+    margin-right: 1.25ex;
+    cursor: pointer;
+    position: relative;
+    box-shadow: inset 0 2px 2px 0 rgba(0,0,0,0.075), 
+                inset 0 0 0 1px rgba(37,158,250,0);
+}
+
+.check-icon {
+    position: relative;
+    transition: opacity 0.2s,transform 0.2s;
+    transform: scale(0);
+    opacity: 0;
+    line-height: 20px;
+}
+
+#check-icon {
+    display: block;
+    cursor: pointer;
+    user-select: none;
+    font-size: 12px;
+    color: #a9b5cb;
+}
+#terms-and-cond-checkbox {
+    display: inline-block;
+    height: 20px;
+    width: 18px;
+    background-image: url(../images/logos/information-outline.svg);
+    background-size: 18px;
+    margin-left: 5px;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.8;
+}
+
+.checkbox-input {
+    opacity: 0;
+    z-index: -1;
+    line-height: 0;
+    display: inline;
+    position: absolute;
+}
+
+#registration-form-action {
+    background-color: rgb(21,27,39,0.175);
+    padding-top: 0.5rem;
+    border-radius: 12px;
+    box-sizing: border-box;
+    width: 380px;
+    margin: 0 auto;
+    height: 300px;
+}
+
 /* banner */
 #banner {
     background: url('../images/pexels-rebrand-cities-1367272.jpg') no-repeat;
@@ -830,16 +923,93 @@ p {
  .user-profile-image {
      width: 30px;
  }
+
+ /* disclaimer portion section  */
+ .footer {
+    padding: 50px 0 40px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    background-color: #181e2d;
+    color: #a9b5cb;
+    height: 300px;
+ }
+
+ #footer-row {
+    position: relative;
+    left: 30px;
+ }
+
+ #company-footer-text {
+    position: relative;
+    left: 0px;
+    top: -60px;
+ }
+
+ #home-footer {
+    position: relative;
+    left: -30px;
+    top: -33px;
+ }
+
+ #trading-footer {
+    position: relative;
+    left: -70px;
+    top: -33px;
+ }
+
+ #company-footer {
+    position: relative;
+    left: -130px;
+    top: -33px;
+ }
+
+ #payment-methods-footer {
+    position: relative;
+    left: -100px;
+    top: -34px;
+ }
+
+ /* disclaimer section footer  */
+ .disclaimer {
+    padding: 40px 0;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    background-color: #181e2d;
+    color: #a9b5cb;
+ }
+
+ .disclaimer-row {
+    min-width: 984px;
+    max-width: 1200px;
+    padding: 0 25px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+ }
+
+ #trading-involves {
+    position: relative;
+    left: 10px;
+ }
+
+ .built-with {
+    position: relative;
+    left: 887px;
+    top: 45px;
+}
+
 @media only screen and (min-width:800px){
 /* login */
 .form-bg {
     background-color: rgb(21,27,39,0.175);
-    padding-top: 2.5rem;
+    padding-top: 0.5rem;
     border-radius: 12px;
     box-sizing: border-box;
-    width: 400px;
+    width: 382px;
     margin: 0 auto;
-    height: 360px;
+    height: 310px;
 }
 
 form {

@@ -27,47 +27,43 @@
     <link rel="stylesheet" href="./static/css/sidebar-themes.css">
     <link rel="stylesheet" href="./static/css/dashboard.css">
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" />
+
 </head>
 
 <body>
     <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
 
       <!-- dashboard sidebar -->
-        <nav id="sidebar" class="sidebar-wrapper">
+      <!-- remove desktop class to display sidebar on mobile -->
+        <nav id="sidebar" class="sidebar-wrapper desktop">
             <div class="sidebar-content">
-                <!-- sidebar-brand  -->
-                <div class="sidebar-item sidebar-brand">
-                    <a href="#">pro sidebar</a>
-                </div>
-                <!-- sidebar-header  -->
-                <div class="sidebar-item sidebar-header d-flex flex-nowrap">
-                    <div class="user-pic">
-                        <img class="img-responsive img-rounded" src="img/user.jpg" alt="User picture">
+                    <!-- sidebar-brand  -->
+                    <div class="sidebar-item sidebar-brand">
+                        <a href="#">
+                            <em>Expert</em> Option Investments
+                        </a>
                     </div>
-                    <div class="user-info">
-                        <span class="user-name">Jhon
-                            <strong>Smith</strong>
-                        </span>
-                        <span class="user-role">Administrator</span>
-                        <span class="user-status">
-                            <i class="fa fa-circle"></i>
-                            <span>Online</span>
-                        </span>
-                    </div>
-                </div>
-                <!-- sidebar-search  -->
-                <div class="sidebar-item sidebar-search">
-                    <div>
-                        <div class="input-group">
-                            <input type="text" class="form-control search-menu" placeholder="Search...">
-                            <div class="input-group-append">
-                                <span class="input-group-text">
-                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                </span>
-                            </div>
+                    <!-- sidebar-header  -->
+                    <div class="sidebar-item sidebar-header d-flex flex-nowrap">
+                        <div class="user-pic">
+                            <img class="img-responsive img-rounded" src="img/user.jpg" alt="User picture">
+                        </div>
+                        <div class="user-info">
+                            <span class="user-name">Jhon
+                                <strong>Smith</strong>
+                            </span>
+                            <span class="user-role">Administrator</span>
+                            <span class="user-status">
+                                <i class="fa fa-circle"></i>
+                                <span>Online</span>
+                            </span>
                         </div>
                     </div>
-                </div>
                 <!-- sidebar-menu  -->
                 <div class=" sidebar-item sidebar-menu">
                     <ul>
@@ -83,124 +79,46 @@
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li>
-                                        <a href="#">Dashboard 1
-                                            <span class="badge badge-pill badge-success">Pro</span>
+                                        <a href="#">Trading Centre
+                                            <!-- show locked until documents have been added. -->
+                                            <span class="badge badge-pill badge-success">Locked</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">Dashboard 2</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Dashboard 3</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="sidebar-dropdown">
-                            <a href="#">
-                                <i class="fa fa-shopping-cart"></i>
-                                <span class="menu-text">E-commerce</span>
-                                <span class="badge badge-pill badge-danger">3</span>
-                            </a>
-                            <div class="sidebar-submenu">
-                                <ul>
-                                    <li>
-                                        <a href="#">Products
-
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Orders</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Credit cart</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="sidebar-dropdown">
-                            <a href="#">
-                                <i class="far fa-gem"></i>
-                                <span class="menu-text">Components</span>
-                            </a>
-                            <div class="sidebar-submenu">
-                                <ul>
-                                    <li>
-                                        <a href="#">General</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Panels</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Tables</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Icons</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Forms</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="sidebar-dropdown">
-                            <a href="#">
-                                <i class="fa fa-chart-line"></i>
-                                <span class="menu-text">Charts</span>
-                            </a>
-                            <div class="sidebar-submenu">
-                                <ul>
-                                    <li>
-                                        <a href="#">Pie chart</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Line chart</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Bar chart</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Histogram</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="sidebar-dropdown">
-                            <a href="#">
-                                <i class="fa fa-globe"></i>
-                                <span class="menu-text">Maps</span>
-                            </a>
-                            <div class="sidebar-submenu">
-                                <ul>
-                                    <li>
-                                        <a href="#">Google maps</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Open street map</a>
+                                        <a href="#">Trading History</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
                         <li class="header-menu">
-                            <span>Extra</span>
+                            <span>Account & Transactions</span>
                         </li>
                         <li>
                             <a href="#">
                                 <i class="fa fa-book"></i>
-                                <span class="menu-text">Documentation</span>
-                                <span class="badge badge-pill badge-primary">Beta</span>
+                                <span class="menu-text">Fund Account</span>
+                                <span class="badge badge-pill badge-primary">New</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
                                 <i class="fa fa-calendar"></i>
-                                <span class="menu-text">Calendar</span>
+                                <span class="menu-text">Withdraw Funds</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
                                 <i class="fa fa-folder"></i>
-                                <span class="menu-text">Examples</span>
+                                <span class="menu-text">ID Verification</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-folder"></i>
+                                <span class="menu-text">Account Upgrade</span>
+
+                                <!-- Display current Account -->
+                                <span class="badge badge-pill badge-warning">Platinum</span>
                             </a>
                         </li>
                     </ul>
@@ -410,116 +328,60 @@
                     <h3>Welcome, <span class="welcome-user">User </span></h3>
                 </div> -->
 
-                <div class="row text-center pt-4">
-                    <!-- bal, invested, btc bal, ref bonus -->
-                <!-- balance / invested / btc bal / Ref Bonus ... signals -->
-                <div class="col-lg-6">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="dashboard-display" id="balance">
-                                    <div class="row">
-                                        <div class="col-lg-3">
-                                            <i class="fas fa-money-bill dashboard-icon-resize"></i>
-                                        </div>
-                                        <div class="col-lg-9">
-                                            <h4 class="dashboard-display-header">BALANCE</h4>
-                                            <h5>$ 0</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="dashboard-display" id="invested">
-                                    <div class="row">
-                                        <div class="col-lg-3">
-                                            <i class="fas fa-clock dashboard-icon-resize"></i>
-                                        </div>
-                                        <div class="col-lg-9">
-                                            <h4 class="dashboard-display-header">INVESTED</h4>
-                                            <h5>$ 0</h5>
-                                        </div>
-                                    </div>
-                            </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="dashboard-display" id="btc-bal">
-                                    <div class="row">
-                                        <div class="col-lg-3">
-                                            <i class="fas fa-caret-up dashboard-icon-resize"></i>
-                                        </div>
-                                        <div class="col-lg-9">
-                                            <h4 class="dashboard-display-header">BTC BAL</h4>
-                                            <h5>0.0000</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="dashboard-display" id="ref-bonus">
-                                    <div class="row">
-                                        <div class="col-lg-3">
-                                            <i class="fas fa-caret-down dashboard-icon-resize"></i>
-                                        </div>
-                                        <div class="col-lg-9">
-                                            <h4 class="dashboard-display-header">REF BONUS</h4>
-                                            <h5>$ 0</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- status/ currency / type / signal -->
-
-                        <div class="col-lg-6">
+                <!-- desktop view of dashboard details -->
+                <div class="desktop">
+                    <div class="row text-center pt-4">
+                        <!-- bal, invested, btc bal, ref bonus -->
+                    <!-- balance / invested / btc bal / Ref Bonus ... signals -->
+                    <div class="col-lg-6">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <div id="status" class="dashboard-display" >
+                                    <div class="dashboard-display" id="balance">
                                         <div class="row">
                                             <div class="col-lg-3">
-                                                <i class="fas fa-lightbulb dashboard-icon-resize"></i>
+                                                <i class="fas fa-money-bill dashboard-icon-resize"></i>
                                             </div>
                                             <div class="col-lg-9">
-                                                <h4 class="dashboard-display-header">STATUS</h4>
-                                                <h5>Unverified</h5>
+                                                <h4 class="dashboard-display-header">BALANCE</h4>
+                                                <h5>$ 0</h5>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
-                                    <div id="currency"class="dashboard-display" >
+                                    <div class="dashboard-display" id="invested">
                                         <div class="row">
                                             <div class="col-lg-3">
-                                                <i class="fas fa-university dashboard-icon-resize"></i>
+                                                <i class="fas fa-clock dashboard-icon-resize"></i>
                                             </div>
                                             <div class="col-lg-9">
-                                                <h4 class="dashboard-display-header">CURRENCY</h4>
+                                                <h4 class="dashboard-display-header">INVESTED</h4>
                                                 <h5>$ 0</h5>
                                             </div>
                                         </div>
                                 </div>
                                 </div>
                                 <div class="col-lg-6">
-                                    <div class="dashboard-display" id="type">
+                                    <div class="dashboard-display" id="btc-bal">
                                         <div class="row">
                                             <div class="col-lg-3">
-                                                <i class="fas fa-shield-alt dashboard-icon-resize"></i>
+                                                <i class="fas fa-caret-up dashboard-icon-resize"></i>
                                             </div>
                                             <div class="col-lg-9">
-                                                <h4 class="dashboard-display-header">TYPE</h4>
-                                                <h5 class="error">Starter</h5>
+                                                <h4 class="dashboard-display-header">BTC BAL</h4>
+                                                <h5>0.0000</h5>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
-                                    <div class="dashboard-display" id="signal">
+                                    <div class="dashboard-display" id="ref-bonus">
                                         <div class="row">
                                             <div class="col-lg-3">
-                                                <i class="fas fa-wifi dashboard-icon-resize"></i>
+                                                <i class="fas fa-caret-down dashboard-icon-resize"></i>
                                             </div>
                                             <div class="col-lg-9">
-                                                <h4 class="dashboard-display-header">SIGNAL</h4>
+                                                <h4 class="dashboard-display-header">REF BONUS</h4>
                                                 <h5>$ 0</h5>
                                             </div>
                                         </div>
@@ -527,6 +389,190 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- status/ currency / type / signal -->
+    
+                            <div class="col-lg-6">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div id="status" class="dashboard-display" >
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <i class="fas fa-lightbulb dashboard-icon-resize"></i>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <h4 class="dashboard-display-header">STATUS</h4>
+                                                    <h5>Unverified</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div id="currency"class="dashboard-display" >
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <i class="fas fa-university dashboard-icon-resize"></i>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <h4 class="dashboard-display-header">CURRENCY</h4>
+                                                    <h5>$ 0</h5>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="dashboard-display" id="type">
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <i class="fas fa-shield-alt dashboard-icon-resize"></i>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <h4 class="dashboard-display-header">TYPE</h4>
+                                                    <h5 class="error">Starter</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="dashboard-display" id="signal">
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <i class="fas fa-wifi dashboard-icon-resize"></i>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <h4 class="dashboard-display-header">SIGNAL</h4>
+                                                    <h5>$ 0</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+
+                <!-- mobile view of dashboard details -->
+                <div class="mobile">
+                        <div class="row text-center pt-4">
+                            <!-- bal, invested, btc bal, ref bonus -->
+                        <!-- balance / invested / btc bal / Ref Bonus ... signals -->
+                        <div class="col-lg-6">
+                            <div class="">
+                                <div class="row owl-carousel owl-theme">
+                                    <div class="col-lg-6 item">
+                                        <div class="dashboard-display" id="balance">
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <i class="fas fa-money-bill dashboard-icon-resize"></i>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <h4 class="dashboard-display-header">BALANCE</h4>
+                                                    <h5>$ 0</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 item">
+                                        <div class="dashboard-display" id="invested">
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <i class="fas fa-clock dashboard-icon-resize"></i>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <h4 class="dashboard-display-header">INVESTED</h4>
+                                                    <h5>$ 0</h5>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    </div>
+                                    <div class="col-lg-6 item ">
+                                        <div class="dashboard-display" id="btc-bal">
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <i class="fas fa-caret-up dashboard-icon-resize"></i>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <h4 class="dashboard-display-header">BTC BAL</h4>
+                                                    <h5>0.0000</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="dashboard-display" id="ref-bonus">
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <i class="fas fa-caret-down dashboard-icon-resize"></i>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <h4 class="dashboard-display-header">REF BONUS</h4>
+                                                    <h5>$ 0</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- status/ currency / type / signal -->
+        
+                                <div class="col-lg-6">
+                                    <div class="row owl-carousel owl-theme">
+                                        <div class="col-lg-6 item">
+                                            <div id="status" class="dashboard-display" >
+                                                <div class="row">
+                                                    <div class="col-lg-3">
+                                                        <i class="fas fa-lightbulb dashboard-icon-resize"></i>
+                                                    </div>
+                                                    <div class="col-lg-9">
+                                                        <h4 class="dashboard-display-header">STATUS</h4>
+                                                        <h5>Unverified</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 item">
+                                            <div id="currency"class="dashboard-display" >
+                                                <div class="row">
+                                                    <div class="col-lg-3">
+                                                        <i class="fas fa-university dashboard-icon-resize"></i>
+                                                    </div>
+                                                    <div class="col-lg-9">
+                                                        <h4 class="dashboard-display-header">CURRENCY</h4>
+                                                        <h5>$ 0</h5>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                        </div>
+                                    
+                                        <div class="col-lg-6 item">
+                                            <div class="dashboard-display" id="type">
+                                                <div class="row">
+                                                    <div class="col-lg-3">
+                                                        <i class="fas fa-shield-alt dashboard-icon-resize"></i>
+                                                    </div>
+                                                    <div class="col-lg-9">
+                                                        <h4 class="dashboard-display-header">TYPE</h4>
+                                                        <h5 class="error">Starter</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="dashboard-display" id="signal">
+                                                <div class="row">
+                                                    <div class="col-lg-3">
+                                                        <i class="fas fa-wifi dashboard-icon-resize"></i>
+                                                    </div>
+                                                    <div class="col-lg-9">
+                                                        <h4 class="dashboard-display-header">SIGNAL</h4>
+                                                        <h5>$ 0</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -780,14 +826,13 @@
     </script>
     <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
 
-    <!-- using local scripts -->
-    <!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script> -->
-
+    <!-- owl carousel js files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous"></script>
+    
+    <!-- in body javascript -->
     <script>
-      jQuery(function ($) {
+      $(function ($) {
+        // dashboard sidebar functionality
 
       // Dropdown menu
       $(".sidebar-dropdown > a").click(function () {
@@ -876,6 +921,20 @@
 
       }
       });
+
+
+    // owl carousel
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin: 10,
+        // nav: true, 
+        responsive : {
+            0:{
+                items: 1, 
+                // nav: true
+            },
+        }
+    });
     </script>
     <!-- <script src="./static/js/main.js"></script> -->
 </body>

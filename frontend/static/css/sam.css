@@ -5,7 +5,7 @@ body {
     background-image: linear-gradient(rgb(39, 46, 74) 0%,
      rgb(21, 27, 39) 100%);
     font-family: -apple-system, BlinkMacSystemFont, Roboto, "Open Sans", "Helvetica Neue", sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     color: rgb(245, 245, 245);
     line-height: 1.6;
     height: 100%;
@@ -14,6 +14,23 @@ body {
     background-position: center top;
     background-repeat: repeat-x;
     margin: 0px;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+h1, h2, h3, h4, h5 {
+    margin-top: 0px;
+}
+
+h4 {
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
 }
 /* Login form section styling 
 
@@ -629,8 +646,10 @@ p {
 
 .row {
     position: relative;
-    left: 80px;
-    padding-top: 10px;
+    left: 0px;
+    padding-top: 0px;
+    margin-right: -70px;
+    margin-left: 0px
 }
 
 /* 30 + 2014 30 + environment  */
@@ -653,16 +672,12 @@ p {
     align-items: center;
 }
 
-.about-us {
+#about-us-text {
     font-size: 46px;
     font-weight: 200;
     line-height: 1.2;
     margin-bottom: 25px;
     margin: 40px 0;
-}
-
-.about-us.centered {
-    text-align: center;
 }
 
 .contact-us {
@@ -693,7 +708,7 @@ p {
 }
 
 /* Contact us table section  */
-.mttx {
+.contact-table {
     max-width: 976px;
     display: flex;
     -webkit-box-pack: center;
@@ -704,11 +719,11 @@ p {
     flex-wrap: wrap;
 }
 
-.lrc9 {
-    width: 56%;
+.table-column {
+    width: 50%;
 }
 
-.lv27 .item{
+.table-column-div .item {
     margin: 0 10px 10px;
     background-color: #263047;
     color: #fff;
@@ -717,14 +732,14 @@ p {
     overflow: hidden;
 }
 
-.lv27 .item .row {
+.table-column-div .item .row {
     position: relative;
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
 }
 
-.lv27 .item .row:before {
+.table-column-div .item .row:before {
     content: '';
     position: absolute;
     height: 100%;
@@ -739,38 +754,63 @@ p {
     box-sizing: border-box;
 }
 
-.lv27 .item .row .col.major {
+.table-column-div .item .row .col.major {
     width: 37%;
 }
 
-.lv27 .item .row .col {
-    padding: 16px 20px;
+.table-column-div .item .row .col {
+    padding: 0px 40px;
     -webkit-box-flex: 0;
     box-sizing: border-box;
 }
 
-.lv27 .item .row .item-header {
-    font-size: 14px;
+.table-column-div .item .row .item-header {
+    font-size: 12px;
     color: #a9b5cb;
-    margin-bottom: 0.25em;
+    margin-bottom: 0px;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
+    margin-top: 10px;
 }
 
-.lv27 .item .row .col.minor {
+
+.table-column-div .item .row .col.minor {
     width: 63%;
+    position: relative;
+    right: 115px;
 }
 
-.lv27 .item .row .footer.top {
+
+.item-header-flag-icon {
+    border-radius: 1px;
+    width: 21px;
+    height: 14px;
+    transition: box-shadow 0.2s;
+}
+
+#english-text {
+    width: 81px;
+}
+.table-column-div .item .row .number-footer .top {
     margin-bottom: 1em;
 }
 
-.zfjf {
+a:link, a:visited {
+    color: rgb(245, 245, 245);
+    text-decoration: none;
+    transition: transform 0.15s ease 0s, color 0.15s ease 0s;
+}
+
+a {
+    display: block;
+}
+
+.form-table {
     width: 44%;
 }
 
-.qb9j {
+.form-table-div {
     position: relative;
     background-color: #263047;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
@@ -779,7 +819,7 @@ p {
     box-sizing: border-box;
 }
 
-.j9eu {
+.form-input {
     display: flex;
     -webkit-box-pack: justify;
     align-items: center;
@@ -788,20 +828,19 @@ p {
     flex-grow: 1;
 }
 
-.form-text, .form-textarea {
+.form-input-text, .form-textarea {
     width: 100%;
     position: relative;
     display: flex;
+    padding: 10px;
 }
 
-.form-text input {
-        height: 36px;
+.form-input-text, input {
+        height: 33px;
         line-height: 36px;
-        padding: 0 12px;
-    
 }
 
-.form-text input, .form-textarea {
+#name, #email, #message, #phone {
     width: 100%;
     outline: none;
     border: 1px solid rgba(47,59,81,0.5);
@@ -816,6 +855,49 @@ p {
     transition: border-color 0.2s;
     box-shadow: inset 0 2px 2px 0 rgba(0,0,0,0.075), inset 0 0 0 1px rgba(37,158,250,0);
 }  
+
+.phone-number {
+    width: 55% ;
+}
+
+.number-send-button {
+    width: calc(45% - 20px);
+}
+
+.send-button, .full-width {
+    width: 100%;
+}
+
+.send-button {
+    padding: 0 15p;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    font-size: 14px;
+    background: none;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 3px;
+    text-decoration: none;
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+    touch-action: manipulation;
+    white-space: nowrap;
+    max-width: 100%;
+    outline: none;
+    transition: opacity 0.2s,transform 0.15s,background-image 0.15s,background-color 0.15s,color 0.15s,border-color 0.15s,box-shadow 0.15s !important;
+    height: 36px;
+    line-height: 34px;
+    border-color: #3facff;
+    background-color: #3facff;
+    background-image: linear-gradient(to top,#3facff,#259efa);
+    box-shadow: 0 3px 10px #0048b5;
+    color: #fff;
+}
 
 .support {
     display: flex;
@@ -860,8 +942,12 @@ p {
     width: calc(45% - 20px);
 }
 
-.support-chat-button {
-    padding: 0 15px;
+.online-chat-button {
+    width: 100%;
+}
+
+.online-chat-button {
+    padding: 0 5px;
     color: #fff;
     display: flex;
     -webkit-box-align: center;
@@ -875,6 +961,8 @@ p {
     text-decoration: none;
     box-sizing: border-box;
     position: relative;
+    left: 12px;
+    top: 10px;
     text-align: center;
     touch-action: manipulation;
     white-space: nowrap;
@@ -886,7 +974,8 @@ p {
     line-height: 34px;
     border-color: #259EFA;
 }
-.oycl {
+
+.corporate-center {
     text-align: center;
     font-size: 14px;
     color: #a9b5cb;
@@ -894,7 +983,7 @@ p {
     width: 45%;
 }
 
-.l6f1 {
+.corporate-center-email {
     margin-top: 1em;
 }
 
@@ -925,7 +1014,7 @@ p {
  }
 
  /* disclaimer portion section  */
- .footer {
+ #footer {
     padding: 50px 0 40px;
     border-top: 1px solid rgba(255,255,255,0.06);
     background-color: #181e2d;

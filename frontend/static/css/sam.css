@@ -391,7 +391,10 @@ h2 {
     margin-bottom: 25px;
 }
 
-.span-about-header, .span-our-value-header, .limiter-image  {
+.span-about-header,
+.span-our-value-header,
+.limiter-image,  
+.span-contact-us  {
     display: inline-block;
     position: relative;
     line-height: 1em;
@@ -718,16 +721,6 @@ p {
 .contact-us {
     font-size: 46px;
     font-weight: 200
-}
-
-.span-contact-us {
-    display: inline-block;
-    position: relative;
-    line-height: 1em;
-    height: 1em;
-    vertical-align: text-bottom;
-    width: 55px;
-    margin: 0 15px 0 0
 }
 
 .contact-us-image {
@@ -1312,7 +1305,7 @@ a:hover {
 }
 
 /* navigation buttons */
-btn-primary {
+.btn-primary {
     color: #fff;
     border-color: #3b5998;
     background-color: rgb(33, 40, 63);

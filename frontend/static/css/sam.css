@@ -652,6 +652,58 @@ p {
     margin-left: 0px
 }
 
+/* Multiplatform, security-standards and accurate quotes section  */
+
+.limiter {
+    min-width: 984px;
+    max-width: 1200px;
+    padding: 0 25px;
+    margin: 0 auto;
+}
+
+.multiplatform-security-accurate {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.multiplatform, .security-standards, .accurate-quotes {
+    width: 22%;
+}
+
+.multiplatform-header, .security-standards-header {
+    margin-bottom: 0.5em;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.span-mulitplatform, .span-security-standards, .span-accurate-quotes {
+    display: inline-block;
+    position: relative;
+    line-height: 1em;
+    height: 1em;
+    vertical-align: text-bottom;
+    width: 26px;
+    margin: 0 10px 0 0;
+}
+
+.multiplatform-text, .security-standards-text, .accurate-quotes-text {
+    color: #a9b5cb;
+}
+
+.multiplatform-logo, .security-standards-logo, .accurate-quotes-logo {
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 50%;
+    position: absolute;
+    display: block;    transform: translateY(-55%);
+    width: 100%;
+    padding-top: 100%;
+    background-position: 0 50%;
+}
+
+
 /* 30 + 2014 30 + environment  */
 .css-11e38wd {
     display: inline-block;

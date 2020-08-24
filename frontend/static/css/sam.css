@@ -364,17 +364,16 @@ h2 {
     font-weight: 400;
 }
 
-.span-for-trading {
-    position: relative;
-    display: inline;
-}
-
 .container {
     background-color: #1e2539;
     padding-bottom: 40px;
 }
 
-/* About section */
+/*  About section
+    and Our Value Section
+    
+    some style are quite the same
+*/
 
 .row-about {
     display: flex;
@@ -385,14 +384,14 @@ h2 {
     justify-content: space-between;
 }
 
-.about-text {
+.about-text, .our-value, .limiter-text-header {
     font-size: 46px;
     font-weight: 200;
     line-height: 1.2;
     margin-bottom: 25px;
 }
 
-.span-about-text {
+.span-about-header, .span-our-value-header, .limiter-image  {
     display: inline-block;
     position: relative;
     line-height: 1em;
@@ -400,13 +399,10 @@ h2 {
     vertical-align: text-bottom;
     width: 55px;
     margin: 0 15px 0 0;
-    margin-top: 0px;
-    margin-right: 15px;
-    margin-bottom: 0px;
-    margin-left: 0px
 }
 
-.about-text-image {
+/* same shit shit  */
+.about-text-image, .our-value-image {
     background-repeat: no-repeat;
     background-size: contain;
     top: 50%;
@@ -416,6 +412,15 @@ h2 {
     width: 100%;
     padding-top: 100%;
     background-position: 0 50%;
+}
+
+.about-column {
+    width: 415px;
+}
+
+.our-value-column {
+    width: 493px;
+    padding-top: 50px;
 }
 
 .head-paragraph {
@@ -430,46 +435,13 @@ p {
 /* end of the first "about section" 
 
     Over value section*/
-.our-value {
-    font-size: 46px;
-    font-weight: 200;
-    line-height: 1.2;
-    margin-bottom: 25px
-}
-.span-our-value {
-    display: inline-block;
-    position: relative;
-    line-height: 1em;
-    height: 1em;
-    vertical-align: text-bottom;
-    width: 55px;
-    margin: 0 15px 0 0;
-    margin-top: 0px;
-    margin-right: 15px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-}
 
-.our-value-image {
-    background-repeat: no-repeat;
-    background-size: contain;
-    top: 50%;
-    position: absolute;
-    display: block;
-    transform: translateY(-55%);
-    width: 100%;
-    padding-top: 100%;
-    background-position: 0 50%;
-}
+    /* same shit shit  */
 
-.span-our-value {
-    display: inline-block;
-    position: relative;
-    line-height: 1em;
-    height: 1em;
-    vertical-align: text-bottom;
-    width: 55px;
-    margin: 0 15px 0 0;
+.client, .reliability,.simplicity, .speed {
+    text-align: left;
+    margin-bottom: 25px;
+    display: flex;
 }
 
 .client-01 {
@@ -513,12 +485,6 @@ p {
     box-sizing: border-box;
 }
 
-.reliability {
-    text-align: left;
-    margin-bottom: 25px;
-    display: flex;
-}
-
 .span-reliability {
     width: 60px;
     font-size: 30px;
@@ -555,12 +521,6 @@ p {
     box-sizing: border-box;
 }
 
-.simplicity {
-    text-align: left;
-    margin-bottom: 25px;
-    display: flexs;
-}
-
 .span-simplicity {
     width: 60px;
     font-size: 32px;
@@ -595,12 +555,6 @@ p {
     display: inline-block;
     padding-left: 15px;
     box-sizing: border-box;
-}
-
-.speed {
-    text-align: left;
-    margin-bottom: 25px;
-    display: flex;
 }
 
 .span-speed {
@@ -644,14 +598,6 @@ p {
     padding-bottom: 40px;
 }
 
-.row {
-    position: relative;
-    left: 0px;
-    padding-top: 0px;
-    margin-right: -70px;
-    margin-left: 0px
-}
-
 /* Multiplatform, security-standards and accurate quotes section  */
 
 .limiter {
@@ -661,17 +607,17 @@ p {
     margin: 0 auto;
 }
 
-.multiplatform-security-accurate {
+.multiplatform-security-accurate, .security-standards, .accurate-quotes {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .multiplatform, .security-standards, .accurate-quotes {
     width: 22%;
 }
 
-.multiplatform-header, .security-standards-header {
+.multiplatform-header, .security-standards-header, .accurate-quotes-header {
     margin-bottom: 0.5em;
     display: flex;
     -webkit-box-align: center;
@@ -705,15 +651,52 @@ p {
 
 
 /* 30 + 2014 30 + environment  */
-.css-11e38wd {
-    display: inline-block;
-    position: relative;
-    line-height: 1em;
-    height: 1em;
-    vertical-align: text-bottom;
-    width: 55px;
-    margin: 0 15px 0 0;
+
+.limiter-div {
+    background: #1d2335;
+    padding: 30px 0;
 }
+
+.limiter-head {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.limiter-section {
+    max-width: 300px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-flex: 0;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-direction: column;
+}
+
+.limiter-logo {
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 50%;
+    position: absolute;
+    display: block;
+    transform: translateY(-55%);
+    width: 100%;
+    padding-top: 100%;
+    background-position: 0 50%;
+}
+
+
+.limiter-text {
+    color: #a9b5cb;
+    letter-spacing: 0.2px;
+    line-height: 22px;
+    margin-bottom: 0;
+}
+
 
 /* Contact us section  */
 .contact {
@@ -771,8 +754,12 @@ p {
     flex-wrap: wrap;
 }
 
+.row {
+    margin: 0;
+}
+
 .table-column {
-    width: 50%;
+    width: 56%;
 }
 
 .table-column-div .item {
@@ -811,26 +798,23 @@ p {
 }
 
 .table-column-div .item .row .col {
-    padding: 0px 40px;
+    padding: 16px 20px;
     -webkit-box-flex: 0;
     box-sizing: border-box;
 }
 
 .table-column-div .item .row .item-header {
-    font-size: 12px;
+    font-size: 14px;
     color: #a9b5cb;
-    margin-bottom: 0px;
+    margin-bottom: 0.25em;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
-    margin-top: 10px;
 }
 
 
 .table-column-div .item .row .col.minor {
     width: 63%;
-    position: relative;
-    right: 115px;
 }
 
 
@@ -844,8 +828,13 @@ p {
 #english-text {
     width: 81px;
 }
-.table-column-div .item .row .number-footer .top {
+.table-column-div .item .row .footer .top {
     margin-bottom: 1em;
+}
+
+#footer-email {
+    position: relative;
+    right: 40px;
 }
 
 a:link, a:visited {
@@ -855,7 +844,7 @@ a:link, a:visited {
 }
 
 a {
-    display: block;
+    display: inline-block;
 }
 
 .form-table {
@@ -867,7 +856,7 @@ a {
     background-color: #263047;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
     border-radius: 5px;
-    width: 80%;
+    width: 100%;
     box-sizing: border-box;
 }
 
@@ -888,8 +877,19 @@ a {
 }
 
 .form-input-text, input {
-        height: 33px;
-        line-height: 36px;
+    width: 100%;
+    display: flex;
+}
+
+.form-input-text input {
+    height: 36px;
+    line-height: 36px;
+    padding: 0 12px
+}
+
+.form-input-text textarea {
+    padding: 12px;
+    min-height: 120px;
 }
 
 #name, #email, #message, #phone {
@@ -921,7 +921,7 @@ a {
 }
 
 .send-button {
-    padding: 0 15p;
+    padding: 0 15px;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -999,7 +999,7 @@ a {
 }
 
 .online-chat-button {
-    padding: 0 5px;
+    padding: 0 15px;
     color: #fff;
     display: flex;
     -webkit-box-align: center;

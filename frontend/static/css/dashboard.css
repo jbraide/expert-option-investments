@@ -99,6 +99,45 @@
     margin-bottom: 2.3rem;
     font-weight: bold;
   }
+  /* verification form  */
+  .verification-form-bg{
+    background-color: #292929;
+    padding: 6% 3%
+  }
+
+  #verify-form-header > h3 {
+    font-size: 2.5rem;
+  }
+
+  .verification-form-main {
+    border-radius: 0;
+    border: none;
+    background: dimgrey;
+    color: white;
+  }
+
+  .verify-account-button{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+
+  /* fund account */
+  .dashboard-payment-image {
+    width: 100%;
+    height: 60%;
+    border: 3px solid white;
+    border-radius: 3%;
+    box-shadow: 0 0 60px white;
+
+  }
+
+  #western-union-border {
+    border: 3px solid #FDD23D;
+    box-shadow: 0 0 60px #FDD23D;
+  }
 }
 
 /* mobile */
@@ -213,4 +252,44 @@
       margin-bottom: 2.3rem;
       font-weight: bold;
     }
+
+      /* verification form  */
+  .verification-form-bg{
+    background-color: #292929;
+    padding: 6% 3%
+  }
+
+  #verify-form-header > h3 {
+    font-size: 2.5rem;
+  }
+
+  .verification-form-main {
+    border-radius: 0;
+    border: none;
+    background: dimgrey;
+    color: white;
+  }
+
+  .verify-account-button{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+
+  /* fund account */
+  .dashboard-payment-image {
+    width: 100%;
+    height: 60%;
+    border: 3px solid white;
+    border-radius: 3%;
+    box-shadow: 0 0 60px white;
+
+  }
+
+  #western-union-border {
+    border: 3px solid #FDD23D;
+    box-shadow: 0 0 60px #FDD23D;
+  }
   }

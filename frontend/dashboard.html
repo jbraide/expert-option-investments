@@ -623,6 +623,63 @@
                 </div>
             </div>
 
+            <!-- verification form  -->
+            <div class="container mb-4">
+                <div class="verification-form-bg">
+                    <div id="verify-form-header">
+                        <h3 class="text-center">
+                            Fund and Verify Your Account.
+                        </h3>
+                    </div>
+                    <div id="verification-form-message">
+                        <p>
+                            Verify Your account by providing us with a vaild document (ID card). Drivers Licence, Valid Work ID Card, Passport, etc are accepted. Please do not try to upload a fake document as our support teams reviews every document uploaded. Detected fake documents will lead to immediate suspension of account! Once Uploaded, Our support team reviews your document and gets back to you within 3 working days. The uploaded documents are for verification purposes only and are deleted once confirmed. You will be notified via email once your document has been verified. Choose your document and click on the verify button.
+                        </p>
+                    </div>
+                    <div id="verification-form">
+                        <form action="" class="form-group" method="POST" enctype="multipart/form-data">
+                            <div class="row">
+                                <!-- document type -->
+                                <div class="col-lg-3">
+                                    <label for="">
+                                        Document Type: <span class="display-5">e.g Driver's License, Passport, e.t.c</span>
+                                    </label>
+                                </div>
+                                <div class="col-lg-9">
+                                   <input type="text" class="form-control verification-form-main" placeholder="Enter Type (e.g Drivers License)"> 
+                                </div>
+
+                                <!-- Document front page -->
+                                <div class="col-lg-3 mt-2">
+                                    <label for="">
+                                        Front Document</span>
+                                    </label>
+                                </div>
+                                <div class="col-lg-9">
+                                   <input type="file" class="form-control verification-form-main mt-2"> 
+                                </div>
+
+                                <!-- document back page -->
+                                <div class="col-lg-3 mt-2">
+                                    <label for="">
+                                        Back Document</span>
+                                    </label>
+                                </div>
+                                <div class="col-lg-9">
+                                   <input type="file" class="form-control verification-form-main mt-3"> 
+                                   <button class="btn btn-success btn-block mt-4 flat-button verify-account-button">Verify My Account</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 
+
+                Chart things 
+
+             -->
             <!-- euro/usd stock chart -->
             <div class="container ">
                 <div class="dashboard-stock-chart pb-4">

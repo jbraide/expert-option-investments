@@ -364,7 +364,8 @@ h2 {
     font-weight: 400;
 }
 
-.container {
+.container,
+.how-it-works-background  {
     background-color: #1e2539;
     padding-bottom: 40px;
 }
@@ -384,7 +385,9 @@ h2 {
     justify-content: space-between;
 }
 
-.about-text, .our-value, .limiter-text-header {
+.about-text,
+.our-value,
+.limiter-text-header {
     font-size: 46px;
     font-weight: 200;
     line-height: 1.2;
@@ -404,7 +407,21 @@ h2 {
     margin: 0 15px 0 0;
 }
 
-/* same shit shit  */
+.about-image-building {
+    width: 100%;
+    height: 200px;
+    background: #2d3651;
+    border: 1px solid #313b59;
+    box-shadow: 0 0 20px 0 rgba(12,16,22,0.1);
+    border-radius: 8px;
+    margin-top: -40px;
+    margin-bottom: 35px;
+    background-image: url(../images/building.jpg);
+    background-position: 50%;
+    background-size: cover;
+}
+
+
 .about-text-image, .our-value-image {
     background-repeat: no-repeat;
     background-size: contain;
@@ -596,14 +613,10 @@ p {
     box-sizing: border-box;
 }
 
-.how-it-works-background {
-    background-color: #1e2539;
-    padding-bottom: 40px;
-}
-
 /* Multiplatform, security-standards and accurate quotes section  */
 
-.limiter {
+.limiter,
+.about {
     min-width: 984px;
     max-width: 1200px;
     padding: 0 25px;

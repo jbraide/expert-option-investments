@@ -1146,6 +1146,178 @@ a {
     left: 887px;
     top: 45px;
 }
+/* Samuel's media query  */
+
+@media only screen and (max-width: 1024px) and (min-width: 0) {
+   /* About Section --Start-- */
+    .container {
+        padding-bottom: 20px;
+        background-color:#1e2539;
+    }
+
+    .about {
+        min-width: auto;
+        max-width: 1200px;
+        padding: 0 25px;
+        margin: 0 auto;
+    }
+
+    .row-about {
+        margin: 0;
+        display: flex;
+        flex-flow: row;
+        flex-wrap: wrap;
+        -webkit-box-flex: 1;
+        flex-grow: 1;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+    }
+
+    .about-column,
+    .table-column {
+        width: 100%;
+    }
+
+    /* About section --End--  */
+    /* Our value section --Start--  */
+
+    .our-value-column {
+        width: 100%;
+        padding-top: 20px;
+    }
+
+    .container {
+        padding-bottom: 20px;
+        background-color:#1e2539;
+    }
+
+    .limiter {
+        min-width: auto;
+    }
+    
+    .disclaimer {
+        min-width: auto;
+    }
+
+    .disclaimer-row {
+        width: 100%;
+        display: block
+    }
+
+    #trading-involves {
+        font-size: 12px;
+    }
+    
+
+}
+
+
+@media only screen and (max-width: 550px) and (min-width: 0) {
+    #banner {
+        height: 350px;
+        padding: 0 20px;
+    }
+
+    .trading-available {
+        max-width: 90%;
+        font-size: 32px
+    }
+
+
+    .about-text,
+    .our-value,
+    .limiter-text-header {
+    font-size: 30px;
+    margin-bottom: 20px;
+    }
+
+    .span-our-value-header {
+        width: 40px;
+        font-size: 30px;
+    }
+
+    .multiplatform,
+    .security-standards,
+    .accurate-quotes {
+        width: 70%;
+        margin: 10px 0px;
+    }
+
+    .span-mulitplatform,
+    .span-security-standards,
+    .span-accurate-quotes,
+    .span-contact-us {
+        width: 20px;
+        margin: 0 10px 0 0;
+    }
+
+    .limiter-head {
+        flex-direction: column;
+    }
+
+    .contact {
+        padding: 0 20px;
+    }
+
+    .contact-table {
+        width: 100%;
+    }
+    .table-column-div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .table-column-div .item {
+        margin: 0 0 10px;
+        width: 100%;
+    }
+
+    .table-column-div .item .row {
+        flex-direction: column;
+    }
+
+    .table-column-div .item .row .col.major {
+        width: 100%;
+    }
+
+    .form-table,
+    .send-button,
+    .online-chat-button {
+        width: 100%;
+    }
+
+    .corporate-center {
+        width: 100%;
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+
+    #footer {
+        padding: 40px 0 30px;
+    }
+
+    #footer-row {
+        position: relative;
+        left: 2px;
+    }
+
+    #footer-logo {
+        width: 95%;
+    }
+
+    #disclaimer-portion {
+        padding: 30px 0px;
+    }
+
+
+    #trading-involves {
+        font-size: 10px;
+    }
+    
+
+
+}
+
 
 @media only screen and (min-width:800px){
 /* login */

@@ -1,0 +1,96 @@
+/* dashboard */
+  /* dashboard bread crumb */
+#bread-crumb-dashboard {
+  background-color: #292929;
+  padding: 2% 0;
+  padding-left: 3%;
+}
+
+.bread-crumb-dashboard-inner > h3{
+  font-weight: bold;
+  text-transform: uppercase;
+
+}
+
+  /* welcome user */
+.welcome-user {
+  font-weight: 200;
+  background-color: wheat;
+  color: black;
+  padding: 1% 3% ;
+}
+
+  /* main dashboard body */
+.dashboard-stock-chart{
+    height: 400px;
+}
+
+.dashboard-display{
+  background-color: #292929;
+  margin-bottom: 6%;
+  padding: 8% 2%;
+  border: 2px solid white;
+}
+.dashboard-icon-resize{
+  font-size: 1.4rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
+}
+
+.dashboard-display-header {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* change dashboard display icon colors  */
+.fa-money-bill, .fa-lightbulb {
+  color: #58CD72;
+}
+
+.fa-clock,.fa-university {
+  color: #E74C3C;
+}
+
+.fa-caret-up, .fa-shield-alt {
+  color: #3498DB;
+}
+
+.fa-caret-down, .fa-wifi {
+  color: #F1C539;
+}
+
+
+  /* ratings & achievements */
+
+.rating-received-box-outer {
+  background-color: #292929;
+}
+.rating-achievement-position > span {
+  padding: 43%;
+}
+
+#ratings-received-box, #achievement-points-box {
+  padding-top: 7%;
+
+}
+
+.star-color-box{
+  background-color: #318F77;
+  width: 40%;
+}
+
+.trophy-color-box {
+  background-color:#44A35A;
+}
+
+
+/* profile */
+.profile-text-color{
+  color: black;
+}
+
+.profile-body > span{
+  display: block;
+  margin-bottom: 2.3rem;
+  font-weight: bold;
+}

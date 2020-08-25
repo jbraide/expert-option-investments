@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% endblock %}</title>
+  
+<body>
+ {% block body %}
+ {% endblock %}
+<!-- footer -->
+<footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3" id="column-1">
+          <h3>Superior Traders</h3>
+          <p>Superior Traders is one of the leading platforms in the UK offering Forex and Stocks Trading options. The company is also registered with the Financial Conduct Authority of the UK</p>
+        </div>
+        <div class="col-lg-3  column-2" id="about-footer">
+          <h3>About Superior Traders</h3>
+          <a href="{% url 'main:index' %}">Home</a>
+          <a href="{% url 'main:about' %}">About Superior Traders</a>
+          <a href="">Privacy Policy</a>
+          <a href="{% url 'main:rules' %}">Terms of Use</a>
+          <a href=""></a>              
+        </div>
+        <div class="col-lg-4" id="column-3">
+          <h3>Contacts</h3>
+          <section>
+            <h5>Postal adress</h5>
+            <p>United States Location:</p>
+          <span>1615 Nelson Ct, Hewlett, NY, 11557</span>
+          <hr>
+            <p>Germany Location:</p>
+               <span>Hallesches Ufer 63 Lenningen Baden-Württemberg</span>
+          </section>
+
+        </div>
+        <div class="col-lg-2" id="column-4">
+          <h3>Social</h3>
+            <a href="fb.com">
+              <i class="fab fa-facebook"></i> 
+            </a>
+            <a href="twitter.com">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="linkedin.com">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="youtube.com">
+              <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+    <div id="copyright" class="text-center">
+      <p>&copy; Copyright 2018 All rights Reserved.</p>
+    </div>
+
+  <!-- jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- owl carousel -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+    $(document).ready(function(){
+    $(".owl-carousel").owlCarousel({
+        margin: 10, 
+        loop: true, 
+        responsiveClass: true,
+        responsive: {
+            0:{
+                items: 1
+            }
+        },
+        autoplay:true,
+        autoplayTimeout:5000,
+        autoplayHoverPause:true
+    });
+    });
+</script>
+  
+  <!-- scripts -->
+  <script>
+    (function(b, i, t, C, O, I, N) {
+        window.addEventListener('load', function() {
+            if (b.getElementById(C)) return;
+            I = b.createElement(i), N = b.getElementsByTagName(i)[0];
+            I.src = t;
+            I.id = C;
+            N.parentNode.insertBefore(I, N);
+        }, false)
+    })(document, 'script', 'https://widgets.bitcoin.com/widget.js', 'btcwdgt');
+  </script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .models import Profile, Deposit, Withdraw
+from .models import Profile, Withdraw
 
 class RegistrationForm(UserCreationForm):
     email = forms.EmailField(max_length=50)
@@ -18,21 +18,17 @@ class LoginForm(forms.Form):
     password = forms.CharField(max_length=50, widget=forms.PasswordInput)
 
 
-# django countries 
+# django countries & phone field
 from django_countries.widgets import CountrySelectWidget
+# from phone_field import PhoneField
 class ProfileForm(forms.ModelForm):
     class Meta: 
         model = Profile
-        fields = ('first_name', 'last_name', 'email', 'street_address','city', 'state', 'postal_or_zip_code', 'profile_picture', 'country')
+        fields = ('first_name', 'last_name', 'email','phone_number','street_address','city', 'state', 'postal_or_zip_code', 'profile_picture', 'country')
         widgets = {
-            'country': CountrySelectWidget()
+            'country': CountrySelectWidget(),
+            # 'phone_number':
         }
-
-
-class DepositForm(forms.ModelForm):
-    class Meta:
-        model = Deposit
-        fields = ('select_payment_method','select_currency','amount')
 
 class WithdrawalForm(forms.ModelForm):
     password = forms.CharField(max_length=30, widget=forms.PasswordInput)

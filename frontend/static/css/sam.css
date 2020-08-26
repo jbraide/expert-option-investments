@@ -1213,9 +1213,15 @@ a {
 
 
 @media only screen and (max-width: 550px) and (min-width: 0) {
+   
+   #nav {
+       width: 100%;
+   }
+   
     #banner {
         height: 350px;
         padding: 0 20px;
+        width: 100%;
     }
 
     .trading-available {

@@ -25,9 +25,6 @@ SECRET_KEY = 'n+n%kq+pewhtcbqlw=eg-(@0vi@3%4b(a&6q+q6h42j==c09am'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -73,15 +70,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'expertoptioninvestmentsproject.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
 
 # Password validation

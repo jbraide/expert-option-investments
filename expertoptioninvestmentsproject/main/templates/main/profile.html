@@ -411,11 +411,13 @@
                 </div>                
             </div>
 
-            <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-            Launch demo modal
-        </button>
-
+            <div class="container">
+                <form action="" class="form-group" method="POST">
+                    {% csrf_token %}
+                    {{ profile_form }}
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
         
             
 

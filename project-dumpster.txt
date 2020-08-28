@@ -1,5 +1,12 @@
+# starting django application
 source ~/Documents/web_projects/venv/bin/activate && cd expertoptioninvestmentsproject && python manage.py runserver
+source ~/Documents/web_projects/venv/bin/activate && cd expertoptioninvestmentsproject && python manage.py runserver --setting=expertoptioninvestmentsproject.settings.development
+
 python manage.py makemigrations && python manage.py migrate
+
+# production and development setting for migrations 
+python manage.py makemigrations --setting=expertoptioninvestmentsproject.settings.development
+
 
 CREATE DATABASE expertoptioninvestments;
 CREATE USER expert WITH PASSWORD 'expertoptioninvestments';

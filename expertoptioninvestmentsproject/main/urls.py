@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import index, login, logout_view, dashboard, register,t_and_c, about, fund_account, trading_history, withdraw_funds
-from .views import id_verification, account_upgrade
+from .views import id_verification, account_upgrade, account_type, create_profile
+
 app_name = 'main'
 
 urlpatterns = [
@@ -8,6 +9,7 @@ urlpatterns = [
     path('', index, name="index"),
     # about
     path('about/', about, name='about'),
+    path('account-types', account_type, name='account-type'),
     # terms and conditions, Privacy policy
     path('terms-and-conditions/', t_and_c, name='terms-and-conditions'),
     # dashboard routes
@@ -19,6 +21,6 @@ urlpatterns = [
     path('account/upgrade', account_upgrade, name='account-upgrade'),
     # registration and login routes
     path('register/', register, name='register'),
-
+    path('profile/create', create_profile, name='profile-form' )
     
 ]

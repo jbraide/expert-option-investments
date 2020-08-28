@@ -116,7 +116,6 @@ class Profile(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='profile')
     first_name = models.CharField(max_length=23, default='', blank=True)
     last_name = models.CharField(max_length=23, default='', blank=True)
-    email = models.EmailField(max_length=50)
     phone_number = PhoneNumberField(blank=True, help_text='Contact Phone Number')
     street_address = models.CharField(max_length=150, default='', blank=True)
     city =  models.CharField(max_length = 100, default=False, blank=True)
@@ -136,12 +135,12 @@ class Profile(models.Model):
 #     instance.profile.save()
 # post_save.connect(create_user_profile, sender=User)
 
-@receiver(post_save, sender=User)
+@receiver(post_save, sender=CustomUser)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
 
-@receiver(post_save, sender=User)
+@receiver(post_save, sender=CustomUser)
 def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
 

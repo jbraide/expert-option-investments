@@ -1,0 +1,1264 @@
+/* Desktop view of registration page  */
+body {
+    background-color: rgb(39, 46, 74);
+    background-image: linear-gradient(rgb(39, 46, 74) 0%, rgb(21, 27, 39) 100%);
+    background-position: center top;
+    background-repeat: repeat-x;
+    font-family: -apple-system, BlinkMacSystemFont, Roboto, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    color: rgb(245, 245, 245);
+    line-height: 1.6;
+    height: 100%;
+    position: relative;
+    overflow-x: hidden;
+    margin: 0px;
+}
+
+h1 {
+    font-weight: 200;
+    line-height: 1.2;
+    margin-bottom: 0.4em;
+}
+
+#registration-form,
+#login-form {
+    padding: 13% 0 100px;
+    text-align: center;
+    background: radial-gradient(circle,rgba(46,60,111,1) 0%,rgba(37,44,71,1) 100%);
+}
+
+#forgot-password {
+    color: #a9b5cb;
+    position: relative;
+    top: 5px;
+}
+
+#forgot-password:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+#login-button {
+    border-color: #3facff;
+    background-color: #3facff;
+    background-image: linear-gradient(to top,#3facff,#259efa);
+    box-shadow: 0 3px 10px #0048b5;
+    width: 40%;
+    position: relative;
+    top: 10px;
+}
+
+#login-button:hover {
+    background: rgb(57, 178, 255);
+    color: rgb(255, 255, 255);
+}
+
+
+a#facebook-login-button {
+    position: relative;
+    right: 13px;
+    top: 40px;
+}
+
+a#google-login-button {
+    position: relative;
+    left: 100px;
+    top: 40px;
+    padding-left: 22px;
+}
+
+#register-header {
+    padding: 0 0 10px;
+    font-size: 32px;
+}
+
+#registration-form-action,
+#login-form-action {
+    background-color: rgb(21,27,39,0.175);
+    border-radius: 12px;
+    box-sizing: border-box;
+    margin: 20px auto;
+    position: relative;
+    padding: 50px;
+    width: 400px;
+    height: 300px
+}
+
+.mx-5#form-action {
+    margin: 0 !important;
+}
+
+#reg-term-and-conditions {
+    position: relative;
+    top: 4px
+}
+
+.open-account-button {
+    border-color: #3facff;
+    background-color: #3facff;
+    background-image: linear-gradient(to top,#3facff,#259efa);
+    box-shadow: 0 3px 10px #0048b5;
+}
+
+.open-account-button:hover {
+    background: rgb(57, 178, 255);
+    color: rgb(255, 255, 255)
+}
+
+#facebook-button,
+#google-button {
+    border-radius: 2px;
+    padding-right: 30px;
+    margin-right: 80px;
+    width: 100%;
+}
+
+.form-control {
+    color: #fff;
+    background-color: #20293e;
+}
+
+.mx-auto {
+    color: #a9b5cb;
+}
+
+.mx-auto:hover {
+    color: #fff;
+    text-decoration-line: none;
+}
+
+.checkbox-label {
+    color: #a9b5cb;
+    font-size: 12px;
+}
+
+/* ---------FOOTER---------- 
+
+
+    --------REGION----------
+    
+    
+*/
+#company-footer-text {
+    padding: 10px;
+}
+
+#company-footer-text > p {
+    color: #a9b5cb;
+}
+
+#footer-logo {
+    width: 100%;
+}
+
+.footer-links {
+    padding: 30px;
+}
+
+.footer-links > a {
+    color: #a9b5cb;
+    display: block;
+}
+
+.footer-links > a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+#payment-methods-footer {
+    padding: 30px;
+}
+
+#trading-involves,
+#expert-invest,
+#built-with > p {
+    color: #a9b5cb;
+}
+
+.disclaimer {
+    padding: 30px;
+}
+
+#disclaimer-portion {
+    border-top: 1px solid#a9b5cb;
+}
+
+/* ----ABOUT---- 
+------PAGE-----STYLING
+--- INFORMATIONS--  
+*/
+
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+h1, h2, h3, h4, h5 {
+    margin-top: 0px;
+}
+
+h4 {
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+/* Login form section styling 
+
+    [the login and registration form section styling are the same]
+
+    Registration form section styling 
+ */
+
+
+/* banner */
+#banner {
+    background: url('../images/pexels-rebrand-cities-1367272.jpg') no-repeat;
+    height: 100vh;
+    box-shadow: 0 3000px rgba(27, 35, 55, .7) inset;
+    color: white;
+  }
+  
+.trading-available {
+    display: block;
+    font-size: 42px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+    max-width: 60%;
+    position: relative;
+    font-style: italic;
+
+}
+
+.trading-available:before {
+    content: '';
+    background-image: url(../images/logos/quote.svg);
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 22px;
+    position: absolute;
+    left: -28px;
+    bottom: -35px;
+}
+
+.trading-available:after {
+    content: '';
+    background-image: url(../images/logos/quote-close.svg);
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 22px;
+    position: absolute;
+    top: -28px;
+    right: -40px;
+}
+
+.span-for-trading {
+    position: relative;
+    display: inline;
+}
+
+.span-for-trading:after {
+    content: '';
+    background-image: url(../images/logos/heading-line.svg);
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 120px;
+    height: 5px;
+    right: 0;
+    bottom: -10px;
+} 
+
+h1 {
+    font-weight: 200;
+    line-height: 1.2;
+    font-size: 46px;
+    margin-bottom: 0.4em;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.container,
+.how-it-works-background  {
+    background-color: #1e2539;
+    padding-bottom: 40px;
+}
+
+/*  About section
+    and Our Value Section
+    
+    some style are quite the same
+*/
+
+.row-about {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.about-text,
+.our-value,
+.limiter-text-header {
+    font-size: 46px;
+    font-weight: 200;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.span-about-header,
+.span-our-value-header,
+.limiter-image,  
+.span-contact-us  {
+    display: inline-block;
+    position: relative;
+    line-height: 1em;
+    height: 1em;
+    vertical-align: text-bottom;
+    width: 55px;
+    margin: 0 15px 0 0;
+}
+
+.about-image-building {
+    width: 100%;
+    height: 200px;
+    background: #2d3651;
+    border: 1px solid #313b59;
+    box-shadow: 0 0 20px 0 rgba(12,16,22,0.1);
+    border-radius: 8px;
+    margin-top: -40px;
+    margin-bottom: 35px;
+    background-image: url(../images/building.jpg);
+    background-position: 50%;
+    background-size: cover;
+}
+
+
+.about-text-image, .our-value-image {
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 50%;
+    position: absolute;
+    display: block;
+    transform: translateY(-55%);
+    width: 100%;
+    padding-top: 100%;
+    background-position: 0 50%;
+}
+
+.about-column {
+    width: 415px;
+}
+
+.our-value-column {
+    width: 493px;
+    padding-top: 50px;
+}
+
+.head-paragraph {
+    color: #a9b5cb;
+}
+
+p {
+    margin-top: 0px;
+    margin-bottom: 1em;
+}
+
+/* end of the first "about section" 
+
+    Over value section*/
+
+    /* same shit shit  */
+
+.client, .reliability,.simplicity, .speed {
+    text-align: left;
+    margin-bottom: 25px;
+    display: flex;
+}
+
+.client-01 {
+    text-align: left;
+    margin-bottom: 25px;
+    display: flex;
+}
+
+.span-client {
+    width: 60px;
+    font-size: 32px;
+    line-height: 40px;
+    height: 40px;
+    position: relative;
+    text-align: center;
+    z-index: 0;
+}
+
+.span-client::before {
+    content: '';
+    opacity: 0.3;
+    background: #259efa;
+    width: 90%;
+    left: 5%;
+    height: 3px;
+    position: absolute;
+    border-radius: 5px;
+    top: 50%;
+    z-index: -1;
+}
+
+.span-clients {
+    font-size: 14px;
+    font-weight: 400;
+    color: #a9b5cb;
+    letter-spacing: 0.2px;
+    line-height: 22px;
+    width: calc(90% - 40px);
+    display: inline-block;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+.span-reliability {
+    width: 60px;
+    font-size: 30px;
+    line-height: 40px;
+    height: 40px;
+    position: relative;
+    text-align: center;
+    z-index: 0;
+}
+
+.span-reliability::before {
+    content: '';
+    opacity: 0.3;
+    background: #259efa;
+    width: 90%;
+    left: 5%;
+    height: 3px;
+    position: absolute;
+    border-radius: 5px;
+    top: 50%;
+    z-index: -1;
+    transform: translateY(-50%);
+}
+
+.span-reliability-02 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #a9b5cb;
+    letter-spacing: 0.2px;
+    line-height: 22px;
+    width: calc(90% - 40px);
+    display: inline-block;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+.span-simplicity {
+    width: 60px;
+    font-size: 32px;
+    line-height: 40px;
+    height: 40px;
+    position: relative;
+    text-align: center;
+    z-index: 0;
+}
+
+.span-simplicity::before {
+    content: '';
+    opacity: 0.3;
+    background: #259efa;
+    width: 90%;
+    left: 5%;
+    height: 3px;
+    position: absolute;
+    border-radius: 5px;
+    top: 50%;
+    z-index: -1;
+    transform: translateY(-50%);
+}
+
+.span-simplicity-03 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #a9b5cb;
+    letter-spacing: 0.2px;
+    line-height: 22px;
+    width: calc(90% - 40px);
+    display: inline-block;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+.span-speed {
+    width: 60px;
+    font-size: 32px;
+    line-height: 40px;
+    height: 40px;
+    position: relative;
+    text-align: center;
+    z-index: 0;
+}
+
+.span-speed::before {
+    content: '';
+    opacity: 0.3;
+    background: #259efa;
+    width: 90%;
+    left: 5%;
+    height: 3px;
+    position: absolute;
+    border-radius: 5px;
+    top: 50%;
+    z-index: -1;
+    transform: translateY(-50%);
+}
+
+.span-speed-04 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #a9b5cb;
+    letter-spacing: 0.2px;
+    line-height: 22px;
+    width: calc(90% - 40px);
+    display: inline-block;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+/* Multiplatform, security-standards and accurate quotes section  */
+
+.limiter,
+.about {
+    min-width: 984px;
+    max-width: 1200px;
+    padding: 0 25px;
+    margin: 0 auto;
+}
+
+.multiplatform-security-accurate, .security-standards, .accurate-quotes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.multiplatform, .security-standards, .accurate-quotes {
+    width: 22%;
+}
+
+.multiplatform-header, .security-standards-header, .accurate-quotes-header {
+    margin-bottom: 0.5em;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.span-mulitplatform, .span-security-standards, .span-accurate-quotes {
+    display: inline-block;
+    position: relative;
+    line-height: 1em;
+    height: 1em;
+    vertical-align: text-bottom;
+    width: 26px;
+    margin: 0 10px 0 0;
+}
+
+.multiplatform-text, .security-standards-text, .accurate-quotes-text {
+    color: #a9b5cb;
+}
+
+.multiplatform-logo, .security-standards-logo, .accurate-quotes-logo {
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 50%;
+    position: absolute;
+    display: block;    transform: translateY(-55%);
+    width: 100%;
+    padding-top: 100%;
+    background-position: 0 50%;
+}
+
+
+/* 30 + 2014 30 + environment  */
+
+.limiter-div {
+    background: #1d2335;
+    padding: 30px 0;
+}
+
+.limiter-head {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.limiter-section {
+    max-width: 300px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-flex: 0;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-direction: column;
+}
+
+.limiter-logo {
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 50%;
+    position: absolute;
+    display: block;
+    transform: translateY(-55%);
+    width: 100%;
+    padding-top: 100%;
+    background-position: 0 50%;
+}
+
+
+.limiter-text {
+    color: #a9b5cb;
+    letter-spacing: 0.2px;
+    line-height: 22px;
+    margin-bottom: 0;
+}
+
+
+/* Contact us section  */
+.contact {
+    background-color: #1e2539;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#about-us-text {
+    font-size: 46px;
+    font-weight: 200;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    margin: 40px 0;
+}
+
+.contact-us {
+    font-size: 46px;
+    font-weight: 200
+}
+
+.contact-us-image {
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 50%;
+    position: absolute;
+    display: block;
+    transform: translateY(-55%);
+    width: 100%;
+    padding-top: 100%;
+    background-position: 0 50%;
+}
+
+/* Contact us table section  */
+.contact-table {
+    max-width: 976px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-direction: row;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.row {
+    margin: 0;
+}
+
+.table-column {
+    width: 56%;
+}
+
+.table-column-div .item {
+    margin: 0 10px 10px;
+    background-color: #263047;
+    color: #fff;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.table-column-div .item .row {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.table-column-div .item .row:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 3px;
+    left: 0;
+    opacity: 0.7;
+    background-image: linear-gradient(-180deg,#369bf4 0%,#1c56bf 100%);
+    box-shadow: 0 0 10px 0 rgba(16,121,213,0.5);
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+.table-column-div .item .row .col.major {
+    width: 37%;
+}
+
+.table-column-div .item .row .col {
+    padding: 16px 20px;
+    -webkit-box-flex: 0;
+    box-sizing: border-box;
+}
+
+.table-column-div .item .row .item-header {
+    font-size: 14px;
+    color: #a9b5cb;
+    margin-bottom: 0.25em;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+
+.table-column-div .item .row .col.minor {
+    width: 63%;
+}
+
+
+.item-header-flag-icon {
+    border-radius: 1px;
+    width: 21px;
+    height: 14px;
+    transition: box-shadow 0.2s;
+}
+
+#english-text {
+    width: 81px;
+}
+.table-column-div .item .row .footer .top {
+    margin-bottom: 1em;
+}
+
+#footer-email {
+    position: relative;
+    right: 40px;
+}
+
+a:link, a:visited {
+    color: rgb(245, 245, 245);
+    text-decoration: none;
+    transition: transform 0.15s ease 0s, color 0.15s ease 0s;
+}
+
+a {
+    display: inline-block;
+}
+
+.form-table {
+    width: 44%;
+}
+
+.form-table-div {
+    position: relative;
+    background-color: #263047;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-input {
+    display: flex;
+    -webkit-box-pack: justify;
+    align-items: center;
+    margin-bottom: 16px;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+}
+
+.form-input-text, .form-textarea {
+    width: 100%;
+    position: relative;
+    display: flex;
+    padding: 10px;
+}
+
+.form-input-text, input {
+    width: 100%;
+    display: flex;
+}
+
+.form-input-text input {
+    height: 36px;
+    line-height: 36px;
+    padding: 0 12px
+}
+
+.form-input-text textarea {
+    padding: 12px;
+    min-height: 120px;
+}
+
+#name, #email, #message, #phone {
+    width: 100%;
+    outline: none;
+    border: 1px solid rgba(47,59,81,0.5);
+    background: none;
+    background-color: #20293e;
+    border-radius: 4px;
+    color: #fff;
+    font-family: -apple-system,BlinkMacSystemFont,Roboto,Open Sans,Helvetica Neue,sans-serif;
+    box-sizing: border-box;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    transition: border-color 0.2s;
+    box-shadow: inset 0 2px 2px 0 rgba(0,0,0,0.075), inset 0 0 0 1px rgba(37,158,250,0);
+}  
+
+.phone-number {
+    width: 55% ;
+}
+
+.number-send-button {
+    width: calc(45% - 20px);
+}
+
+.send-button, .full-width {
+    width: 100%;
+}
+
+.send-button {
+    padding: 0 15px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    font-size: 14px;
+    background: none;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 3px;
+    text-decoration: none;
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+    touch-action: manipulation;
+    white-space: nowrap;
+    max-width: 100%;
+    outline: none;
+    transition: opacity 0.2s,transform 0.15s,background-image 0.15s,background-color 0.15s,color 0.15s,border-color 0.15s,box-shadow 0.15s !important;
+    height: 36px;
+    line-height: 34px;
+    border-color: #3facff;
+    background-color: #3facff;
+    background-image: linear-gradient(to top,#3facff,#259efa);
+    box-shadow: 0 3px 10px #0048b5;
+    color: #fff;
+}
+
+.support {
+    display: flex;
+    padding: 20px;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #263047;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    background-image: radial-gradient(closest-side at 50% 130%,#385bab 0%,#27314c 100%);
+    background-position: -50%;
+
+}
+
+.support::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 3px;
+    left: 0;
+    opacity: 0.7;
+    background-image: linear-gradient(-180deg,#369bf4 0%,#1c56bf 100%);
+    box-shadow: 0 0 10px 0 rgba(16,121,213,0.5);
+}
+
+.support-text {
+    font-size: 14px;
+    color: #a9b5cb;
+    width: 100%;
+}
+
+.support-online{
+    width: 55%;
+}
+
+.support-button {
+    width: calc(45% - 20px);
+}
+
+.online-chat-button {
+    width: 100%;
+}
+
+.online-chat-button {
+    padding: 0 15px;
+    color: #fff;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    border: 1px solid transparent;
+    font-size: 14px;
+    background: none;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 3px;
+    text-decoration: none;
+    box-sizing: border-box;
+    position: relative;
+    left: 12px;
+    top: 10px;
+    text-align: center;
+    touch-action: manipulation;
+    white-space: nowrap;
+    max-width: 100%;
+    outline: none;
+    box-shadow: 0 0 15px rgba(0,72,181,0);
+    transition: opacity 0.2s,transform 0.15s,background-image 0.15s,background-color 0.15s,color 0.15s,border-color 0.15s,box-shadow 0.15s !important;
+    height: 36px;
+    line-height: 34px;
+    border-color: #259EFA;
+}
+
+.corporate-center {
+    text-align: center;
+    font-size: 14px;
+    color: #a9b5cb;
+    margin-top: 40px;
+    width: 45%;
+}
+
+.corporate-center-email {
+    margin-top: 1em;
+}
+
+/* verification section  */
+.breadcrums li a:before {
+    content: '/';
+    color: #768387;
+    position: absolute;
+    right: -13px;
+    top: 0;
+}
+
+.verification-image {
+     left: 300px;
+ }
+
+ .verify-account-text {
+     font-size: 18px;
+ }
+ 
+
+ .user-profile-text {
+     font-size: 18px;
+ }
+
+ .user-profile-image {
+     width: 30px;
+ }
+
+
+
+
+
+
+
+
+
+/* Mobile view of Registration page  */
+@media only screen and (max-width: 1024px) and (min-width: 320px) {
+
+    body {
+        background-color: rgb(39, 46, 74);
+        background-image: linear-gradient(rgb(39, 46, 74) 0%, rgb(21, 27, 39) 100%);
+        background-position: center top;
+        background-repeat: repeat-x;
+        font-family: -apple-system, BlinkMacSystemFont, Roboto, "Open Sans", "Helvetica Neue", sans-serif;
+        font-size: 14px;
+        color: rgb(245, 245, 245);
+        line-height: 1.6;
+        height: 100%;
+        position: relative;
+        overflow-x: hidden;
+        margin: 0px;
+    }
+
+    h1 {
+        font-weight: 200;
+        line-height: 1.2;
+        margin-bottom: 0.4em;
+    }
+
+    #nav {
+        width: 100%;
+    }
+    
+    #banner {
+        background: url('../images/pexels-rebrand-cities-1367272.jpg') no-repeat;
+        height: 100vh;
+        box-shadow: 0 3000px rgba(27, 35, 55, .7) inset;
+        color: white;
+        width: 100%;
+      }
+      
+     /* navigation banner */
+    .banner-navigation {
+         width: 85%;
+        background-color: transparent;
+        margin: 0 auto;
+        padding-top: 2rem;
+        align-content: center;
+        left: 146px;
+        top: -10px;
+    }
+ 
+
+    #registration-form,
+    #login-form {
+        padding: 13% 0 100px;
+        text-align: center;
+        background: radial-gradient(circle,rgba(46,60,111,1) 0%,rgba(37,44,71,1) 100%);
+    }
+
+    #register-header {
+        padding: 0 0 10px;
+        font-size: 32px;
+    }
+
+    #registration-form-action,
+    #login-form-action {
+        background-color: rgb(21,27,39,0.175);
+        border-radius: 12px;
+        box-sizing: border-box;
+        margin: 0 auto;
+        position: relative;
+        padding: 25px;
+        width: 100%;
+    }
+
+    .mx-5#form-action {
+        margin: 0 !important;
+    }
+
+    .open-account-button {
+        border-color: #3facff;
+        background-color: #3facff;
+        background-image: linear-gradient(to top,#3facff,#259efa);
+        box-shadow: 0 3px 10px #0048b5;
+    }
+
+    .open-account-button:hover {
+        background: rgb(57, 178, 255);
+        color: rgb(255, 255, 255)
+    }
+
+    #facebook-button,
+    #google-button {
+        border-radius: 0px;
+    }
+
+    a#facebook-login-button {
+        position: relative;
+        right: 17px;
+        top: 40px;
+    }
+
+    a#google-login-button {
+        position: relative;
+        left: 74px;
+        top: 40px;
+        padding-left: 22px;
+    }
+
+    .form-control {
+        color: #fff;
+        background-color: #20293e;
+    }
+
+    .mx-auto {
+        color: #a9b5cb;
+    }
+
+    .mx-auto:hover {
+        color: #fff;
+        text-decoration-line: none;
+    }
+
+    .checkbox-label {
+        color: #a9b5cb;
+        font-size: 12px;
+    }
+
+    #company-footer-text > p {
+        color: #a9b5cb;
+    }
+
+    #footer-logo {
+        width: 100%;
+    }
+
+    .footer-links > a {
+        color: #a9b5cb;
+        display: block;
+    }
+
+    .footer-links > a:hover {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    #trading-involves,
+    #expert-invest,
+    #built-with > p {
+        color: #a9b5cb;
+    }
+
+  
+     .trading-available {
+         max-width: 90%;
+         font-size: 32px
+     }
+ 
+     .about,
+     .limiter {
+        min-width: 320px;
+        max-width: 1200px;
+        padding: 0 25px;
+        margin: 0 aut0;
+     }
+
+     #about-us-text {
+         font-size: 36px;
+     }
+     .about-text,
+     .our-value,
+     .limiter-text-header {
+     font-size: 30px;
+     margin-bottom: 20px;
+     }
+ 
+     .span-our-value-header {
+         width: 40px;
+         font-size: 30px;
+     }
+ 
+     .multiplatform,
+     .security-standards,
+     .accurate-quotes {
+         width: 70%;
+         margin: 10px 0px;
+     }
+ 
+     .span-mulitplatform,
+     .span-security-standards,
+     .span-accurate-quotes,
+     .span-contact-us {
+         width: 20px;
+         margin: 0 10px 0 0;
+     }
+ 
+     .limiter-head {
+         flex-direction: column;
+     }
+ 
+     .contact {
+         padding: 0 20px;
+     }
+     
+     .contact-table {
+         width: 100%;
+     }
+
+     .table-column {
+        min-width: 320px;
+    }
+
+     .table-column-div {
+         display: flex;
+         flex-direction: column;
+     }
+ 
+     .table-column-div .item {
+         margin: 0 0 10px;
+         width: 100%;
+     }
+ 
+     .table-column-div .item .row {
+         flex-direction: column;
+     }
+ 
+     .table-column-div .item .row .col.major {
+         width: 100%;
+     }
+ 
+     .form-table,
+     .send-button,
+     .online-chat-button {
+         width: 100%;
+     }
+ 
+     .corporate-center {
+         width: 100%;
+         margin-bottom: 30px;
+         margin-top: 30px;
+     }
+ 
+     #footer {
+         padding: 40px 0 30px;
+     }
+ 
+     #footer-row {
+         display: block;
+         left: 2px;
+     }
+ 
+     #footer-logo {
+         width: 95%;
+     }
+ 
+     #disclaimer-portion {
+         display: block;
+         padding: 30px 0px;
+     }
+ 
+ 
+     #trading-involves {
+         font-size: 10px;
+     }
+     
+ 
+}    
+

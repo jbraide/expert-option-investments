@@ -1,6 +1,7 @@
 {% extends "dashboard/dashboard-base.html" %}
 {% block dashboard %}
 {% load static %}
+{% load widget_tweaks %}
     <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
         {% include "dashboard/sidebar.html" %}
       
@@ -77,8 +78,29 @@
             <!-- TradingView Widget END -->
 
             
+            {% if request.user.verificationdocument.verified %}
+            <!-- verification container content -->
+            <div class="container" style="min-height: 245px;">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card mt-5">
+                            <div class="card-body">
+                                 <h3 class="text-dark text-center py-4">
+                                    <span>Identification Status</span>
+                                </h3>
+                                <div class="col-sm verification-image py-4">
+                                    <img src="{% static 'images/logos/verified.png' %}" style="height: 200px;"  id="verification-image-check"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% else %}
+            
             <!-- verification form  -->
-            <div class="container my-4">
+            <div class="container mb-4">
                 <div class="verification-form-bg">
                     <div id="verify-form-header">
                         <h3 class="text-center">
@@ -92,6 +114,7 @@
                     </div>
                     <div id="verification-form">
                         <form action="" class="form-group" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
                             <div class="row">
                                 <!-- document type -->
                                 <div class="col-lg-3">
@@ -100,7 +123,8 @@
                                     </label>
                                 </div>
                                 <div class="col-lg-9">
-                                   <input type="text" class="form-control verification-form-main" placeholder="Enter Type (e.g Drivers License)"> 
+                                    {{ verification_form.document_type|add_class:"form_control verification-form-main" }}
+                                   <!-- <input type="text" class="form-control verification-form-main" placeholder="Enter Type (e.g Drivers License)">  -->
                                 </div>
 
                                 <!-- Document front page -->
@@ -110,7 +134,8 @@
                                     </label>
                                 </div>
                                 <div class="col-lg-9">
-                                   <input type="file" class="form-control verification-form-main mt-2"> 
+                                    {{ verification_form.front_document|add_class:"form_control verification-form-main mt-2" }}
+                                   <!-- <input type="file" class="form-control verification-form-main mt-2">  -->
                                 </div>
 
                                 <!-- document back page -->
@@ -120,7 +145,8 @@
                                     </label>
                                 </div>
                                 <div class="col-lg-9">
-                                   <input type="file" class="form-control verification-form-main mt-3"> 
+                                    {{ verification_form.back_document|add_class:"form_control verification-form-main mt-3" }}
+                                   <!-- <input type="file" class="form-control verification-form-main mt-3">  -->
                                    <button class="btn btn-success btn-block mt-4 flat-button verify-account-button">Verify My Account</button>
                                 </div>
                             </div>
@@ -128,25 +154,7 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- verification container content -->
-            <div class="container" style="min-height: 245px;">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="card mt-5">
-                            <div class="card-body">
-                                 <h3 class="text-dark text-center py-4">
-                                    <span>Identification Status</span>
-                                </h3>
-                                <div class="col-sm verification-image py-4">
-                                    <img src="{% static 'images/logos/verified.png' %}" style="height: 200px;" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            {% endif %}
             <!-- end of dashboard content -->
         </main>
         <!-- page-content" -->

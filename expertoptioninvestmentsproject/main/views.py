@@ -2,13 +2,16 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth import login as auth_login
 
+# import user settings
+from django.contrib.auth import get_user_model
 
 from django.contrib.auth.decorators import login_required
 
-from .forms import RegistrationForm, ProfileForm, WithdrawalForm
+from .forms import RegistrationForm, ProfileForm, WithdrawalForm, VerificationDocumentForm
 
 # models
-from .models import Balance, Signals, AccountType, InvestedAmount, BTCAddress, Profile
+from .models import Balance, Signals, InvestedAmount, BTCbalance, Profile, DailyInvestments, VerificationDocument
+from .models import CustomUser
 from django.db.models import Sum
 
 # password reset 
@@ -50,17 +53,20 @@ def t_and_c(request):
 @login_required(login_url='/login')
 def dashboard(request):
     user = request.user
-    balance = Balance.objects.filter(user=user).aggregate(amount=Sum('amount'))
-    # signals_amount = Signals.objects.filter(user=user).aggregate(amount=Sum('amount'))
-    # invested = InvestedAmount.objects.filter(user=user).aggregate(amount=Sum('amount'))
-    # type = AccountType.objects.filter(user=user)
 
+    # dashboard info from database
+    balance = Balance.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    signals_amount = Signals.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    invested = InvestedAmount.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    btc_balance = BTCbalance.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    daily_investments = DailyInvestments.objects.filter(user=user).aggregate(amount=Sum('amount'))
    
     context = {
         'balance': balance, 
-        # 'signals': signals_amount, 
-        # 'invested': invested, 
-        # 'type': type
+        'signals': signals_amount, 
+        'invested': invested,
+        'btc_balance': btc_balance,
+        'daily_investments': daily_investments 
     }
     return render(request, 'main/dashboard.html', context)
 
@@ -112,9 +118,37 @@ def withdraw_funds(request):
 
     return render(request, 'main/withdraw-funds.html', context )
 
+# document verification
+from django.contrib.auth import get_user_model
+from .models import CustomUser
+
 def id_verification(request):
-    # change file location to the verification document
-    return render(request, 'main/id-verification.html')
+    # user = CustomUser
+    if request.method == 'POST':
+        verification_form = VerificationDocumentForm(request.POST,request.FILES)
+        if verification_form.is_valid():
+            ver_model = VerificationDocument
+            document_type = verification_form.cleaned_data.get('document_type')
+            front_document = verification_form.cleaned_data.get('front_document')
+            back_document = verification_form.cleaned_data.get('back_document')
+            ver_model.objects.create(
+                user = request.user,
+                document_type=document_type,
+                front_document=front_document,
+                back_document=back_document
+            )
+            return redirect('main:dashboard')            
+            # verification_form.save()
+            # time.sleep(40)
+        else:
+            print(verification_form.errors)
+    else:
+        verification_form = VerificationDocumentForm()
+
+    context = {
+        'verification_form': verification_form
+    }
+    return render(request, 'main/id-verification.html', context)
 
 def account_upgrade(request):
     return render(request, 'main/account-upgrade.html')
@@ -187,10 +221,12 @@ def register(request):
         # form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            username = form.cleaned_data.get('username')
+            username = form.cleaned_data.get('email')
             password = form.cleaned_data.get('password1')
+            print(username)
             user_login = authenticate(request,username=username, password=password)
             auth_login(request, user_login)
+            print(auth_login(request, user_login))
             return redirect('main:profile-form')
         else:
             print(form.errors)
@@ -201,58 +237,76 @@ def register(request):
         'form': form
     }
     return render(request, 'main/register.html', context)
-
+import time
 def create_profile(request):
     if request.method == 'POST':
-        reg_form = RegistrationForm(request.POST)
-        profile_form = ProfileForm(request.POST)
-        if reg_form.is_valid() and profile_form.is_valid():
-            user = reg_form.save(commit=False)
-            user.refresh_from_db()
+        # reg_form = RegistrationForm(request.POST)
+        profile_form = ProfileForm(request.POST,instance=request.user, files=request.FILES)
+        if profile_form.is_valid():
+        #     user = get_user_model()
+        #     print(user.objects.get(pk=request.user.user_id))
+        #     print(request.user.user_id)
+        #     user.profile.user = request.user
+        #     # user.profile.user_id = request.user.user_id
+        #     user.profile.first_name = profile_form.cleaned_data.get('first_name')
+        #     user.profile.last_name = profile_form.cleaned_data.get('last_name')
+        #     user.profile.phone_number = profile_form.cleaned_data.get('phone_number')
+        #     user.profile.street_address = profile_form.cleaned_data.get('street_address')
+        #     user.profile.city = profile_form.cleaned_data.get('city')
+        #     user.profile.state = profile_form.cleaned_data.get('state')
+        #     user.profile.postal_or_zip_code = profile_form.cleaned_data.get('postal_or_zip_code')
+        #     user.profile.profile_picture = profile_form.cleaned_data.get('profile_picture')
+        #     user.profile.country = profile_form.cleaned_data.get('country')
+        #     user.profile.select_plan = profile_form.cleaned_data.get('select_plan')
+
+        # if reg_form.is_valid() and profile_form.is_valid():
+            # user = reg_form.save(commit=False)
+            # user.refresh_from_db()
+            # user.profile.first_name = profile_form.cleaned_data.get('first_name')
+            # user.profile.last_name = profile_form.cleaned_data.get('last_name')
+            # user.profile.phone_number = profile_form.cleaned_data.get('phone_number')
+            # user.profile.street_address = profile_form.cleaned_data.get('street_address')
+            # user.profile.city = profile_form.cleaned_data.get('city')
+            # user.profile.state = profile_form.cleaned_data.get('state')
+            # user.profile.postal_or_zip_code = profile_form.cleaned_data.get('postal_or_zip_code')
+            # user.profile.profile_picture = profile_form.cleaned_data.get('profile_picture')
+            # user.profile.country = profile_form.cleaned_data.get('country')
 
             # # TESTING w/ profile model
-            # user = request.user
-            # print(user)
-            # first_name = profile_form.cleaned_data.get('first_name')
-            # last_name = profile_form.cleaned_data.get('last_name')
-            # phone_number = profile_form.cleaned_data.get('phone_number')
-            # street_address = profile_form.cleaned_data.get('street_address')
-            # city = profile_form.cleaned_data.get('city')
-            # state = profile_form.cleaned_data.get('state')
-            # postal_or_zip_code = profile_form.cleaned_data.get('postal_or_zip_code')
-            # profile_picture = profile_form.cleaned_data.get('profile_picture')
-            # country = profile_form.cleaned_data.get('country')
+            user = request.user
+            print(user)
+            first_name = profile_form.cleaned_data.get('first_name')
+            last_name = profile_form.cleaned_data.get('last_name')
+            phone_number = profile_form.cleaned_data.get('phone_number')
+            street_address = profile_form.cleaned_data.get('street_address')
+            city = profile_form.cleaned_data.get('city')
+            state = profile_form.cleaned_data.get('state')
+            postal_or_zip_code = profile_form.cleaned_data.get('postal_or_zip_code')
+            profile_picture = profile_form.cleaned_data.get('profile_picture')
+            country = profile_form.cleaned_data.get('country')
 
-            # Profile.objects.create(
-            #     user=user.user_id, 
-            #     first_name = first_name,
-            #     last_name = last_name,
-            #     phone_number = phone_number, 
-            #     street_address=street_address,
-            #     city = city,
-            #     state = state, 
-            #     postal_or_zip_code = postal_or_zip_code,
-            #     profile_picture = profile_picture,
-            #     country  = country 
-            # )            
+            Profile.objects.create(
+                user=user, 
+                first_name = first_name,
+                last_name = last_name,
+                phone_number = phone_number, 
+                street_address=street_address,
+                city = city,
+                state = state, 
+                postal_or_zip_code = postal_or_zip_code,
+                profile_picture = profile_picture,
+                country  = country 
+            )            
 
-            user.profile.first_name = profile_form.cleaned_data.get('first_name')
-            user.profile.last_name = profile_form.cleaned_data.get('last_name')
-            user.profile.phone_number = profile_form.cleaned_data.get('phone_number')
-            user.profile.street_address = profile_form.cleaned_data.get('street_address')
-            user.profile.city = profile_form.cleaned_data.get('city')
-            user.profile.state = profile_form.cleaned_data.get('state')
-            user.profile.postal_or_zip_code = profile_form.cleaned_data.get('postal_or_zip_code')
-            user.profile.profile_picture = profile_form.cleaned_data.get('profile_picture')
-            user.profile.country = profile_form.cleaned_data.get('country')
+            
 
-            profile_form.save()
+            # profile_form.save()
+            # user.save()
             return redirect('main:dashboard')
         else:
-            print(reg_form.errors)
+            # print(reg_form.errors)
             print(profile_form.errors)
     else:
-        print(request.user.first_name)
         profile_form = ProfileForm()
     context = {
         'profile_form': profile_form

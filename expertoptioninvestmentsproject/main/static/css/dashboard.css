@@ -138,6 +138,10 @@
     border: 3px solid #FDD23D;
     box-shadow: 0 0 60px #FDD23D;
   }
+
+  #verification-image-check {
+    margin: 0 34%;
+  }
 }
 
 /* mobile */

@@ -410,7 +410,8 @@
                     <h3>Welcome, <span class="">User </span></h3>
                 </div>                
             </div>
-
+            
+             <h3>Hi, {{ request.user.email }} </h3>
             <div class="container">
                 <form action="" class="form-group" method="POST">
                     {% csrf_token %}

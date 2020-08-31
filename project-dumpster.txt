@@ -5,7 +5,7 @@ source ~/Documents/web_projects/venv/bin/activate && cd expertoptioninvestmentsp
 python manage.py makemigrations && python manage.py migrate
 
 # production and development setting for migrations 
-python manage.py makemigrations --setting=expertoptioninvestmentsproject.settings.development
+python manage.py makemigrations --setting=expertoptioninvestmentsproject.settings.development && python manage.py migrate --setting=expertoptioninvestmentsproject.settings.development
 
 
 CREATE DATABASE expertoptioninvestments;
@@ -27,8 +27,9 @@ After=network.target
 [Service]
 User=trader
 Group=www-data
-WorkingDirectory=/home/trader/trading-site/superiortraders
-ExecStart=/home/trader/venv/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/trader/superiortraders.sock superiortraders.wsgi:application
+Enviroment="DJANGO_SETTINGS_MODULE=expertoptioninvestmentsproject.settings.production"
+WorkingDirectory=/home/trader/trading-site/expertoptioninvestmentsproject
+ExecStart=/home/trader/venv/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/trader/expertoptioninvestmentsproject.sock expertoptioninvestmentsproject.wsgi:application
 
 [Install]
 WantedBy=multi-user.target
@@ -46,7 +47,7 @@ server {
 
     location / {
         include proxy_params;
-        proxy_pass http://unix:/home/trader/superiortraders.sock;
+        proxy_pass http://unix:/home/trader/expertoptioninvestmentsproject.sock;
     }
 }
 

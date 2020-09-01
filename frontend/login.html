@@ -16,7 +16,7 @@
 
     <!-- project css -->
     <link rel="stylesheet" href="./static/css/main.css">
-    <link rel="stylesheet" href="./static/css/sam.css">
+    <link rel="stylesheet" href="./static/css/edit.css">
     <!-- fontawesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
 
@@ -52,11 +52,9 @@
       <div id="login-form">
         <h1 class="text-center" id="register-header">Login</h1>
         <div class="form-bg" id="login-form-action">
-          <form action="" class="mx-5">
-            <div>
-              <div class="form-group">
-              <input type="email" name="" id="reg-email-input" class="form-control" placeholder="E-mail" required>
-              </div>
+          <form action="" class="mx-5" id="form-action">
+            <div class="form-group">
+            <input type="email" name="" id="reg-email-input" class="form-control" placeholder="E-mail" required>
             </div>
             <div>
               <div>
@@ -64,43 +62,46 @@
               </div>
             </div>
               <!-- forgot password -->
-              <a href=""  id="forgot-password">Forgot password?</a>
-              <div class="css-1ry0z4">
-                <button type="submit" class="btn btn-primary bttn" id="login-login-button">Login</button>
+              <div id="form-action">
+                <a href=""  id="forgot-password">Forgot password?</a>
+                <button type="submit" class="btn btn-primary float-right" id="login-button">Login</button>
               </div>
               <section class="facebook-and-google-button">
-                <a><button class="btn btn-primary" id="facebook-button">Facebook</button></a>
-                <a><button class="btn btn-danger" id="google-button">Google</button></a>
+                <div class="row">
+                  <div class="col-lg-6 d-flex align-items-center">
+                    <a class="btn btn-primary btn-small" id="facebook-login-button">Facebook</a>
+                    <a class="btn btn-danger btn-small" id="google-login-button">Google</a>
+                  </div>
+                </div>
               </section>
           </form>
         </div>
         <a href="" class="mx-auto">Real account</a>
       </div>
       <!-- footer section  -->
-      <footer>
-        <div class="footer">
+      <footer class="container">
+        <div class="col-lg" id="footer">
           <div class="row" id="footer-row">
             <div class="col-lg-4" id="company-footer-text">
                 <img src="../frontend/static/images/logos/full-exp-opt-logo.png" alt="expert option investment logo" id="footer-logo" class="desktop">
                 <img src="../frontend/static/images/logos/full-exp-opt-logo.png" alt="expert option investment logo" id="footer-logo" class="mobile">
                    <h3>Expert Option Investments</h3>
               <p class=" my-3">
-                Company provides services to everyone across the globe. <br>
-              </p>
-              <p class=" my-3">
+                Company provides servies to everyone across the globe.
+                <br>
                 Making trading available and accessible to everyone is and continues to be our # 1 goal and priority.
               </p>
             </div>
-            <div class="col-lg-2" id="home-footer">
+            <div class="col-lg-2 footer-links" id="home-footer">
               <h4>Home</h4>
               <a href="">Login</a>
               <a href="">Create Account</a>
             </div>
-            <div class="col-lg-2" id="trading-footer">
+            <div class="col-lg-2 footer-links" id="trading-footer">
               <h4>Trading</h4>
               <a href="">Account Types</a>
             </div>
-            <div class="col-lg-2" id="company-footer">
+            <div class="col-lg-2 footer-links" id="company-footer">
               <h4>Company</h4>
               <a href="">About Company</a>
               <a href="">Terms</a>
@@ -116,8 +117,8 @@
       </footer>
       <!-- disclaimer part -->
       <div id="disclaimer-portion">
-        <div class="disclaimer">
-          <div class="disclaimer-row">
+        <div class=" container disclaimer">
+          <div class="row disclaimer-row">
             <div class="col-lg-9 my-3" id="trading-involves">
               <p>Trading and investing involves significant level of risk and is not suitable and/or appropriate for all clients. Please make sure you carefully consider your investment objectives, level of experience and risk appetite before buying or selling. Buying or selling entails financial risks and could result in a partial or complete loss of your funds, therefore, you should not invest funds you cannot afford to lose. You should be aware of and fully understand all the risks associated with trading and investing, and seek advice from an independent financial advisor if you have any doubts. You are granted limited non-exclusive rights to use the IP contained in this site for personal, non-commercial, non-transferable use only in relation to the services offered on the site.</p>
             </div>
@@ -129,10 +130,8 @@
                 <i class="fab fa-facebook-square"></i>
                 <i class="fab fa-instagram-square"></i>
                 <i class="fab fa-youtube"></i>
+              </p>
               </span>
-            </div>
-            <div class="built-with">
-              <p>Built with &#128040; from A1-Technologies</p>
             </div>
           </div>
         </div>

@@ -30,8 +30,7 @@ After=network.target
 [Service]
 User=trader
 Group=www-data
-Enviroment="DJANGO_SETTINGS_MODULE=expertoptioninvestmentsproject.settings.production"
-WorkingDirectory=/home/trader/trading-site/expertoptioninvestmentsproject/
+WorkingDirectory=/home/trader/trading-site/expertoptioninvestmentsproject
 ExecStart=/home/trader/venv/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/trader/expertoptioninvestmentsproject.sock expertoptioninvestmentsproject.wsgi:application
 
 [Install]

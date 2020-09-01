@@ -25,7 +25,7 @@ SECRET_KEY = 'n+n%kq+pewhtcbqlw=eg-(@0vi@3%4b(a&6q+q6h42j==c09am'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','165.22.227.225']
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','165.22.227.225', 'expertoptioninvestments.com']
 
 
 # Application definition

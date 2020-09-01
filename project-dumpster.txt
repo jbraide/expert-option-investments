@@ -2,10 +2,13 @@
 source ~/Documents/web_projects/venv/bin/activate && cd expertoptioninvestmentsproject && python manage.py runserver
 source ~/Documents/web_projects/venv/bin/activate && cd expertoptioninvestmentsproject && python manage.py runserver --setting=expertoptioninvestmentsproject.settings.development
 
-python manage.py makemigrations && python manage.py migrate
 
 # production and development setting for migrations 
+python manage.py makemigrations && python manage.py migrate
 python manage.py makemigrations --setting=expertoptioninvestmentsproject.settings.development && python manage.py migrate --setting=expertoptioninvestmentsproject.settings.development
+
+# creating superuser
+python manage.py createsuperuser --setting=expertoptioninvestmentsproject.settings.development
 
 
 CREATE DATABASE expertoptioninvestments;
@@ -27,7 +30,6 @@ After=network.target
 [Service]
 User=trader
 Group=www-data
-Enviroment="DJANGO_SETTINGS_MODULE=expertoptioninvestmentsproject.settings.production"
 WorkingDirectory=/home/trader/trading-site/expertoptioninvestmentsproject
 ExecStart=/home/trader/venv/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/trader/expertoptioninvestmentsproject.sock expertoptioninvestmentsproject.wsgi:application
 

@@ -15,8 +15,8 @@
 
 
     <!-- project css -->
-    <link rel="stylesheet" href="./static/css/main.css">
-    <link rel="stylesheet" href="./static/css/sam.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/sam.css">
 
     <!-- fontawesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
@@ -53,8 +53,10 @@
       <div id="registration-form">
         <h1 class="text-center" id="register-header">Register</h1>
         <div class="form-bg" id=registration-form-action>
-          <form action="" class="mx-5 1w2d6bn ">
-            <div class="form-group">
+          <form action="" class="mx-5 1w2d6bn" method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <!-- <div class="form-group">
               <input type="email" name="" id="reg-email-input" class="form-control" placeholder="E-mail" required>
             </div>
             <div>
@@ -69,12 +71,12 @@
                   <input type="checkbox" tabindex="0" class="checkbox-input">
                   I accept Terms &amp; conditions, Privacy policy
                 </label>
-              </div>
-              <!-- <div class="css-1ry0z4" id="button"> -->
-                <button class="btn btn-primary open-account-button btn-block" id="">
+              </div> -->
+              
+                <button type="submit" class="btn btn-primary open-account-button btn-block" id="">
                   Open Account
                 </button>
-              <!-- </div> -->
+              
               <br>
             </div>            
             <section class="facebook-and-google-button">

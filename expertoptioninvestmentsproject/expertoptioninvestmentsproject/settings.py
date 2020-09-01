@@ -25,7 +25,7 @@ SECRET_KEY = 'n+n%kq+pewhtcbqlw=eg-(@0vi@3%4b(a&6q+q6h42j==c09am'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','165.22.227.225']
 
 
 # Application definition
@@ -74,19 +74,19 @@ WSGI_APPLICATION = 'expertoptioninvestmentsproject.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'expertoptioninvestments',
+        'USER': 'expert',
+        'PASSWORD': 'expertoptioninvestments',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
 
 # Password validation
-# https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -104,7 +104,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Internationalization
-# https://docs.djangoproject.com/en/2.2/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
@@ -130,3 +129,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 AUTH_USER_MODEL = 'main.CustomUser'
 
 # adding phone number 
+
+# login success 
+LOGIN_REDIRECT_URL =  'main:dashboard'

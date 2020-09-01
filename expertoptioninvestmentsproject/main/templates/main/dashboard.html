@@ -95,7 +95,11 @@
                                             </div>
                                             <div class="col-lg-9">
                                                 <h4 class="dashboard-display-header">INVESTED</h4>
-                                                <h5>$ 0</h5>
+                                                {% if  invested.amount %}
+                                                    <h5>$ {{ invested.amount }} </h5>
+                                                {% else %}
+                                                    <h5>$ 0</h5>                                                  
+                                                {% endif %}
                                             </div>
                                         </div>
                                 </div>
@@ -108,7 +112,11 @@
                                             </div>
                                             <div class="col-lg-9">
                                                 <h4 class="dashboard-display-header">BTC BAL</h4>
-                                                <h5>0.0000</h5>
+                                                {% if  btc_balance.amount %}
+                                                <h5>$ {{ btc_balance.amount }} </h5>
+                                                {% else %}
+                                                    <h5>0.0000</h5>                                                  
+                                                {% endif %}                                                
                                             </div>
                                         </div>
                                     </div>
@@ -120,8 +128,12 @@
                                                 <i class="fas fa-caret-down dashboard-icon-resize"></i>
                                             </div>
                                             <div class="col-lg-9">
-                                                <h4 class="dashboard-display-header">REF BONUS</h4>
-                                                <h5>$ 0</h5>
+                                                <h4 class="dashboard-display-header">Daily Investments</h4>
+                                                {% if daily_investments.amount %}
+                                                    <h5>$ {{ daily_investments.amount }} </h5>
+                                                {% else %}
+                                                    <h5>$ 0.00</h5>
+                                                {% endif %}
                                             </div>
                                         </div>
                                     </div>
@@ -170,7 +182,11 @@
                                                 </div>
                                                 <div class="col-lg-9">
                                                     <h4 class="dashboard-display-header">TYPE</h4>
+                                                    {% if request.user.profile.select_plan %}
                                                     <h5 class="error">{{ request.user.profile.select_plan }}</h5>
+                                                    {% else %}
+                                                    <h5 class="error">Mini</h5>
+                                                    {% endif %}
                                                 </div>
                                             </div>
                                         </div>
@@ -183,7 +199,11 @@
                                                 </div>
                                                 <div class="col-lg-9">
                                                     <h4 class="dashboard-display-header">SIGNAL</h4>
-                                                    <h5>$ 0</h5>
+                                                    {% if signals.amount %}
+                                                        <h5>$ {{ signals.amount }}</h5>
+                                                    {% else %}
+                                                        <h5>$ 0</h5>
+                                                    {% endif %}
                                                 </div>
                                             </div>
                                         </div>
@@ -196,8 +216,8 @@
                 <!-- mobile view of dashboard details -->
                 <div class="mobile">
                         <div class="row text-center pt-4">
-                            <!-- bal, invested, btc bal, ref bonus -->
-                        <!-- balance / invested / btc bal / Ref Bonus ... signals -->
+                            <!-- bal, invested, btc bal, Daily Investments -->
+                        <!-- balance / invested / btc bal / Daily Investments ... signals -->
                         <div class="col-lg-6">
                             <div class="">
                                 <div class="row owl-carousel owl-theme ">
@@ -209,7 +229,11 @@
                                                 </div>
                                                 <div class="col-lg-9">
                                                     <h4 class="dashboard-display-header">BALANCE</h4>
-                                                    <h5>$ 0</h5>
+                                                    {% if balance.amount %}
+                                                    <h5>$ {{ balance.amount }} </h5>
+                                                    {% else %}
+                                                    <h5> $ 0 </h5>
+                                                    {% endif %}
                                                 </div>
                                             </div>
                                         </div>
@@ -222,7 +246,11 @@
                                                 </div>
                                                 <div class="col-lg-9">
                                                     <h4 class="dashboard-display-header">INVESTED</h4>
-                                                    <h5>$ 0</h5>
+                                                    {% if  invested.amount %}
+                                                    <h5>$ {{ invested.amount }} </h5>
+                                                    {% else %}
+                                                        <h5>$ 0</h5>                                                  
+                                                    {% endif %}
                                                 </div>
                                             </div>
                                     </div>
@@ -235,7 +263,11 @@
                                                 </div>
                                                 <div class="col-lg-9">
                                                     <h4 class="dashboard-display-header">BTC BAL</h4>
-                                                    <h5>0.0000</h5>
+                                                    {% if  btc_balance.amount %}
+                                                    <h5>$ {{ btc_balance.amount }} </h5>
+                                                    {% else %}
+                                                        <h5>0.0000</h5>                                                  
+                                                    {% endif %} 
                                                 </div>
                                             </div>
                                         </div>
@@ -247,8 +279,12 @@
                                                     <i class="fas fa-caret-down dashboard-icon-resize"></i>
                                                 </div>
                                                 <div class="col-lg-9">
-                                                    <h4 class="dashboard-display-header">REF BONUS</h4>
-                                                    <h5>$ 0</h5>
+                                                    <h4 class="dashboard-display-header">Daily Investments</h4>
+                                                    {% if daily_investments.amount %}
+                                                    <h5>$ {{ daily_investments.amount }} </h5>
+                                                    {% else %}
+                                                        <h5>$ 0.00</h5>
+                                                    {% endif %}
                                                 </div>
                                             </div>
                                         </div>
@@ -267,7 +303,11 @@
                                                     </div>
                                                     <div class="col-lg-9">
                                                         <h4 class="dashboard-display-header">STATUS</h4>
+                                                        {% if request.user.verificationdocument.verified %}
+                                                        <h5>Verified</h5>
+                                                        {% else %}
                                                         <h5>Unverified</h5>
+                                                        {% endif %}
                                                     </div>
                                                 </div>
                                             </div>
@@ -280,7 +320,7 @@
                                                     </div>
                                                     <div class="col-lg-9">
                                                         <h4 class="dashboard-display-header">CURRENCY</h4>
-                                                        <h5>$ 0</h5>
+                                                        <h5>USD</h5>
                                                     </div>
                                                 </div>
                                         </div>
@@ -294,7 +334,11 @@
                                                     </div>
                                                     <div class="col-lg-9">
                                                         <h4 class="dashboard-display-header">TYPE</h4>
-                                                        <h5 class="error">Starter</h5>
+                                                        {% if request.user.profile.select_plan %}
+                                                        <h5 class="error">{{ request.user.profile.select_plan }}</h5>
+                                                        {% else %}
+                                                        <h5 class="error">Mini</h5>
+                                                        {% endif %}
                                                     </div>
                                                 </div>
                                             </div>
@@ -307,7 +351,11 @@
                                                     </div>
                                                     <div class="col-lg-9">
                                                         <h4 class="dashboard-display-header">SIGNAL</h4>
-                                                        <h5>$ 0</h5>
+                                                        {% if signals.amount %}
+                                                        <h5>$ {{ signals.amount }}</h5>
+                                                        {% else %}
+                                                            <h5>$ 0</h5>
+                                                        {% endif %}
                                                     </div>
                                                 </div>
                                             </div>
@@ -365,6 +413,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- show chart on verified -->
             {% if request.user.verificationdocument.verified %}
             <!-- 
                 Chart things 
@@ -555,6 +605,7 @@
                     
                 </div>
             </div>
+            <!-- else display verification form for login -->
             {% else %}
         <!-- verification form  -->
             <div class="container mb-4">

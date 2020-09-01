@@ -1,0 +1,26 @@
+
+/* verification section  */
+.breadcrums li a:before {
+    content: '/';
+    color: #768387;
+    position: absolute;
+    right: -13px;
+    top: 0;
+}
+
+.verification-image {
+     left: 300px;
+ }
+
+ .verify-account-text {
+     font-size: 18px;
+ }
+ 
+
+ .user-profile-text {
+     font-size: 18px;
+ }
+
+ .user-profile-image {
+     width: 30px;
+ }

@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Profile, Balance, InvestedAmount, AccountType, Signals, BTCAddress, VerificationDocument
+from .models import Profile, Balance, InvestedAmount, Signals, BTCbalance, VerificationDocument
+from .models import DailyInvestments
 
 '''
     custom user admin fieldset
@@ -10,29 +11,38 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as DjangoUserAdmin
 from django.utils.translation import ugettext_lazy as _
 
-from .models import User
+from .models import CustomUser
+from .forms  import RegistrationForm
 
 
-@admin.register(User)
-class UserAdmin(DjangoUserAdmin):
+@admin.register(CustomUser)
+class CustomUserAdmin(DjangoUserAdmin):
     """Define admin model for custom User model with no email field."""
 
-    fieldsets = (
+    DjangoUserAdmin.fieldsets = (
         (None, {'fields': ('email', 'password')}),
         (_('Personal info'), {'fields': ('first_name', 'last_name')}),
         (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser',
                                        'groups', 'user_permissions')}),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
     )
+    add_form = RegistrationForm
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
             'fields': ('email', 'password1', 'password2'),
         }),
     )
-    list_display = ('email', 'first_name', 'last_name', 'is_staff')
-    search_fields = ('email', 'first_name', 'last_name')
+    # add_form = RegistrationForm
+    # CUSTOM USER 1
+    list_display = ('email',)
+    search_fields = ('email',)
     ordering = ('email',)
+
+    # CUSTOM USER 2
+    # list_display = ('email', 'first_name', 'last_name', 'is_staff')
+    # search_fields = ('email', 'first_name', 'last_name')
+    # ordering = ('email',)
 
 
 ''' 
@@ -51,23 +61,26 @@ class BalanceAdmin(admin.ModelAdmin):
 @admin.register(InvestedAmount)
 class InvestedAmountAdmin(admin.ModelAdmin):
     list_display = ['user','amount',]
-    
-@admin.register(AccountType)
-class AccountTypeAdmin(admin.ModelAdmin):
-    list_display = ['user', 'type']
 
 @admin.register(Signals)
 class SignalsAdmin(admin.ModelAdmin):
     list_display = ['user','amount',]
 
-@admin.register(BTCAddress)
-class BTCAddressAdmin(admin.ModelAdmin):
-    list_display = ['address', ]
+@admin.register(BTCbalance)
+class BTCbalanceAdmin(admin.ModelAdmin):
+    list_display = ['user', 'amount']
 
 # verfication documents
 @admin.register(VerificationDocument)
 class VerificationDocumentAdmin(admin.ModelAdmin):
     list_display = ['user',]
+
+# btc balance
+@admin.register(DailyInvestments)
+class DailyInvestmentsAdmin(admin.ModelAdmin):
+    list_display = ['user', 'amount']
+    
+
     
 
     

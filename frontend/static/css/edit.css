@@ -366,9 +366,10 @@ h2 {
     color: #a9b5cb;
 }
 
-p {
+p, li {
     margin-top: 0px;
     margin-bottom: 1em;
+    color: #a9b5cb;
 }
 
 /* end of the first "about section" 

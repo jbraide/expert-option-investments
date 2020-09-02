@@ -35,16 +35,16 @@ ExecStart=/home/trader/venv/bin/gunicorn --access-logfile - --workers 3 --bind u
 
 [Install]
 WantedBy=multi-user.target
-
+ssh root@165.22.227.225
 
 # nginx 
 server {
     listen 80;
-    server_name superior-traders.com;
+    server_name expertoptioninvestments.com;
 
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {
-        root /home/trader/trading-site;
+        root /home/trader/trading-site/expertoptioninvestmentsproject;
     }
 
     location / {

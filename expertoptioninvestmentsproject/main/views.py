@@ -60,13 +60,39 @@ def dashboard(request):
     invested = InvestedAmount.objects.filter(user=user).aggregate(amount=Sum('amount'))
     btc_balance = BTCbalance.objects.filter(user=user).aggregate(amount=Sum('amount'))
     daily_investments = DailyInvestments.objects.filter(user=user).aggregate(amount=Sum('amount'))
-   
+
+    # id verification logic
+    if request.method == 'POST':
+        verification_form = VerificationDocumentForm(request.POST,request.FILES)
+        if verification_form.is_valid():
+            # verification model 
+            ver_model = VerificationDocument
+            
+            # collect form data
+            document_type = verification_form.cleaned_data.get('document_type')
+            front_document = verification_form.cleaned_data.get('front_document')
+            back_document = verification_form.cleaned_data.get('back_document')
+
+            # pass form data to the model
+            ver_model.objects.create(
+                user = request.user,
+                document_type=document_type,
+                front_document=front_document,
+                back_document=back_document
+            )
+            return redirect('main:dashboard')  
+        else:
+            print(verification_form.errors)
+    else:
+        verification_form = VerificationDocumentForm()
+
     context = {
         'balance': balance, 
         'signals': signals_amount, 
         'invested': invested,
         'btc_balance': btc_balance,
-        'daily_investments': daily_investments 
+        'daily_investments': daily_investments, 
+        'verification_form': verification_form
     }
     return render(request, 'main/dashboard.html', context)
 
@@ -123,11 +149,13 @@ from django.contrib.auth import get_user_model
 from .models import CustomUser
 
 def id_verification(request):
-    # user = CustomUser
     if request.method == 'POST':
         verification_form = VerificationDocumentForm(request.POST,request.FILES)
         if verification_form.is_valid():
+            # verification model
             ver_model = VerificationDocument
+
+            # collect form data
             document_type = verification_form.cleaned_data.get('document_type')
             front_document = verification_form.cleaned_data.get('front_document')
             back_document = verification_form.cleaned_data.get('back_document')
@@ -137,9 +165,7 @@ def id_verification(request):
                 front_document=front_document,
                 back_document=back_document
             )
-            return redirect('main:dashboard')            
-            # verification_form.save()
-            # time.sleep(40)
+            return redirect('main:dashboard')
         else:
             print(verification_form.errors)
     else:
@@ -156,63 +182,6 @@ def account_upgrade(request):
 
 ''' account setup '''
 '''         registration / logout            '''
-
-
-# registration route
-# def register(request):
-#     if request.method == 'POST':
-#         form = RegistrationForm(request.POST)
-#         # profile = ProfileForm(request.POST, instance=request.user.profile, files=request.FILES)
-#         if form.is_valid():
-#             user = form.save()
-#             user.refresh_from_db()
-#             username = form.cleaned_data.get('username')
-#             password = form.cleaned_data.get('password1')
-#             user_login = authenticate(request,username=username, password=password)
-#             auth_login(request, user_login)
-
-#             return redirect('main:profile-form')
-#         else:
-#             print(form.errors)
-
-
-#             # # profile creation test
-#             # first_name = form.cleaned_data.get('first_name')
-#             # last_name = form.cleaned_data.get('last_name')
-#             # email = form.cleaned_data.get('email')
-#             # profile_picture = form.cleaned_data.get('profile_picture')
-#             # country = form.cleaned_data.get('country') 
-
-
-#             # Profile.objects.create()
-
-#             # if profile.is_valid():
-#             #     user.profile.first_name = form.cleaned_data.get('first_name')
-#             #     user.profile.last_name = form.cleaned_data.get('last_name')
-#             #     user.profile.email = form.cleaned_data.get('email')
-#             #     user.profile.profile_picture = form.cleaned_data.get('profile_picture')
-#             #     user.profile.country = form.cleaned_data.get('country')
-
-#             #     user.save()
-#             #     profile.save()
-#             #     return redirect('main:dashboard')
-        
-#             # else:
-#             #     print('Something went wrong')
-#             #     print(form.errors)
-#             #     print(profile.errors)
-
-
-#     else:
-#         form = RegistrationForm()
-#         # profile = ProfileForm()
-#     context = {
-#         'form': form, 
-#         # 'profile': profile
-#     }
-#     return render(request, 'main/register.html', context)
-
-
 # custom registration route
 from django.contrib.auth.forms import UserCreationForm
 def register(request):
@@ -237,44 +206,16 @@ def register(request):
         'form': form
     }
     return render(request, 'main/register.html', context)
+
+# create profile with the registration data 
 import time
 def create_profile(request):
+    # POST request form logic
     if request.method == 'POST':
-        # reg_form = RegistrationForm(request.POST)
+        # request user instance
         profile_form = ProfileForm(request.POST,instance=request.user, files=request.FILES)
         if profile_form.is_valid():
-        #     user = get_user_model()
-        #     print(user.objects.get(pk=request.user.user_id))
-        #     print(request.user.user_id)
-        #     user.profile.user = request.user
-        #     # user.profile.user_id = request.user.user_id
-        #     user.profile.first_name = profile_form.cleaned_data.get('first_name')
-        #     user.profile.last_name = profile_form.cleaned_data.get('last_name')
-        #     user.profile.phone_number = profile_form.cleaned_data.get('phone_number')
-        #     user.profile.street_address = profile_form.cleaned_data.get('street_address')
-        #     user.profile.city = profile_form.cleaned_data.get('city')
-        #     user.profile.state = profile_form.cleaned_data.get('state')
-        #     user.profile.postal_or_zip_code = profile_form.cleaned_data.get('postal_or_zip_code')
-        #     user.profile.profile_picture = profile_form.cleaned_data.get('profile_picture')
-        #     user.profile.country = profile_form.cleaned_data.get('country')
-        #     user.profile.select_plan = profile_form.cleaned_data.get('select_plan')
-
-        # if reg_form.is_valid() and profile_form.is_valid():
-            # user = reg_form.save(commit=False)
-            # user.refresh_from_db()
-            # user.profile.first_name = profile_form.cleaned_data.get('first_name')
-            # user.profile.last_name = profile_form.cleaned_data.get('last_name')
-            # user.profile.phone_number = profile_form.cleaned_data.get('phone_number')
-            # user.profile.street_address = profile_form.cleaned_data.get('street_address')
-            # user.profile.city = profile_form.cleaned_data.get('city')
-            # user.profile.state = profile_form.cleaned_data.get('state')
-            # user.profile.postal_or_zip_code = profile_form.cleaned_data.get('postal_or_zip_code')
-            # user.profile.profile_picture = profile_form.cleaned_data.get('profile_picture')
-            # user.profile.country = profile_form.cleaned_data.get('country')
-
-            # # TESTING w/ profile model
-            user = request.user
-            print(user)
+            # gather profile form data
             first_name = profile_form.cleaned_data.get('first_name')
             last_name = profile_form.cleaned_data.get('last_name')
             phone_number = profile_form.cleaned_data.get('phone_number')
@@ -284,9 +225,15 @@ def create_profile(request):
             postal_or_zip_code = profile_form.cleaned_data.get('postal_or_zip_code')
             profile_picture = profile_form.cleaned_data.get('profile_picture')
             country = profile_form.cleaned_data.get('country')
+            
+            '''fetch profile of currently registered and logged in user first'''
+            # request user
+            user = request.user
+            # filter by UUID and match the user that has been created from the registration
+            profile_user = Profile.objects.filter(user_id=user.user_id)
 
-            Profile.objects.create(
-                user=user, 
+            # update the users profile with the required form data
+            profile_user.update(
                 first_name = first_name,
                 last_name = last_name,
                 phone_number = phone_number, 
@@ -296,25 +243,29 @@ def create_profile(request):
                 postal_or_zip_code = postal_or_zip_code,
                 profile_picture = profile_picture,
                 country  = country 
-            )            
+            )
 
-            
+            # save the profile data to the form model 
+            profile_form.save()
 
-            # profile_form.save()
-            # user.save()
+            # redirect to the dashboard
             return redirect('main:dashboard')
+
         else:
-            # print(reg_form.errors)
+            # print profile form errors to the console
             print(profile_form.errors)
     else:
+        # GET profile form
         profile_form = ProfileForm()
     context = {
         'profile_form': profile_form
     }
     return render(request, 'main/profile.html', context)
+
 # logout route
 @login_required(login_url='/accounts/login')
 def logout_view(request):
+    # logout user
     logout(request)
     return redirect('main:index')
 

@@ -1,5 +1,6 @@
 {% extends "dashboard/dashboard-base.html" %}
 {% block dashboard %}
+{% load widget_tweaks %}
   
     <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
 
@@ -65,16 +66,116 @@
                 </div>                
             </div>
             
-            <div class="container">
-                <form action="" class="form-group" method="POST">
+            <!-- profile form beginning -->
+            <div id="profile-create-form" class="container">
+                <h3 class="text-center">Enter your Details to Create a Profile</h3>
+                <!-- profile  form -->
+                <form action="" class="form-group" method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
-                    {{ profile_form }}
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
-        
-            
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label for=""> First Name</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text fas fa-user"></span>
+                                </div>
+                                {{ profile_form.first_name|add_class:'form-control' }}
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <label for=""> Last Name</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text fas fa-user"></span>
+                                </div>
+                                {{ profile_form.last_name|add_class:"form-control" }}
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <label for=""> Phone Number</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text fas fa-phone"></span>
+                                </div>
+                                {{ profile_form.phone_number|add_class:"form-control" }}
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <label for=""> Postal or Zip Code</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text fas fa-map-pin"></span>
+                                </div>                                
+                                {{ profile_form.postal_or_zip_code|add_class:"form-control" }}
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <label for=""> Street Address</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text fas fa-road"></span>
+                                </div>
+                                {{ profile_form.street_address|add_class:"form-control" }}
+                                
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <label for=""> City</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text fas fa-search-location"></span>
+                                </div>
+                                {{ profile_form.city|add_class:"form-control" }}
 
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <label for=""> State</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text fas fa-"></span>
+                                </div>
+                                {{ profile_form.state|add_class:"form-control" }}
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <label for=""> Country</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text fas fa-flag"></span>
+                                </div>
+                                {{ profile_form.country|add_class:"form-control" }}
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <label for=""> profile Picture</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text fas fa-users"></span>
+                                </div>
+                                {{ profile_form.profile_picture|add_class:"form-control" }}
+
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <label for=""> Select Plan</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text fas fa-bars"></span>
+                                </div>
+                                {{ profile_form.select_plan|add_class:"form-control" }}
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 my-4">
+                            <button class="btn btn-success btn-block flat-button">Create Profile</button>
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>           
+            <!-- end of profile form -->
+        
             <!-- end of dashboard content -->
         </main>
         <!-- page-content" -->

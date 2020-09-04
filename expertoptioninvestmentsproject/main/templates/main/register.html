@@ -53,9 +53,15 @@
       <div id="registration-form">
         <h1 class="text-center" id="register-header">Register</h1>
         <div class="form-bg" id=registration-form-action>
-          <form action="" class="mx-5" id="form-action">
+          <form action="" class="mx-5" id="form-action" method="POST">
             {% csrf_token %}
-            {{ form }}
+            <label for="">Email</label>
+            {{ form.email }}
+            <label for="">Password</label>
+            {{ form.password1 }}
+            <label for="">Password Confirmation: </label>
+            {{ form.password2 }}
+
             <!-- <div class="form-group">
               <input type="email" name="" id="reg-email-input" class="form-control" placeholder="E-mail" required>
             </div>

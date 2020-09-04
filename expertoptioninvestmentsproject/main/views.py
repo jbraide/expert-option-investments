@@ -36,13 +36,17 @@ def about(request):
 # account types
 def account_type(request):
     return render(request, 'main/account-types.html')  
+# Privacy Policy
+def privacy_policy(request):
+    return render(request, 'main/privacy-policy.html')
 
+# payment policy
 def payment_policy(request):
-    return render(request, 'main/payment-policy.html') #not completed
+    return render(request, 'main/payment-policy.html')
 
 # terms and conditions
-def t_and_c(request):
-    return render(request,'main/terms-and-conditions.html') #not completed
+def terms_and_condition(request):
+    return render(request,'main/terms-and-conditions.html')
 
 
 ''' views with logic '''

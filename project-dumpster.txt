@@ -10,6 +10,7 @@ python manage.py makemigrations --setting=expertoptioninvestmentsproject.setting
 # creating superuser
 python manage.py createsuperuser --setting=expertoptioninvestmentsproject.settings.development
 
+ssh root@165.22.227.225
 
 CREATE DATABASE expertoptioninvestments;
 CREATE USER expert WITH PASSWORD 'expertoptioninvestments';
@@ -35,7 +36,7 @@ ExecStart=/home/trader/venv/bin/gunicorn --access-logfile - --workers 3 --bind u
 
 [Install]
 WantedBy=multi-user.target
-ssh root@165.22.227.225
+
 
 # nginx 
 server {

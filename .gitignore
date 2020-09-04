@@ -1,1 +1,3 @@
-project-dumpster.txt
+*project-dumpster.txt
+.vscode
+*/media

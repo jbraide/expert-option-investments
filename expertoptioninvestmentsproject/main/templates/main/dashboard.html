@@ -1,5 +1,6 @@
 {% extends "dashboard/dashboard-base.html" %}
 {% block dashboard %} 
+{% load widget_tweaks %}
 
     <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
 
@@ -622,6 +623,7 @@
                     </div>
                     <div id="verification-form">
                         <form action="" class="form-group" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
                             <div class="row">
                                 <!-- document type -->
                                 <div class="col-lg-3">
@@ -630,7 +632,7 @@
                                     </label>
                                 </div>
                                 <div class="col-lg-9">
-                                   <input type="text" class="form-control verification-form-main" placeholder="Enter Type (e.g Drivers License)"> 
+                                    {{ verification_form.document_type|add_class:"form-control verification-form-main" }}
                                 </div>
 
                                 <!-- Document front page -->
@@ -640,7 +642,7 @@
                                     </label>
                                 </div>
                                 <div class="col-lg-9">
-                                   <input type="file" class="form-control verification-form-main mt-2"> 
+                                    {{ verification_form.front_document|add_class:"form-control verification-form-main mt-2" }}
                                 </div>
 
                                 <!-- document back page -->
@@ -650,7 +652,7 @@
                                     </label>
                                 </div>
                                 <div class="col-lg-9">
-                                   <input type="file" class="form-control verification-form-main mt-3"> 
+                                    {{ verification_form.back_document|add_class:"form-control verification-form-main mt-3" }}
                                    <button class="btn btn-success btn-block mt-4 flat-button verify-account-button">Verify My Account</button>
                                 </div>
                             </div>

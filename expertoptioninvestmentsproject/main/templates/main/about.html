@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+      <!-- bootstrap -->
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <!-- project css -->
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/edit.css">
+
+    <!-- fontawesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
+
+    <!--  google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap" rel="stylesheet">
+
+    <!-- animate css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <!-- wow js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+  <!-- Resources -->
+  <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+  <script src="https://cdn.amcharts.com/lib/4/maps.js"></script>
+  <script src="https://cdn.amcharts.com/lib/4/geodata/worldLow.js"></script>
+  <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+    <!-- wave js -->
+    <script src="./static/js/wave.js"></script>
+    <!-- main js file -->
+    <script src="./static/js/main.js"></script>
+
+    <!-- Chart code -->
+<script>
+// waves js
+var waveAnimation = new Wave('body', {
+  number: 3,
+  smooth: 50,
+  velocity: 2,
+  height: .2,
+  colors: ['#f1f1f1'],
+  border: {
+    show: false,
+    width: 2, 
+    color: ['']
+  }, 
+  opacity: 6, 
+  position: 'bottom'
+
+} )
+waveAnimation.animate()
+
+
+am4core.ready(function() {
+
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+// Create map instance
+var chart = am4core.create("chartdiv", am4maps.MapChart);
+
+// Set map definition
+chart.geodata = am4geodata_worldLow;
+
+// Set projection
+chart.projection = new am4maps.projections.NaturalEarth1();
+chart.panBehavior = "rotateLong";
+
+// Create map polygon series
+var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
+
+// Make map load polygon (like country names) data from GeoJSON
+polygonSeries.useGeodata = true;
+
+polygonSeries.mapPolygons.template.fillOpacity = 0.6;
+polygonSeries.mapPolygons.template.nonScalingStroke = true;
+polygonSeries.mapPolygons.template.strokeWidth = 0.5;
+polygonSeries.mapPolygons.template.adapter.add("fill", function(fill, target) {
+    return chart.colors.getIndex(Math.round(Math.random() * 4)).saturate(0.3);
+})
+
+// Configure series
+var polygonTemplate = polygonSeries.mapPolygons.template;
+polygonTemplate.tooltipText = "{name}";
+
+// Create hover state and set alternative fill color
+var hs = polygonTemplate.states.create("hover");
+hs.properties.fill = chart.colors.getIndex(1);
+
+// Center on Pacic
+chart.deltaLongitude = -154.8;
+
+
+
+var graticuleSeries = chart.series.push(new am4maps.GraticuleSeries());
+graticuleSeries.fitExtent = false;
+
+}); // end am4core.ready()
+</script>
+</head>
+
+<body>
+
+    <div id="banner" class="pt-4">
+      <!-- navigation  -->
+      <div class="banner-navigation" id="nav">
+        <div id="myNav" class="overlay">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <div class="overlay-content">
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>        
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+        <img src="./static/images/flags/us.gif" alt="" class="eng-lang-flag">
+        <img src="./static/images/logos/full-exp-opt-logo.png" alt="" class="main-nav-logo">
+        <span class="nav-buttons">
+          <a href="" class="btn btn-primary nav-login flat-button">Login</a>
+          <a href="" class="btn btn-primary nav-register flat-button">Register</a>
+        </span>
+        
+      </div>
+
+      <!-- banner text -->
+      <div class="banner-text">
+        <div class="text-center">
+          <h1 class="trading-available ">
+            <span class="span-for-trading">
+              We make trading available for Everybody
+            </span>
+          </h1>
+        </div>    
+      </div>   
+    </div>
+      <!-- First About divider section  -->
+        <!-- first column  -->
+    <div class="container">
+      <div class="about">
+        <div class="row row-about d-flex align-items-center clearfix">
+          <div class="about-column">
+            <div class="about-image-building"></div>
+            <h2 class="about-text">
+              <span class="span-about-header">
+                <i style="background-image:url(./static/images/logos/about.svg)" class="about-text-image"></i>
+              </span>
+              About
+            </h2>
+            <p class="head-paragraph">
+              <span>
+                Expert Option Investments is founded with vision to create 100% transparent trading experience for its clients.
+                <br>
+                <br>
+                We provide easy to use trading platform and spend lots of time providing education for our customers. 
+                <br>
+                <br>
+                Our company is interested in successful and prosperous traders who will create high trading volume. 
+                We are proud that we helped many customers to make revenue.
+              </span>
+            </p>
+          </div>
+        <div class="our-value-column">
+          <h2 class="our-value">
+            <span class="span-our-value-header">
+              <i style="background-image:url(../frontend/static/images/logos/values.svg)" class="our-value-image"></i>
+            </span>
+            Our Values
+          </h2>
+          <!-- Our value Sections -- Start-->
+          <section class="client">
+            <span class="span-client">01</span>
+            <span class="span-clients">
+              <span>
+                <b>Clients</b>
+                : Providing best customer service is our primary value. 
+                More than 100 account managers are focused on needs of our clients
+              </span>
+            </span>
+          </section>
+          <section class="reliability">
+            <span class="span-reliability">02</span>
+            <span class="span-reliability-02">
+              <span>
+                <b>Reliability</b>
+              : Being industry leader we provide our clients with extra solidity.
+               We are doing more than anyone else to satisfy needs of our clients.
+              </span>  
+            </span>
+          </section>
+          <section class="simplicity">
+            <span class="span-simplicity">03</span>
+              <span class="span-simplicity-03">
+                <span>
+                <b>Simplicity</b>
+                : Everybody can become a trader with our easiest to use trading platform.
+                Expert Option Investments is available on all modern platforms: Web, Windows, MacOS, iPhone, iPad and Android.
+                </span>
+              </span>
+          </section>
+          <section class="speed">
+            <span class="span-speed">04</span>
+            <span class="span-speed-04">
+              <span>
+                <b>Speed</b>
+                : We provide fastest trading using cutting-edge technologies.
+                No delays in order executions and lags in user interface.
+              </span>
+            </span>
+          </section>
+        </div>
+      </div>
+      </div>
+    </div>
+  <!--another section -->
+  <!-- multiplatform-security-accurate section  -->
+    <div class="container">
+      <div class="limiter">
+        <div class="multiplatform-security-accurate">
+          <div class="multiplatform">
+            <h2 class="multiplatform-header">
+              <span class="span-mulitplatform">
+                <i style="background-image:url(./static/images/logos/icon-vanuatu.svg)" class="multiplatform-logo">
+                </i>
+              </span>
+                Multiplatform
+            </h2><div class="multiplatform-text">
+              <span>
+                Our trading platform is available on all devices
+                <br />
+                Available in all Operating systems (Windows, OSx, Linux)
+              </span>
+            </div>
+          </div>
+          <div class="security-standards">
+            <h2 class="security-standards-header">
+              <span class="span-security-standards">
+                <i style="background-image:url(./static/images/logos/icon-vfrs-bit.svg)" class="security-standards-logo">
+                </i>
+              </span>
+              Security standards
+            </h2>
+            <div class="security-standards-text">
+              <span>
+                Verified by Visa and MasterCard
+                <br>
+                All data is encrypted with strongest cryptographic algorithms
+              </span>
+            </div>
+          </div>
+          <div class="accurate-quotes">
+            <h2 class="accurate-quotes-header">
+              <span class="span-accurate-quotes">
+                <i style="background-image:url(./static/images/logos/icon-lock.svg)" class="accurate-quotes-logo">
+                </i>
+              </span>
+              Accurate quotes
+            </h2>
+            <div class="accurate-quotes-text">
+              <span>
+                Real-time market data provided by leading analytical agencies
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- accounts open at ExpertOptionInvestments -->
+      <!-- begining -->
+    <div class=" limiter-div">
+      <div class="limiter">
+        <div class="limiter-head">
+          <section class="limiter-section">
+            <h2 class="heading limiter-text-header">
+              <span class="limiter-image">
+                <i style="background-image:url(./static/images/logos/icon-line.svg)" class="limiter-logo">
+                </i>
+              </span>
+              30M
+              <!-- -->
+              +
+            </h2>
+            <div class="limiter-text">
+              Accounts opened at ExpertOptionInvestments</div>
+            </section>
+            <section class="limiter-section">
+              <h2 class="heading limiter-text-header">
+                <span class="limiter-image">
+                  <i style="background-image:url(./static/images/logos/icon-line.svg)" class="limiter-logo">
+                  </i>
+                </span>
+                2014
+              </h2>
+              <div class="limiter-text">
+                We started providing services to clients
+              </div>
+            </section>
+            <section class="limiter-section">
+              <h2 class="heading limiter-text-header">
+                <span class="limiter-image">
+                  <i style="background-image:url(./static/images/logos/icon-line.svg)" class="limiter-logo">
+                  </i>
+                </span>
+                30M+
+              </h2>
+              <div class="limiter-text">
+                Deals executed each month
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    <!-- contact section start  -->
+    <div class="contact">
+      <h2 class="heading centered" id="about-us-text">
+        <span class="span-contact-us">
+          <i style="background-image:url(./static/images/logos/contactus.svg)" class="contact-us-image">
+          </i></span>Contact us</h2>
+          <div class="contact-table">
+            <div class="table-column">
+              <div class="table-column-div">
+                <div class="item">
+                  <div class="row">
+                    <div class="col major">
+                      <h3 class="item-header">
+                        <img class="flag-icon item-header-flag-icon" alt="en" src="https://static.expertoption.com/flags/2.0/png-optimized/en.png?v=12">
+                        English
+                      </h3>
+                        <div id="english-text">
+                          24 hours a day, 7 days a week
+                        </div>
+                      </div>
+                      <div class="col minor">
+                        <h4 class="item-header">
+                          Phone number
+                        </h4>
+                        <div class="footer top">
+                          <a target="_blank" href="tel:+44 20 3868 3160">
+                            +44 20 3868 3160
+                          </a>
+                        </div>
+                        <h4 class="item-header">
+                          Email address
+                        </h4>
+                        <div class="footer">
+                          <a target="_blank" href="mailto:support@expertoption.com">
+                            support@expertoptioninvestments.com
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="row">
+                      <div class="col major">
+                        <h3 class="item-header">
+                          <img class="flag-icon item-header-flag-icon" alt="hi" src="https://static.expertoption.com/flags/2.0/png-optimized/hi.png?v=12">
+                          Nigeria
+                        </h3>
+                        <div>
+                          10:30 – 19:30 (India time)
+                        </div>
+                      </div>
+                      <div class="col minor">
+                        <h4 class="item-header">
+                          Phone number
+                        </h4>
+                        <div class="number-footer top">
+                          <a target="_blank" href="tel:000 800 443 0002">
+                            000 800 443 0002
+                          </a>
+                        </div>
+                        <h4 class="item-header">
+                          Email address
+                        </h4>
+                        <div class="number-footer">
+                          <a target="_blank" href="mailto:support@expertoptioninvestments.com">
+                            support@expertoptioninvestments.com
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- table section  -->
+              <div class="form-table">
+                <div class="form-table-div">
+                  <form>
+                    <div class="form-input">
+                      <div class="form-input-text">
+                        <input type="text" placeholder="Full name" name="name" tabindex="0" id="name" value="" autocomplete="name" class="">
+                      </div>
+                    </div>
+                    <div class="form-input">
+                      <div class="form-input-text">
+                        <input type="text" placeholder="Email address" name="email" tabindex="0" id="email" value="" autocomplete="email" class="">
+                      </div>
+                    </div>
+                    <div class="form-input">
+                      <div class="form-input-text">
+                        <textarea placeholder="Leave us a message" name="message" tabindex="0" id="message" type="textarea" class="">
+
+                        </textarea>
+                      </div>
+                    </div>
+                    <div class="form-input">
+                      <div class="phone-number">
+                        <div class="form-input-text">
+                          <input type="text" placeholder="Phone number" name="phone" tabindex="0" id="phone" value="" autocomplete="tel" class="">
+                        </div>
+                      </div>
+                      <div class="number-send-button">
+                        <button class="full-width send-button" type="submit">
+                          Send
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                  <div class="support">
+                    <h3 class="support-text">
+                      Support 
+                    </h3>
+                    <div class="form-input">
+                      <div class="support-online">
+                        We are online 24/7
+                        <br>
+                        365 days a year
+                      </div>
+                      <div class="support-button">
+                        <button class="full-width online-chat-button" type="button">
+                          Online chat
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="corporate-center">
+              EOLabs LLC - 305, Griffith Corporate Centre, Beachmont, 1510, Kingstown, Saint Vincent and the Grenadines
+              <div class="corporate-center-email">
+                Email address
+                <!-- -->
+                :
+                <!-- --> 
+                <a href="mailto:support@expertoptioninvestment.com">
+                  support@expertoptioninvestments.com
+                </a>
+              </div>
+            </div>
+          </div>
+        <!-- footer section  -->
+        <footer class="container">
+          <div class="col-lg" id="footer">
+            <div class="row" id="footer-row">
+              <div class="col-lg-4" id="company-footer-text">
+                  <img src="../frontend/static/images/logos/full-exp-opt-logo.png" alt="expert option investment logo" id="footer-logo" class="desktop">
+                  <img src="../frontend/static/images/logos/full-exp-opt-logo.png" alt="expert option investment logo" id="footer-logo" class="mobile">
+                     <h3>Expert Option Investments</h3>
+                <p class=" my-3">
+                  Company provides servies to everyone across the globe.
+                  <br>
+                  Making trading available and accessible to everyone is and continues to be our # 1 goal and priority.
+                </p>
+              </div>
+              <div class="col-lg-2 footer-links" id="home-footer">
+                <h4>Home</h4>
+                <a href="">Login</a>
+                <a href="">Create Account</a>
+              </div>
+              <div class="col-lg-2 footer-links" id="trading-footer">
+                <h4>Trading</h4>
+                <a href="">Account Types</a>
+              </div>
+              <div class="col-lg-2 footer-links" id="company-footer">
+                <h4>Company</h4>
+                <a href="">About Company</a>
+                <a href="">Terms</a>
+                <a href="">Payment Policy</a>
+                <a href="">Privacy Policy</a>
+              </div>
+              <div class="col-lg-2" id="payment-methods-footer">
+                <h4>Payment Methods</h4>
+                <img src="../frontend/static/images/logos/payments.svg" alt="Payment and Withdrawal methods" class="">
+              </div>
+            </div>
+          </div>
+        </footer>
+        <!-- disclaimer part -->
+        <div id="disclaimer-portion">
+          <div class=" container disclaimer">
+            <div class="row disclaimer-row">
+              <div class="col-lg-9 my-3" id="trading-involves">
+                <p>Trading and investing involves significant level of risk and is not suitable and/or appropriate for all clients. 
+                  Please make sure you carefully consider your investment objectives, 
+                  level of experience and risk appetite before buying or selling. Buying or selling entails financial risks and could result in a partial or complete loss of your funds, therefore, 
+                  you should not invest funds you cannot afford to lose. You should be aware of and fully understand all the risks associated with trading and investing, and seek advice from an independent financial advisor if you have any doubts.
+                   You are granted limited non-exclusive rights to use the IP contained in this site for personal, non-commercial, non-transferable use only in relation to the services offered on the site.</p>
+              </div>
+              <div class="col-lg-3 my-3" id="expert-invest">
+                <p>&copy; 2014 - 2020 Expert Option Investments</p>
+                <span>Expert Option Investments. All rights reserved.</span>
+                <p>
+                <span>
+                  <i class="fab fa-facebook-square"></i>
+                  <i class="fab fa-instagram-square"></i>
+                  <i class="fab fa-youtube"></i>
+                </p>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+</body>
+</html>

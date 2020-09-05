@@ -54,7 +54,8 @@
       <div id="login-form">
         <h1 class="text-center" id="register-header">Login</h1>
         <div class="form-bg" id="login-form-action">
-          <form action="" class="mx-5" id="form-action">
+          <form action="" class="mx-5" id="form-action" method="POST">
+            {% csrf_token %}
             <div class="form-group">
               {{ form.username|add_class:'form-control'|attr:'id:reg-email-input'|attr:'placeholder:Enter Email' }}
             </div>

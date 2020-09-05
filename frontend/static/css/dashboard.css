@@ -153,9 +153,9 @@
       display: none;
     } */
     /* sidebar bug fix  */
-    .sidebar-content {
+    /* .sidebar-content {
       display: block;
-    }
+    } */
     /* dashboard bread crumb */
     #bread-crumb-dashboard {
       background-color: #292929;

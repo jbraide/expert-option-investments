@@ -64,7 +64,9 @@ def dashboard(request):
     invested = InvestedAmount.objects.filter(user=user).aggregate(amount=Sum('amount'))
     btc_balance = BTCbalance.objects.filter(user=user).aggregate(amount=Sum('amount'))
     daily_investments = DailyInvestments.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    plan = Profile.objects.filter(user=user).all()
 
+    print(plan)
     # id verification logic
     if request.method == 'POST':
         verification_form = VerificationDocumentForm(request.POST,request.FILES)

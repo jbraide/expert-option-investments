@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="expert option invesments dashboard">
+    <title>Dashboard</title>
+
+    <!-- using online links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
+
+    <!-- using local links -->
+    <!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css"> -->
+    
+    <!-- css files -->
+    <link rel="stylesheet" href="/static/css/main.css">
+    <!-- <link rel="stylesheet" href="/static/css/edit.css" > -->
+    <link rel="stylesheet" href="/static/css/sidebar-style.css">
+    <link rel="stylesheet" href="/static/css/sidebar-themes.css">
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+</head>
+
+<body>
+    <div class="page-wrapper default-theme sidebar-bg bg1">
+
+      {% include "dashboard/sidebar.html" %}
+
+        <!-- dashboard-content  -->
+        <main class="page-content">
+            <div id="overlay" class="overlay"></div>
+            <div id="bread-crumb-dashboard">
+                 <!-- welcome, progress & verifications -->
+               <div class="container">
+                 <!-- user welcome message header -->
+                    <div class="welcome-header-container">
+                        <div class="row verified-header">
+                            <div class="col-sm-6 bg-light clearfix">
+                                 <div class="verify-account-header py-3 mx-3 d-flex align-items-center">
+                                     <h3 class="text-dark mx-3 verify-account-text">Account Upgrade</h3>
+                                     <a href="" class="text-dark">Home</a> <span class="text-dark"> / </span> <span class="text-secondary">Account Upgrade</span>
+                                 </div>
+                            </div>
+                            <div class="col-sm-6 bg-light d-flex align-items-center">
+                                <div class="col-sm clearfix">
+                                    <div class="col-sm-3 user-profile float-right bg-primary">
+                                        <div class="row verification-profile-area d-flex align-items-center">
+                                            <div class="col-sm-6">
+                                                <img src="https://img.icons8.com/officel/40/000000/circled-user-male-skin-type-6.png"/>
+                                            </div>
+                                            <div class="Col-sm-6">
+                                                <h3 class="user-profile-text text-white">
+                                                    <span>John Doe</span>
+                                                </h3>
+                                            </div>
+                                        </div>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+            <!-- stock prices slider -->
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                {
+                "symbols": [
+                {
+                    "proName": "FOREXCOM:SPXUSD",
+                    "title": "S&P 500"
+                },
+                {
+                    "proName": "FOREXCOM:NSXUSD",
+                    "title": "Nasdaq 100"
+                },
+                {
+                    "proName": "FX_IDC:EURUSD",
+                    "title": "EUR/USD"
+                },
+                {
+                    "proName": "BITSTAMP:BTCUSD",
+                    "title": "BTC/USD"
+                },
+                {
+                    "proName": "BITSTAMP:ETHUSD",
+                    "title": "ETH/USD"
+                }
+                ],
+                "colorTheme": "light",
+                "isTransparent": false,
+                "displayMode": "adaptive",
+                "locale": "en"
+            }
+                </script>
+            </div>
+            <!-- TradingView Widget END -->
+          
+            <!-- toggle button -->
+            <div class="container">
+                <a id="toggle-sidebar" class="btn btn-secondary rounded-0" href="#">
+                    <span>Toggle Sidebar</span>
+                </a>
+            </div>
+
+            <!-- type here and delete the data when done -->
+                     <!-- verification container content -->
+            <div class="container" style="min-height: 150px;">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card mt-4 ">
+                            <div class="card-body py-1">
+                                 <h3 class="text-dark text-center py-4">
+                                    <span>Account Upgrade</span>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container" style="min-height: 245px;">
+                <!-- Upgrade plan rows  -->
+                <div class="row text-center">
+                    <div class="col-lg-4">
+                        <div class="plan-showcase-border">
+                          <h3 class="plan-showcase-header text-center">
+                            Mini
+                          </h3>
+                          <hr class="color mini"/>
+                          <p class="plan-showcase-text">
+                            For those who prefer light start. Upgrade to higher status when ready
+                          </p>
+                          <br>
+                          <p class="plan-showcase-from-text">
+                            From
+                          </p>
+                          <h4>$ 10</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="plan-showcase-border">
+                          <h3 class="plan-showcase-header text-center">
+                            Entry 
+                          </h3>
+                          <hr class="color entry"/>
+                          <p class="plan-showcase-text">
+                            For those who prefer light start. Upgrade to higher status when ready
+                          </p>
+                          <br>
+                          <p class="plan-showcase-from-text">
+                            From
+                          </p>
+                          <h4>$ 50</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="plan-showcase-border">
+                          <h3 class="plan-showcase-header text-center">
+                            Silver
+                          </h3>
+                          <hr class="color silver"/>
+                          <p class="plan-showcase-text">
+                            Majority of our clients start with Silver account. Free consultations included 
+                          </p>
+                          <br>
+                          <p class="plan-showcase-from-text">
+                            From
+                          </p>
+                          <h4>$ 500</h4>
+                        </div>
+                      </div>
+                </div>
+                      <div class="row">
+                        <div class="col-lg-4">
+                            <div class="plan-showcase-border">
+                              <h3 class="plan-showcase-header text-center">
+                                Gold
+                              </h3>
+                              <hr class="color gold"/>
+                              <p class="plan-showcase-text">
+                                Smart investments start with Gold account. Get most from your account with privileged features
+                              </p>
+                              <br>
+                              <p class="plan-showcase-from-text" id="gold-plan">
+                                From
+                                <h4>$ 2500</h4>
+                              </p>
+                            </div>
+                          </div>
+                          <div class="col-lg-4">
+                            <div class="plan-showcase-border">
+                              <h3 class="plan-showcase-header text-center">
+                                Platinum
+                              </h3>
+                              <hr class="color platinum"/>
+                              <p class="plan-showcase-text">
+                                Our best expertise and exclusive account management for serious investors
+                              </p>
+                              <br>
+                              <p class="plan-showcase-from-text">
+                                From
+                                <h4>$ 5000</h4>
+                              </p>
+                            </div>
+                          </div>
+                          <div class="col-lg-4">
+                            <div class="plan-showcase-border">
+                              <h3 class="plan-showcase-header text-center">
+                                Private
+                              </h3>
+                              <hr class="color private"/>
+                              <p class="plan-showcase-text">
+                                Ask your account manager for additional information
+                              </p>
+                              <br>
+                              <p class="plan-showcase-from-text">
+                                by
+                              </p>
+                              <h4>Invitation only</h4>
+                            </div>
+                          </div>
+                </div>
+
+            </div>
+            
+            <!-- visit this link -->
+            <!-- https://capitalmarket.online/user/account/ -->
+
+            <!-- 
+                login credentials
+                email - netgci@ymail.com
+                password - Ag69jj96ag
+         -->
+
+            <!-- 
+                you will create the
+                - profile
+                - come up with a solution for the ID verification
+                    i.e 
+                    - provide documents for verification
+                    - wait while admin verifies your documents
+                    - verified    
+                -
+
+            -->
+            <!-- end of dashboard content -->
+        </main>
+        <!-- page-content" -->
+    </div>
+    <!-- page-wrapper -->
+
+    <!-- using online scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+    </script>
+    <script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- using local scripts -->
+    <!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script> -->
+
+    <script>
+      jQuery(function ($) {
+
+      // Dropdown menu
+      $(".sidebar-dropdown > a").click(function () {
+          $(".sidebar-submenu").slideUp(200);
+          if ($(this).parent().hasClass("active")) {
+              $(".sidebar-dropdown").removeClass("active");
+              $(this).parent().removeClass("active");
+          } else {
+              $(".sidebar-dropdown").removeClass("active");
+              $(this).next(".sidebar-submenu").slideDown(200);
+              $(this).parent().addClass("active");
+          }
+
+      });
+
+      //toggle sidebar
+      $("#toggle-sidebar").click(function () {
+          $(".page-wrapper").toggleClass("toggled");
+      });
+      //Pin sidebar
+      $("#pin-sidebar").click(function () {
+          if ($(".page-wrapper").hasClass("pinned")) {
+              // unpin sidebar when hovered
+              $(".page-wrapper").removeClass("pinned");
+              $("#sidebar").unbind( "hover");
+          } else {
+              $(".page-wrapper").addClass("pinned");
+              $("#sidebar").hover(
+                  function () {
+                      console.log("mouseenter");
+                      $(".page-wrapper").addClass("sidebar-hovered");
+                  },
+                  function () {
+                      console.log("mouseout");
+                      $(".page-wrapper").removeClass("sidebar-hovered");
+                  }
+              )
+
+          }
+      });
+
+
+      //toggle sidebar overlay
+      $("#overlay").click(function () {
+          $(".page-wrapper").toggleClass("toggled");
+      });
+
+      //switch between themes 
+      var themes = "default-theme legacy-theme chiller-theme ice-theme cool-theme light-theme";
+      $('[data-theme]').click(function () {
+          $('[data-theme]').removeClass("selected");
+          $(this).addClass("selected");
+          $('.page-wrapper').removeClass(themes);
+          $('.page-wrapper').addClass($(this).attr('data-theme'));
+      });
+
+      // switch between background images
+      var bgs = "bg1 bg2 bg3 bg4";
+      $('[data-bg]').click(function () {
+          $('[data-bg]').removeClass("selected");
+          $(this).addClass("selected");
+          $('.page-wrapper').removeClass(bgs);
+          $('.page-wrapper').addClass($(this).attr('data-bg'));
+      });
+
+      // toggle background image
+      $("#toggle-bg").change(function (e) {
+          e.preventDefault();
+          $('.page-wrapper').toggleClass("sidebar-bg");
+      });
+
+      // toggle border radius
+      $("#toggle-border-radius").change(function (e) {
+          e.preventDefault();
+          $('.page-wrapper').toggleClass("boder-radius-on");
+      });
+
+      //custom scroll bar is only used on desktop
+      if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+          $(".sidebar-content").mCustomScrollbar({
+              axis: "y",
+              autoHideScrollbar: true,
+              scrollInertia: 300
+          });
+          $(".sidebar-content").addClass("desktop");
+
+      }
+      });
+    </script>
+    <!-- <script src="./static/js/main.js"></script> -->
+</body>
+
+</html>

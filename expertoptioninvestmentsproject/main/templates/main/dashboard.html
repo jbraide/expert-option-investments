@@ -2,7 +2,7 @@
 {% block dashboard %} 
 {% load widget_tweaks %}
 
-    <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
+    <div class="page-wrapper default-theme sidebar-bg bg1">
 
       {% include "dashboard/sidebar.html" %}
         <!-- dashboard-content  -->
@@ -63,6 +63,9 @@
                 <!-- <div class="welcome-header-container py-4">
                     <h3>Welcome, <span class="welcome-user">User </span></h3>
                 </div> -->
+                <a id="toggle-sidebar" class="btn btn-secondary rounded-0" href="#">
+                    <span>Toggle Sidebar</span>
+                </a>
 
                 <!-- desktop view of dashboard details -->
                 <div class="desktop">
@@ -293,8 +296,6 @@
                                 </div>
                             </div>
                             <!-- status/ currency / type / signal -->
-        
-                                <div class="col-lg-6">
                                     <div class="row owl-carousel owl-theme mt-4">
                                         <div class="col-lg-6 item">
                                             <div id="status" class="dashboard-display" >
@@ -360,7 +361,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
                                     </div>
                                 </div>
                         </div>

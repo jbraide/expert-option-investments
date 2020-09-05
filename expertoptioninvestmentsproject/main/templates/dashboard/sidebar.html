@@ -1,7 +1,7 @@
 {% block sidebar %}
     <!-- dashboard sidebar -->
       <!-- remove desktop class to display sidebar on mobile -->
-      <nav id="sidebar" class="sidebar-wrapper desktop">
+      <nav id="sidebar" class="sidebar-wrapper ">
         <div class="sidebar-content">
                 <!-- sidebar-brand  -->
                 <div class="sidebar-item sidebar-brand">
@@ -19,7 +19,7 @@
                         {{ request.user.profile.first_name }}
                             <strong>{{ request.user.profile.last_name }}</strong>
                         </span>
-                        <span class="user-role">Administrator</span>
+                        <span class="user-role">Trader</span>
                         <span class="user-status">
                             <i class="fa fa-circle"></i>
                             <span>Online</span>

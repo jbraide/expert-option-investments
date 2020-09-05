@@ -2,7 +2,7 @@
 {% block dashboard %}
 {% load static %}
 {% load widget_tweaks %}
-    <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
+    <div class="page-wrapper default-theme sidebar-bg bg1">
         {% include "dashboard/sidebar.html" %}
       
         <!-- dashboard-content  -->
@@ -77,7 +77,15 @@
             </div>
             <!-- TradingView Widget END -->
 
+            <!-- toggle button -->
+            <div class="container">
+                <a id="toggle-sidebar" class="btn btn-secondary rounded-0" href="#">
+                    <span>Toggle Sidebar</span>
+                </a>
+            </div>
             
+
+            <!-- if ID has been verified -->
             {% if request.user.verificationdocument.verified %}
             <!-- verification container content -->
             <div class="container" style="min-height: 245px;">
@@ -98,7 +106,7 @@
             </div>
 
             {% else %}
-            
+            <!-- else show the form -->
             <!-- verification form  -->
             <div class="container mb-4">
                 <div class="verification-form-bg">

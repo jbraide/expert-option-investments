@@ -2,7 +2,7 @@
 {% block dashboard %}
 {% load widget_tweaks %}
   
-    <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
+    <div class="page-wrapper default-theme sidebar-bg bg1">
 
       <!-- dashboard sidebar -->
         {% include "dashboard/sidebar.html" %}
@@ -64,6 +64,13 @@
                 <div class="welcome-header-container">
                     <h3>Hi, {{ request.user.email }} </h3>
                 </div>                
+            </div>
+
+            <!-- toggle button -->
+            <div class="container">
+                <a id="toggle-sidebar" class="btn btn-secondary rounded-0" href="#">
+                    <span>Toggle Sidebar</span>
+                </a>
             </div>
             
             <!-- profile form beginning -->

@@ -54,7 +54,7 @@ def terms_and_condition(request):
 '''             dashboard things             '''
 
 # dashboard homepage / trading center
-@login_required(login_url='/login')
+@login_required(login_url='login')
 def dashboard(request):
     user = request.user
 
@@ -64,9 +64,7 @@ def dashboard(request):
     invested = InvestedAmount.objects.filter(user=user).aggregate(amount=Sum('amount'))
     btc_balance = BTCbalance.objects.filter(user=user).aggregate(amount=Sum('amount'))
     daily_investments = DailyInvestments.objects.filter(user=user).aggregate(amount=Sum('amount'))
-    plan = Profile.objects.filter(user=user).all()
 
-    print(plan)
     # id verification logic
     if request.method == 'POST':
         verification_form = VerificationDocumentForm(request.POST,request.FILES)
@@ -231,6 +229,7 @@ def create_profile(request):
             postal_or_zip_code = profile_form.cleaned_data.get('postal_or_zip_code')
             profile_picture = profile_form.cleaned_data.get('profile_picture')
             country = profile_form.cleaned_data.get('country')
+            select_plan = profile_form.cleaned_data.get('select_plan')
             
             '''fetch profile of currently registered and logged in user first'''
             # request user
@@ -248,7 +247,8 @@ def create_profile(request):
                 state = state, 
                 postal_or_zip_code = postal_or_zip_code,
                 profile_picture = profile_picture,
-                country  = country 
+                country  = country,
+                select_plan = select_plan 
             )
 
             # save the profile data to the form model 

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from . import secret_setting as secret
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,7 +21,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'n+n%kq+pewhtcbqlw=eg-(@0vi@3%4b(a&6q+q6h42j==c09am'
+
+SECRET_KEY = secret.get_secret('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -77,9 +79,9 @@ WSGI_APPLICATION = 'expertoptioninvestmentsproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'expertoptioninvestments',
-        'USER': 'expert',
-        'PASSWORD': 'expertoptioninvestments',
+        'NAME': secret.get_secret('NAME'),
+        'USER': secret.get_secret('USER'),
+        'PASSWORD': secret.get_secret('PASSWORD'),
         'HOST': 'localhost',
         'PORT': '',
     }

@@ -46,6 +46,25 @@
   <!-- main js file -->
   <script src="./static/js/main.js"></script>
   <script>
+  // open + close navigation
+  function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+  }
+  
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+
+  // sticky fixed navigation
+  $(document).ready(function(){
+    $(window).scroll(function(){
+      if ($(this).scrollTop() > 250){
+        $('.banner-navigation').addClass('navbar-sticky')
+      } else {
+        $('.banner-navigation').removeClass('navbar-sticky')
+      }
+    })
+  })
     // owl carousel
   $('.owl-carousel').owlCarousel({
     loop:true,
@@ -126,7 +145,10 @@ chart.deltaLongitude = -154.8;
 var graticuleSeries = chart.series.push(new am4maps.GraticuleSeries());
 graticuleSeries.fitExtent = false;
 
-}); // end am4core.ready()
+
+
+}); 
+// end am4core.ready()
 </script>
 </head>
 <body>

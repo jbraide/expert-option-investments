@@ -1,0 +1,117 @@
+/* Styling for the footer  */
+/* Desktop version */
+@media only screen and (min-width: 640px){
+    #company-footer-text {
+        padding: 10px;
+    }
+    
+    #company-footer-text > p {
+        color: #a9b5cb;
+    }
+    
+    #footer-logo {
+        width: 100%;
+    }
+    
+    .footer-links {
+        padding: 30px;
+    }
+    
+    .footer-links > a {
+        color: #a9b5cb;
+        display: block;
+    }
+    
+    .footer-links > a:hover {
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    #payment-methods-footer {
+        padding: 30px;
+    }
+    
+    #trading-involves,
+    #expert-invest,
+    #built-with > p {
+        color: #a9b5cb;
+    }
+    
+    .disclaimer {
+        padding: 30px;
+    }
+    
+    #disclaimer-portion {
+        border-top: 1px solid#a9b5cb;
+    }
+}
+
+/* mobile view */
+@media only screen and (max-width:640px){
+    #company-footer-text {
+        padding: 10px;
+    }
+    
+    #company-footer-text > p {
+        color: #a9b5cb;
+    }
+    
+    #footer-logo {
+        width: 100%;
+    }
+    
+    .footer-links {
+        padding: 30px;
+    }
+    
+    .footer-links > a {
+        color: #a9b5cb;
+        display: block;
+    }
+    
+    .footer-links > a:hover {
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    #payment-methods-footer {
+        padding: 30px;
+    }
+    
+    #trading-involves,
+    #expert-invest,
+    #built-with > p {
+        color: #a9b5cb;
+    }
+    
+    .disclaimer {
+        padding: 30px;
+    }
+    
+    #disclaimer-portion {
+        border-top: 1px solid#a9b5cb;
+    }
+    
+    #footer {
+        padding: 40px 0 30px;
+    }
+    
+    #footer-row {
+        display: block;
+        left: 2px;
+    }
+    
+    #footer-logo {
+        width: 95%;
+    }
+    
+    #disclaimer-portion {
+        display: block;
+        padding: 30px 0px;
+    }
+    
+    
+    #trading-involves {
+       font-size: 10px;
+    }  
+}

@@ -133,14 +133,19 @@
             <div class="modal-body">
                 <div class="container">
                     <div class="profile-body">
-                        <span id="profile-full-name">Full Name: Jhon Doe</span>
+                        <span id="profile-full-name">Full Name: {{ request.user.profile.first_name }} {{ request.user.profile.last_name }} </span>
                         <span id="profile-invested-amount">Invested: 0</span>
-                        <span id="profile-country">Country: Germany</span>
-                        <span id="profile-phone-number">Phone Number: 0555566221</span>
-                        <span id="profile-balance">Balance: 0</span>
-                        <span id="profile-account-id">Account ID: 681bf4d5-e74d-4535-b7e2-fca3979bbe1a</span>
-                        <span id="profile-joined">Date Joined: Aug, 02, 2020 19:08:00</span>
-                        <span id="full-name">Account status: Unverified</span>
+                        <span id="profile-country">Country: {{ request.user.profile.country }}</span>
+                        <span id="profile-phone-number">Phone Number: {{ request.user.profile.phone_number }}</span>
+                        <!-- conditional balance display -->
+                        {% if request.user.balance.amount %}
+                            <span id="profile-balance">Balance: $ {{ request.user.balance.amount }}</span>                        
+                        {% else %}
+                            <span id="profile-balance">Balance: $ 0 </span>
+                        {% endif %}
+                        <span id="profile-account-id">Account ID: {{ request.user.user_id }} </span>
+                        <span id="profile-joined">Date Joined: {{ request.user.date_joined }} </span>
+                        <span id="full-name">Account status: {% if  request.user.verificationdocument.verified %}Verified {% else %} UnVerified {% endif %} </span>
                     </div>
                 </div>
             </div>

@@ -39,12 +39,16 @@ hr {
 /* navigation */
 .banner-navigation {
   width: 80%;
-  height: 80px;
   background-color: transparent;
-  margin: 0 auto;
-  padding-top: 2rem ;
+  margin: 0 10%;
+  margin-top: 1%;
 }
-
+.navbar-sticky{
+  background: linear-gradient(to top,rgba(26,32,48,0.95) 0px,#1a2030 80%);
+  position: fixed;
+  padding: 1.4% 1%;
+  transition: 0.3s ease-in;
+}
 .main-nav-logo {
   width: 30%;
   margin: 0 6rem;
@@ -347,13 +351,26 @@ color: lightgrey;
   color: white;
 }
 /* navigation */
-.banner-navigation {
+/* .banner-navigation {
   width: 90%;
   height: 80px;
   background-color: transparent;
   margin: 0 auto;
+} */
+.banner-navigation {
+  width: 90%;
+  background-color: transparent;
+  margin: 0 10%;
+  margin-top: 1%;
 }
-
+.navbar-sticky{
+  background: linear-gradient(to top,rgba(26,32,48,0.95) 0px,#1a2030 80%);
+  position: fixed;
+  padding: 3% 2%;
+  margin: 0 3%;
+  z-index: 5;
+  transition: 0.3s ease-in;
+}
 .main-nav-logo{
   width: 15%;
   margin: 0 4%;
@@ -361,7 +378,7 @@ color: lightgrey;
 }
 
 .nav-buttons {
-  margin-left: 2%;
+  margin-left: -5%;
 }
 .nav-login {
   background-color: transparent;

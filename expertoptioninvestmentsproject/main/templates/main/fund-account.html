@@ -1,119 +1,112 @@
-{% extends "dashboard/dashboard-base.html" %}
-{% block dashboard %}
+{% extends "dashboard/dashboard-base.html" %} {% block dashboard %}
 <div class="page-wrapper default-theme sidebar-bg bg1">
-      
-{% include "dashboard/sidebar.html" %}
 
-        <!-- dashboard-content  -->
-        <main class="page-content">
-            <div id="overlay" class="overlay"></div>
-            <div id="bread-crumb-dashboard">
-                <div class="container">
-             <!-- logo on dashboard -->
-             <div id="dashboard-logo-top-heading">
-            </div>
-          <!-- bread crumb -->
-          <div class="bread-crumb-dashboard-inner">
-            <h3>Dashboard</h3> <a href="">Home</a> / <span>Dashboard</span>
-          </div>   
+    {% include "dashboard/sidebar.html" %}
+
+    <!-- dashboard-content  -->
+    <main class="page-content">
+        <div id="overlay" class="overlay"></div>
+        <div id="bread-crumb-dashboard">
+            <div class="container">
+                <!-- logo on dashboard -->
+                <div id="dashboard-logo-top-heading">
+                </div>
+                <!-- bread crumb -->
+                <div class="bread-crumb-dashboard-inner">
+                    <h3>Dashboard</h3> <a href="">Home</a> / <span>Dashboard</span>
+                </div>
             </div>
         </div>
-            
-            
-            <!-- stock prices slider -->
-            <!-- TradingView Widget BEGIN -->
-            <div class="tradingview-widget-container">
-                <div class="tradingview-widget-container__widget"></div>
-                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+
+
+        <!-- stock prices slider -->
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
                 {
-                "symbols": [
-                {
-                    "proName": "FOREXCOM:SPXUSD",
-                    "title": "S&P 500"
-                },
-                {
-                    "proName": "FOREXCOM:NSXUSD",
-                    "title": "Nasdaq 100"
-                },
-                {
-                    "proName": "FX_IDC:EURUSD",
-                    "title": "EUR/USD"
-                },
-                {
-                    "proName": "BITSTAMP:BTCUSD",
-                    "title": "BTC/USD"
-                },
-                {
-                    "proName": "BITSTAMP:ETHUSD",
-                    "title": "ETH/USD"
+                    "symbols": [{
+                        "proName": "FOREXCOM:SPXUSD",
+                        "title": "S&P 500"
+                    }, {
+                        "proName": "FOREXCOM:NSXUSD",
+                        "title": "Nasdaq 100"
+                    }, {
+                        "proName": "FX_IDC:EURUSD",
+                        "title": "EUR/USD"
+                    }, {
+                        "proName": "BITSTAMP:BTCUSD",
+                        "title": "BTC/USD"
+                    }, {
+                        "proName": "BITSTAMP:ETHUSD",
+                        "title": "ETH/USD"
+                    }],
+                    "colorTheme": "light",
+                    "isTransparent": false,
+                    "displayMode": "adaptive",
+                    "locale": "en"
                 }
-                ],
-                "colorTheme": "light",
-                "isTransparent": false,
-                "displayMode": "adaptive",
-                "locale": "en"
-            }
-                </script>
-            </div>
-            <!-- TradingView Widget END -->  
-            <div class="container">
-                <a id="toggle-sidebar" class="btn btn-secondary rounded-0" href="#">
-                    <span>Toggle Sidebar</span>
-                </a>
-            </div>
-            <!-- payment methods -->
-            <div class="container">
-                <div class="row">
-                    <!-- bitcoin  -->
-                    <div class="col-lg-4">
-                        <img src="https://capitalmarket.online/image/bitcoin.jpg" alt="" class="dashboard-payment-image my-3">
-                            <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary btn-block flat-button" data-toggle="modal" data-target="#bitcoin-payment-modal">
+            </script>
+        </div>
+        <!-- TradingView Widget END -->
+        <div class="container">
+            <a id="toggle-sidebar" class="btn btn-secondary rounded-0" href="#">
+                <span>Toggle Sidebar</span>
+            </a>
+        </div>
+        <!-- payment methods -->
+        <div class="container">
+            <div class="row">
+                <!-- bitcoin  -->
+                <div class="col-lg-4">
+                    <img src="https://capitalmarket.online/image/bitcoin.jpg" alt="" class="dashboard-payment-image my-3">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary btn-block flat-button" data-toggle="modal" data-target="#bitcoin-payment-modal">
                             select
                         </button>
 
-                        <!-- bitcoin Modal -->
-                        <div class="modal fade profile-text-color" id="bitcoin-payment-modal" tabindex="-1" role="dialog" aria-labelledby="bitcoin-payment-modalTitle" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
+                    <!-- bitcoin Modal -->
+                    <div class="modal fade profile-text-color" id="bitcoin-payment-modal" tabindex="-1" role="dialog" aria-labelledby="bitcoin-payment-modalTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Bitcoin Deposit</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Bitcoin Deposit</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                                 </div>
-                                <div class="modal-body">
+                                <div class="modal-body text-center">
                                     <div class="container">
-                                            <h5>All Bitcoin Payments should be sent to the bitcoin address below:</h5>
-
-                                            <img src="/static/images/bitcoin-address-qr-code.jpeg" alt="">
-                                            <br>
-                                            <span class="message-success mt-3">3GKvigR4ivNYz5oYDPipfuTPD2JA281FML</span>
+                                        <h5>All Bitcoin Payments should be sent to the bitcoin address below:</h5>
 
 
-                                            <h5>Once we confirm your payment, your account will be funded instantly.</h5>
-                                            <span class="message-error">
+
+                                        <span class="message-success mt-3">1MkFeQDdkE4s4mE4w3B8pVqWq2kzsogxWB</span>
+
+
+                                        <h5>Once we confirm your payment, your account will be funded instantly.</h5>
+                                        <span class="message-error">
                                                 For more information contact us immediately through our official email address support@expertoptioninvestments.com
                                                 Thank you for using  Expert Option Investments
                                             </span>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                 </div>
-                            </div>
                             </div>
                         </div>
                     </div>
-
-                                        
                 </div>
+
+
             </div>
-        
-        
-            <!-- end of dashboard content -->
-        </main>
-        <!-- page-content" -->
-    </div>
-    <!-- page-wrapper -->
+        </div>
+
+
+        <!-- end of dashboard content -->
+    </main>
+    <!-- page-content" -->
+</div>
+<!-- page-wrapper -->
 {% endblock %}

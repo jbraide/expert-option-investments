@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
     {% load static %}
-      <!-- bootstrap -->
+    <!-- bootstrap -->
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
@@ -30,324 +31,311 @@
     <!-- wow js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
     <script>
-      new WOW().init();
+        new WOW().init();
     </script>
 
-  <!-- owl carousel -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
+    <!-- owl carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
 
-  <!-- Resources -->
-  <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
-  <script src="https://cdn.amcharts.com/lib/4/maps.js"></script>
-  <script src="https://cdn.amcharts.com/lib/4/geodata/worldLow.js"></script>
-  <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
-  
-  <!-- wave js -->
-  <script src="./static/js/wave.js"></script>
-  
-  <!-- main js file -->
-  <script src="./static/js/main.js"></script>
-  <script>
-    // open + close navigation
-    function openNav() {
-      document.getElementById("myNav").style.width = "100%";
-    }
-      
-    function closeNav() {
-      document.getElementById("myNav").style.width = "0%";
-    }
-  
-    // sticky fixed navigation
-    $(document).ready(function(){
-      $(window).scroll(function(){
-        if ($(this).scrollTop() > 250){
-          $('.banner-navigation').addClass('navbar-sticky')
-        } else {
-          $('.banner-navigation').removeClass('navbar-sticky')
+    <!-- Resources -->
+    <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/maps.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/geodata/worldLow.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
+    <!-- wave js -->
+    <script src="./static/js/wave.js"></script>
+
+    <!-- main js file -->
+    <script src="./static/js/main.js"></script>
+    <script>
+        // open + close navigation
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
         }
-      })
-    })
-      // owl carousel
-    $('.owl-carousel').owlCarousel({
-      loop:true,
-      magin: 10,
-      nav:true,
-      responsiveClass:true,
-      responsive: {
-        0:{
-          items:1,
-          nav:false
-        },
-      }
-    })
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+
+        // sticky fixed navigation
+        $(document).ready(function() {
+                $(window).scroll(function() {
+                    if ($(this).scrollTop() > 250) {
+                        $('.banner-navigation').addClass('navbar-sticky')
+                    } else {
+                        $('.banner-navigation').removeClass('navbar-sticky')
+                    }
+                })
+            })
+            // owl carousel
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            magin: 10,
+            nav: true,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: false
+                },
+            }
+        })
     </script>
-  <!-- Chart code -->
-<script>
-// waves js
-var waveAnimation = new Wave('body', {
-  number: 3,
-  smooth: 50,
-  velocity: 2,
-  height: .2,
-  colors: ['#f1f1f1'],
-  border: {
-    show: false,
-    width: 2, 
-    color: ['']
-  }, 
-  opacity: 6, 
-  position: 'bottom'
+    <!-- Chart code -->
+    <script>
+        // waves js
+        var waveAnimation = new Wave('body', {
+            number: 3,
+            smooth: 50,
+            velocity: 2,
+            height: .2,
+            colors: ['#f1f1f1'],
+            border: {
+                show: false,
+                width: 2,
+                color: ['']
+            },
+            opacity: 6,
+            position: 'bottom'
 
-} )
-waveAnimation.animate()
-
-
-am4core.ready(function() {
-
-// Themes begin
-am4core.useTheme(am4themes_animated);
-// Themes end
-
-// Create map instance
-var chart = am4core.create("chartdiv", am4maps.MapChart);
-
-// Set map definition
-chart.geodata = am4geodata_worldLow;
-
-// Set projection
-chart.projection = new am4maps.projections.NaturalEarth1();
-chart.panBehavior = "rotateLong";
-
-// Create map polygon series
-var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
-
-// Make map load polygon (like country names) data from GeoJSON
-polygonSeries.useGeodata = true;
-
-polygonSeries.mapPolygons.template.fillOpacity = 0.6;
-polygonSeries.mapPolygons.template.nonScalingStroke = true;
-polygonSeries.mapPolygons.template.strokeWidth = 0.5;
-polygonSeries.mapPolygons.template.adapter.add("fill", function(fill, target) {
-    return chart.colors.getIndex(Math.round(Math.random() * 4)).saturate(0.3);
-})
-
-// Configure series
-var polygonTemplate = polygonSeries.mapPolygons.template;
-polygonTemplate.tooltipText = "{name}";
-
-// Create hover state and set alternative fill color
-var hs = polygonTemplate.states.create("hover");
-hs.properties.fill = chart.colors.getIndex(1);
-
-// Center on Pacic
-chart.deltaLongitude = -154.8;
+        })
+        waveAnimation.animate()
 
 
+        am4core.ready(function() {
 
-var graticuleSeries = chart.series.push(new am4maps.GraticuleSeries());
-graticuleSeries.fitExtent = false;
+            // Themes begin
+            am4core.useTheme(am4themes_animated);
+            // Themes end
 
-}); // end am4core.ready()
-</script>
+            // Create map instance
+            var chart = am4core.create("chartdiv", am4maps.MapChart);
+
+            // Set map definition
+            chart.geodata = am4geodata_worldLow;
+
+            // Set projection
+            chart.projection = new am4maps.projections.NaturalEarth1();
+            chart.panBehavior = "rotateLong";
+
+            // Create map polygon series
+            var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
+
+            // Make map load polygon (like country names) data from GeoJSON
+            polygonSeries.useGeodata = true;
+
+            polygonSeries.mapPolygons.template.fillOpacity = 0.6;
+            polygonSeries.mapPolygons.template.nonScalingStroke = true;
+            polygonSeries.mapPolygons.template.strokeWidth = 0.5;
+            polygonSeries.mapPolygons.template.adapter.add("fill", function(fill, target) {
+                return chart.colors.getIndex(Math.round(Math.random() * 4)).saturate(0.3);
+            })
+
+            // Configure series
+            var polygonTemplate = polygonSeries.mapPolygons.template;
+            polygonTemplate.tooltipText = "{name}";
+
+            // Create hover state and set alternative fill color
+            var hs = polygonTemplate.states.create("hover");
+            hs.properties.fill = chart.colors.getIndex(1);
+
+            // Center on Pacic
+            chart.deltaLongitude = -154.8;
+
+
+
+            var graticuleSeries = chart.series.push(new am4maps.GraticuleSeries());
+            graticuleSeries.fitExtent = false;
+
+        }); // end am4core.ready()
+    </script>
 </head>
+
 <body>
 
     <div id="banner" class="pt-4">
-      <!-- navigation  -->
-      {% include "main/navbar.html" %}
+        <!-- navigation  -->
+        {% include "main/navbar.html" %}
 
-      <!-- banner text -->
-      <div class="banner-text">
-        <div class="text-center">
-          <h3>
-            Fast
-            <span class="fas fa-circle green-on"></span>
-            online trading
-          </h3>
-          <button class="btn btn-primary mt-4 flat-button create-account-button">
+        <!-- banner text -->
+        <div class="banner-text">
+            <div class="text-center">
+                <h3>
+                    Fast
+                    <span class="fas fa-circle green-on"></span> online trading
+                </h3>
+                <a href="{% url 'main:register' %}" class="btn btn-primary mt-4 flat-button create-account-button">
             Create an Account
-          </button>
-        </div>    
-      </div>   
+                </a>
+            </div>
+        </div>
 
     </div>
 
     <!-- sliding charts -->
     <div id="sliding-chart">
-      <!-- TradingView Widget BEGIN -->
-  <div class="tradingview-widget-container">
-    <div class="tradingview-widget-container__widget"></div>
-    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-    {
-    "symbols": [
-      {
-        "proName": "FOREXCOM:SPXUSD",
-        "title": "S&P 500"
-      },
-      {
-        "proName": "FOREXCOM:NSXUSD",
-        "title": "Nasdaq 100"
-      },
-      {
-        "proName": "FX_IDC:EURUSD",
-        "title": "EUR/USD"
-      },
-      {
-        "proName": "BITSTAMP:BTCUSD",
-        "title": "BTC/USD"
-      },
-      {
-        "proName": "BITSTAMP:ETHUSD",
-        "title": "ETH/USD"
-      }
-    ],
-    "colorTheme": "light",
-    "isTransparent": false,
-    "displayMode": "adaptive",
-    "locale": "en"
-  }
-    </script>
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                {
+                    "symbols": [{
+                        "proName": "FOREXCOM:SPXUSD",
+                        "title": "S&P 500"
+                    }, {
+                        "proName": "FOREXCOM:NSXUSD",
+                        "title": "Nasdaq 100"
+                    }, {
+                        "proName": "FX_IDC:EURUSD",
+                        "title": "EUR/USD"
+                    }, {
+                        "proName": "BITSTAMP:BTCUSD",
+                        "title": "BTC/USD"
+                    }, {
+                        "proName": "BITSTAMP:ETHUSD",
+                        "title": "ETH/USD"
+                    }],
+                    "colorTheme": "light",
+                    "isTransparent": false,
+                    "displayMode": "adaptive",
+                    "locale": "en"
+                }
+            </script>
+        </div>
     </div>
-</div>
-<!-- TradingView Widget END -->
+    <!-- TradingView Widget END -->
     <!-- how it works -->
     <div class="container text-center">
-      <div id="how-it-works">
-        <h2 class="text-center mt-5">
-          How it Works
-        </h2>
-        <div id="how-it-works-background">
-          <div class="row">
-            <div class="col-lg-6">
-              <div id="how-it-works-body">
-                <h5 class="how-it-works-headings">
-                  <span class="fas fa-money-bill mr-3"></span>
-                    Deposit
-                  </h5>
-                  <p class="my-3">Open real account and add funds. We work with more than 12 payment systems.
-                  </p>
-              </div>
+        <div id="how-it-works">
+            <h2 class="text-center mt-5">
+                How it Works
+            </h2>
+            <div id="how-it-works-background">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div id="how-it-works-body">
+                            <h5 class="how-it-works-headings">
+                                <span class="fas fa-money-bill mr-3"></span> Deposit
+                            </h5>
+                            <p class="my-3">Open real account and add funds. We work with more than 12 payment systems.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div id="how-it-works-body">
+                            <h5 class="how-it-works-headings">
+                                <span class="fas fa-chart-line mr-3"></span> Trade
+                            </h5>
+                            <p class="my-3">
+                                Trade out catalog of over 60 assets and stocks. Use technical analysis and trade the news
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div id="how-it-works-body">
+                        <h5 class="how-it-works-headings">
+                            <span class="fas fa-download mr-3"></span> Withdraw
+                        </h5>
+                        <p class="my-3">Get funds easily to your bank card or e-wallet. We take no commission.
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-6">
-              <div id="how-it-works-body">
-                <h5 class="how-it-works-headings">
-                  <span class="fas fa-chart-line mr-3"></span>
-                    Trade
-                  </h5>
-                  <p class="my-3">
-                    Trade out catalog of over 60 assets and stocks. Use technical analysis and trade the news
-                  </p>
-            </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div id="how-it-works-body">
-                  <h5 class="how-it-works-headings">
-                    <span class="fas fa-download mr-3"></span>
-                      Withdraw
-                    </h5>
-                    <p class="my-3">Get funds easily to your bank card or e-wallet. We take no commission.
-                    </p>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
     </div>
 
 
     <!-- proof of excellence  -->
     <div class="container my-5">
-      <div class="proof-of-excellence">
-        <div class="row">
-          <div class="col-lg-6">
-              <h3 id="excellence-header">
-                <span class="fas fa-shield-alt mr-2"></span>
-                Trusted
-              </h3>
-              <p id="excellence-message">
-                Expert Option Investments is the leader in the online trading industry. 
-                We are trusted by more than 5,000,000 clients.
-              </p>
-              <a href="" class="btn btn-primary see-more-button btn-block">See More</a>
-            </div>  
-          <div class="col-lg-6">
-            <h5 id="best-trading-platform">
-              <span class="fas fa-trophy mr-2"></span>
-              Best Trading Platform
-            </h5>
-            <p id="award-winning">
-              Award winner at London Traders Show Stoneleigh Telford Int. Centre, 7 Aug 2015
-            </p>
-          </div>
+        <div class="proof-of-excellence">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3 id="excellence-header">
+                        <span class="fas fa-shield-alt mr-2"></span> Trusted
+                    </h3>
+                    <p id="excellence-message">
+                        Expert Option Investments is the leader in the online trading industry. We are trusted by more than 5,000,000 clients.
+                    </p>
+                    <a href="" class="btn btn-primary see-more-button btn-block">See More</a>
+                </div>
+                <div class="col-lg-6">
+                    <h5 id="best-trading-platform">
+                        <span class="fas fa-trophy mr-2"></span> Best Trading Platform
+                    </h5>
+                    <p id="award-winning">
+                        Award winner at London Traders Show Stoneleigh Telford Int. Centre, 7 Aug 2015
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 
     <!-- Global trading platform -->
     <div id="global-platform">
-      <div class="container text-center">
-        <h3 id="global-platform-header" class="text-center my-4">
-          <span class="fas fa-link"></span>
-          Global Trading Platform
-        </h3>
-        <span class="py-5">
+        <div class="container text-center">
+            <h3 id="global-platform-header" class="text-center my-4">
+                <span class="fas fa-link"></span> Global Trading Platform
+            </h3>
+            <span class="py-5">
           People from more than 80 countries trade at Expert Option Investments
         </span>
-      </div>
-
-      <!-- map -->
-      <div class="container">
-        <div id="chartdiv">
-        <img src="./static/images/world_map.png" alt="">
         </div>
-      </div>
-      <!-- <div id="map"> -->
-      </div>
+
+        <!-- map -->
+        <div class="container">
+            <div id="chartdiv">
+                <img src="./static/images/world_map.png" alt="">
+            </div>
+        </div>
+        <!-- <div id="map"> -->
+    </div>
     </div>
 
     <!-- Account registered and traders online -->
     <div class="container my-5">
-      <div id="registered-online">
-        <div class="row">
-
-          <!-- Registered Accounts -->
-          
-          <div class="col-lg-6">
+        <div id="registered-online">
             <div class="row">
-              <div class="col-lg-2">
-                <span class="fas fa-user-plus display-4"></span>
-              </div>
-              <div class="col-lg-10" id="registered-accounts-container">
-                <h2 id="registered-accounts-number" class="">
-                  385,000
-                </h2>
-                <span>Registered Accounts</span>
-              </div>
-            </div>
-          </div>
 
-          <!-- Users online -->
+                <!-- Registered Accounts -->
 
-          <div class="col-lg-6">
-            <div id="users-online">
-              <div class="row">
-                <div class="col-lg-2">
-                  <span class="fas fa-globe globe-on display-4"></span>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <span class="fas fa-user-plus display-4"></span>
+                        </div>
+                        <div class="col-lg-10" id="registered-accounts-container">
+                            <h2 id="registered-accounts-number" class="">
+                                385,000
+                            </h2>
+                            <span>Registered Accounts</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-10">
-                  <h2>6,788</h2>
-                  <span>Traders Online</span>
+
+                <!-- Users online -->
+
+                <div class="col-lg-6">
+                    <div id="users-online">
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <span class="fas fa-globe globe-on display-4"></span>
+                            </div>
+                            <div class="col-lg-10">
+                                <h2>6,788</h2>
+                                <span>Traders Online</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
 
-    <hr>
-    {% include 'main/footer.html' %}
-      
+    <hr> {% include 'main/footer.html' %}
+
 </body>
+
 </html>

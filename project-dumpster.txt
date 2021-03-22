@@ -1,6 +1,6 @@
 # starting django application
 source ~/Documents/web_projects/venv/bin/activate && cd expertoptioninvestmentsproject && python manage.py runserver
-source ~/Documents/web_projects/venv/bin/activate && cd expertoptioninvestmentsproject && python manage.py runserver --setting=expertoptioninvestmentsproject.settings.development
+source ~/Documents/web_projects/venv/bin/activate && cd expertoptioninvestmentsproject && python manage.py runserver localhost:9191 --setting=expertoptioninvestmentsproject.setting.development
 
 
 # production and development setting for migrations 
